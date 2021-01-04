@@ -1,0 +1,155 @@
+\documentclass[
+fontsize=10pt, 
+listof = totoc,
+parskip = half	
+]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage[]{acronym}
+\usepackage[T1]{fontenc}
+\usepackage[absolute]{textpos}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{tabu}
+\usepackage{graphicx}
+\usepackage{lipsum}  
+\usepackage{float}
+\usepackage{esvect}
+\usepackage{booktabs} % table style
+\usepackage{tabularx}
+%\usepackage{longtable} % table style
+\usepackage{multirow} % table style
+\usepackage{amssymb}
+\usepackage{nicefrac}
+\usepackage{cancel}
+\usepackage{polynom}
+\usepackage{stmaryrd} 
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{paralist}
+
+
+
+\newenvironment{tableEnum}{\begin{varwidth}[t]{\linewidth}\begin{compactenum}[1)]}{\end{compactenum}\end{varwidth}\vspace{0.08cm}}
+\newenvironment{tableItem}{\begin{varwidth}[t]{\linewidth}\begin{compactitem}[-]}{\end{compactitem}\end{varwidth}\vspace{0.08cm}}
+
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\author{Michael Kaip}
+
+\date{}
+
+% Extension for amsmath matrix environment - matrix | vector
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+	\hskip -\arraycolsep
+	\let\@ifnextchar\new@ifnextchar
+	\array{#1}}
+\makeatother
+
+%Extension for roman numbers
+\newcommand{\uproman}[1]{\uppercase\expandafter{\romannumeral#1}}
+\newcommand{\lowroman}[1]{\romannumeral#1\relax}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+	\begin{titlepage}
+		\vspace*{-\headsep}\vspace{-\headheight}
+		\noindent
+		\includegraphics[scale=0.38]{logo}
+		\hfill
+		\textbf{GFaI-Logo hier...}\\[-1ex]
+		\rule{\linewidth}{1pt}
+		
+		\vfill\vfill
+		
+		\begin{center}
+			Bachelorarbeit
+			\begin{huge}
+				\\[2ex]
+				Untersuchung der Möglichkeiten zur Entwicklung \\ einer allgemeingültigen Anordnungsklassifikation \\ von Lamellengraphit
+				\\[6ex]
+			\end{huge}
+			Vorgelegt von:
+			\\[2ex]
+			\begin{huge}
+				Michael Kaip
+			\end{huge}
+			\\[2ex]
+			Studiengang Ingenieurinformatik
+			\\[28ex]
+			Erstgutachter:
+			\\[2ex]
+			Prof. Dr.-Ing. Mohammad Abuosba
+			\\[4ex]
+			Zweitgutachter:
+			\\[2ex]
+			Dipl.-Mathematiker Ulrich Sonntag
+			\\[40ex]
+			Berlin, den XX. April 2021
+		\end{center}
+	
+
+	\end{titlepage}
+	
+\clearpage
+
+\begingroup
+\pagestyle{empty}
+\null
+\newpage
+\endgroup
+
+\pagenumbering{gobble}
+
+\begin{abstract}
+	\lipsum[1-4]   
+\end{abstract}
+
+\newpage
+\tableofcontents
+\newpage
+\pagenumbering{Roman}
+\listoffigures
+\addcontentsline{toc}{chapter}{Abbildungsverzeichnis}
+\newpage
+\listoftables
+\addcontentsline{toc}{chapter}{Tabellenverzeichnis}
+\newpage
+\pagenumbering{arabic}
+\newpage
+
+\chapter{Einleitung}
+
+\section{Motivation}
+
+\section{Problemstellung}
+
+\newpage
+
+\chapter{Grundlagen}
+
+\section{Art und Umfang der einzelnen Aufgaben}
+
+\section{Angewandte Methoden}
+
+\section{Arbeitsergebnisse}
+
+\section{Grad der Selbständigkeit / Weisungsgebundenheit}
+
+\section{Art und Umfang der Unterstützung durch die Ausbildungsstelle}
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
