@@ -4,22 +4,27 @@ listof = totoc,
 parskip = half	
 ]{report}
 \usepackage[utf8]{inputenc}
-\usepackage[ngerman]{babel}
-\usepackage[dvipsnames]{xcolor}
+\usepackage[german]{babel}
+\usepackage[fixlanguage]{babelbib}
+\selectbiblanguage{german}
+\usepackage[dvipsnames, table]{xcolor}
+\usepackage{colortbl}
 \usepackage[most]{tcolorbox}
 \usepackage[]{acronym}
 \usepackage[T1]{fontenc}
 \usepackage[absolute]{textpos}
 \usepackage{amsmath}
 \usepackage{amsfonts}
+\usepackage[ruled,vlined,linesnumbered,ngerman]{algorithm2e}
 \usepackage{tabu}
 \usepackage{graphicx}
-\usepackage{lipsum}  
+\usepackage{mdframed}
 \usepackage{float}
+\usepackage{lipsum}
+\usepackage{fontawesome}  
 \usepackage{esvect}
 \usepackage{booktabs} % table style
 \usepackage{tabularx}
-%\usepackage{longtable} % table style
 \usepackage{multirow} % table style
 \usepackage{amssymb}
 \usepackage{nicefrac}
@@ -30,6 +35,11 @@ parskip = half
 \usepackage{subcaption}
 \usepackage{paralist}
 
+\usepackage{chngcntr}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+
+\usepackage[hidelinks]{hyperref}
 
 
 \newenvironment{tableEnum}{\begin{varwidth}[t]{\linewidth}\begin{compactenum}[1)]}{\end{compactenum}\end{varwidth}\vspace{0.08cm}}
@@ -55,44 +65,42 @@ parskip = half
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
-	\begin{titlepage}
-		\vspace*{-\headsep}\vspace{-\headheight}
-		\noindent
-		\includegraphics[scale=0.38]{logo}
-		\hfill
-		\textbf{GFaI-Logo hier...}\\[-1ex]
-		\rule{\linewidth}{1pt}
-		
-		\vfill\vfill
-		
-		\begin{center}
-			Bachelorarbeit
-			\begin{huge}
-				\\[2ex]
-				Untersuchung der Möglichkeiten zur Entwicklung \\ einer allgemeingültigen Anordnungsklassifikation \\ von Lamellengraphit
-				\\[6ex]
-			\end{huge}
-			Vorgelegt von:
-			\\[2ex]
-			\begin{huge}
-				Michael Kaip
-			\end{huge}
-			\\[2ex]
-			Studiengang Ingenieurinformatik
-			\\[28ex]
-			Erstgutachter:
-			\\[2ex]
-			Prof. Dr.-Ing. Mohammad Abuosba
-			\\[4ex]
-			Zweitgutachter:
-			\\[2ex]
-			Dipl.-Mathematiker Ulrich Sonntag
-			\\[40ex]
-			Berlin, den XX. April 2021
-		\end{center}
+\begin{titlepage}
+	\vspace*{-\headsep}\vspace{-\headheight}
+	\noindent
+	\includegraphics[scale=0.38]{logo}
+	\hfill
+	\textcolor{white}{placeholder}\\[-1ex]
+	\rule{\linewidth}{1pt}
 	
-
-	\end{titlepage}
+	\vfill\vfill
+	
+	\begin{center}
+		Bachelorarbeit
+		\begin{huge}
+			\\[2ex]
+			Untersuchung der Möglichkeiten zur Entwicklung \\ einer allgemeingültigen Anordnungsklassifikation \\ von Lamellengraphit
+			\\[6ex]
+		\end{huge}
+		Vorgelegt von:
+		\\[2ex]
+		\begin{huge}
+			Michael Kaip
+		\end{huge}
+		\\[2ex]
+		Studiengang Ingenieurinformatik
+		\\[28ex]
+		Erstgutachter:
+		\\[2ex]
+		Prof. Dr.-Ing. Mohammad Abuosba
+		\\[4ex]
+		Zweitgutachter:
+		\\[2ex]
+		Dipl.-Mathematiker Ulrich Sonntag
+		\\[40ex]
+		Berlin, den XX. April 2021
+	\end{center}
+\end{titlepage}
 	
 \clearpage
 
@@ -122,32 +130,142 @@ parskip = half
 \newpage
 
 \chapter{Einleitung}
+\label{ch:Einleitung}
 
 \section{Motivation}
+\label{sec:Motivation}
 
 \section{Problemstellung}
+\label{sec:Problemstellung}
+
+\section{Aufbau der Arbeit}
+\label{sec:AufbauDerArbeit}
 
 \newpage
 
 \chapter{Grundlagen}
+\label{ch:Grundlagen}
 
-\section{Art und Umfang der einzelnen Aufgaben}
+\section{Graphitklassifizierung}
+\label{sec:Graphitklassifizierung}
 
-\section{Angewandte Methoden}
+\subsection{Lamellengraphit}
+\label{subsec:Lamellengraphit}
 
-\section{Arbeitsergebnisse}
+\subsection{Mechanische Eigenschaften von Lamellengraphit}
+\label{subsec:MechanischeEigenschaften}
 
-\section{Grad der Selbständigkeit / Weisungsgebundenheit}
+\subsection{Einteilung von Gusseisen mit Lamellengraphit entsprechend den mechanischen\\ Eigenschaften}
+\label{subsec:EinteilungLamellengraphit}
 
-\section{Art und Umfang der Unterstützung durch die Ausbildungsstelle}
+\section{Grundlagen der Bildverarbeitung}
+\label{GrundlagenBildverarbeitung}
+
+\subsection{Bildrepräsentation und Farbräume}
+\label{Bildrep}
+
+\subsection{Skalierung und Interpolationsverfahren}
+\label{subsec:SkalierungUndInterpolation}
+
+\section{Beschreibung der verwendeten Methoden zur statistischen Analyse}
+\label{sec:MethodenStatAnalyse}
+
+
+
+\chapter{Ausgangssituation}
+\label{ch:Ausgangssituation}
+
+\section{Metallographie und Analytik}
+\label{sec:MetallographieAnalytik}
+
+\subsection{Lichtmikroskopie für die Erstellung von Bildproben}
+\label{subsec:Lichtmikroskopie}
+
+\subsection{Bildmaterial}
+\label{subsec:Bildmaterial}
+
+\section{Bestimmung der Mikrostruktur von Gusseisen mit AMGuss}
+\label{sec:BestimmungMikrostrukturAMGuss}
+
+\subsection{Kalibrierung}
+\label{subsec:Kalibrierung}
+
+\subsection{Erstellung eines Anordnungsklassifikators für die Lamellengraphit-Auswertung}
+\label{subsec: Erstellung AnordnungsklassifAMGuss}
+
+\subsection{Methoden zur Bestimmung der Anordnungstypen A-E von Lamellengraphit}
+\label{subsec:AnordnungstypenLamellengraphit}
+
+\subsection{Bewertungsergebnisse einer Lamellengraphit-Auswertung}
+
+\label{subsec:ErgebnisseAMGuss}
 
 
 
 
+\chapter{Konzept}
+\label{ch:Konzept}
+
+\section{Definition der Anforderungen an einen allgemeingültigen\\ Anordnungsklassifikator}
+
+\section{Erzeugung von Bildern mit unterschiedlichen Ausgangskalibrierungen}
+
+\section{Untersuchung der Auswirkungen von Bildskalierungen auf die Reproduzierbarkeit von Messergebnissen unter Anwendung verschiedener Interpolationsverfahren}
+
+\subsection{Messung der Bilder mit AMGuss vor und nach der Skalierung}
+
+\subsection{Anwendung \textit{einstufiger} Skalierungen auf die erzeugten Bilder}
+
+\subsection{Anwendung \textit{mehrstufiger} Skalierungen auf die erzeugten Bilder}
+
+\section{Fehleranalyse}
+
+\subsection{Entwicklung eines statischen Kennzahlensystems}
+
+\subsection{Ermittlung der Laufzeitkomplexitäten und Performancemessung}
+
+
+
+\chapter{Umsetzung}
+
+\section{Rahmenbedingungen}
+
+\subsection{Technologie-Stack}
+
+\section{Implementierung}
+
+\subsection{Modellierung und algorithmische Beschreibung der Implementierung}
+
+\section{Erzeugung von Bildern mit verschiedenen Ausgangskalibrierungen}
+
+\section{Skalierung der erzeugten Bilder (einstufig/mehrstufig)}
+
+\subsection{Bilineare Interpolation}
+
+\subsection{Bikubische Interpolation}
+
+\subsection{Flächenbasierte Interpolation}
+
+\subsection{Nearest-Neighbor-Interpolation}
+
+\subsection{LANCZOS-Interpolation}
+
+
+
+\chapter{Evaluierung}
+
+\section{Vergleich angewendeten Interpolationsverfahren}
+
+\subsection{Laufzeitkomplexität und Performance}
+
+\subsection{Kennzahlenvergleich und Interpretation}
 
 
 
 
+\chapter{Zusammenfassung und Auswertung}
+\section{Zusammenfassung}
+\section{Auswertung}
 
 
 
