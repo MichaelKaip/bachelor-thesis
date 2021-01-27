@@ -14,6 +14,7 @@ parskip = half
 \usepackage[T1]{fontenc}
 \usepackage[absolute]{textpos}
 \usepackage{amsmath}
+\usepackage{amsthm}
 \usepackage{amsfonts}
 \usepackage[ruled,vlined,linesnumbered,ngerman]{algorithm2e}
 \usepackage{tabu}
@@ -34,6 +35,13 @@ parskip = half
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{paralist}
+% for graphics
+\usepackage{physics}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{mathdots}
+\usepackage{yhmath}
+\usepackage{cancel}
 
 \usepackage{chngcntr}
 \counterwithout{figure}{chapter}
@@ -61,6 +69,9 @@ parskip = half
 %Extension for roman numbers
 \newcommand{\uproman}[1]{\uppercase\expandafter{\romannumeral#1}}
 \newcommand{\lowroman}[1]{\romannumeral#1\relax}
+
+\newtheorem{definition}{Definition}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -132,14 +143,23 @@ parskip = half
 \chapter{Einleitung}
 \label{ch:Einleitung}
 
-\section{Motivation}
-\label{sec:Motivation}
-
-\section{Problemstellung}
-\label{sec:Problemstellung}
-
-\section{Aufbau der Arbeit}
-\label{sec:AufbauDerArbeit}
+\boxed{\textcolor{blue}{\textbf{2-3 Seiten}}}
+\\\\
+\textcolor{blue}{\textbf{(1) Was ist Gusseisen und welche wirtschaftliche Bedeutung hat der Werkstoff?}}
+\\\\
+\textcolor{blue}{\textbf{(2) Wie wird Gusseisen hergestellt und wie entstehen dabei unterschiedliche Graphitstrukturen überhaupt?}}
+\\\\
+\textcolor{blue}{\textbf{(3) Welche Typen von Gusseisen gibt es?}}
+\\\\
+\textcolor{blue}{\textbf{(4) Welche Bedeutung hat die Qualität des Gusseisenwerkstoffes mit Bezug auf unterschiedliche typische Verwendungszwecke - mit Beispiel?}}
+\\\\
+\textcolor{blue}{\textbf{(5) Warum ist eine korrekte Klassifikation von Gusseisenwerkstoffen wichtig?}}
+\\\\
+\textcolor{blue}{\textbf{(6) Welche Graphitmorphologien müssen bei normgerechter Klassifizierung berücksichtigt werden?}}
+\\\\
+\textcolor{blue}{\textbf{(6) Wie erfolgt die Klassifikation heute in der Praxis und welche Nachteile sind damit verbunden?}}
+\\\\
+\textcolor{blue}{\textbf{(7) Was sind die Vorteile digitaler Bildverarbeitung in diesem Kontext und wo liegen die Grenzen?}}
 
 \newpage
 
@@ -191,36 +211,98 @@ parskip = half
 \label{subsec:Kalibrierung}
 
 \subsection{Erstellung eines Anordnungsklassifikators für die Lamellengraphit-Auswertung}
-\label{subsec: Erstellung AnordnungsklassifAMGuss}
+\label{subsec: ErstellungAnordnungsklassifAMGuss}
 
 \subsection{Methoden zur Bestimmung der Anordnungstypen A-E von Lamellengraphit}
 \label{subsec:AnordnungstypenLamellengraphit}
 
 \subsection{Bewertungsergebnisse einer Lamellengraphit-Auswertung}
-
 \label{subsec:ErgebnisseAMGuss}
 
+\section{Problemstellung}
+\label{sec:Problemstellung}
 
-
+Bei einem allgemeingültigen Anordnungsklassifikator müsste der Nutzer lediglich die Kalibrierung angeben, mit der die Probenbilder aufgenommen wurden und das System wäre in der Lage, die Kalibrierung der Bilder automatisch an die eines im System hinterlegten Klassifikators durch Skalierung anzupassen. Somit würde der Arbeitsschritt, Klassifikatoren manuell erstellen und  verwalten zu müssen, entfallen. Fehler könnten dadurch vermieden und eine Einheitlichkeit der Messungen sichergestellt werden.
 
 \chapter{Konzept}
 \label{ch:Konzept}
 
-\section{Definition der Anforderungen an einen allgemeingültigen\\ Anordnungsklassifikator}
+\section{Sollzustand/Anforderungen}
+\label{sec:DefAnforderungenAnordnKlas}
+Die Vorgehensweise zur Erstellung eines Anordnungsklassifikators in Kapitel \ref{subsec: ErstellungAnordnungsklassifAMGuss} bereits beschrieben. Dies ist für den Nutzer mit einem nicht unerheblichen Aufwand verbunden. Hinzu kommt eine gewisse Fehleranfälligkeit, da für jede Messung der in Bezug auf die Bildkalibrierung richtige Klassifikator für die Messung ausgewählt werden muss.
+\\\\
+Das Gütekriterium an einen solchen Klassifikator ist, die durch Skalierung (bzw. Interpolation) hervorgerufenen und in Kapitel \ref{sec:Problemstellung} bereits näher beschriebenen Messfehler auf ein \textbf{tolerierbares} Maß hin zu minimieren. Allerdings gibt es jedoch, nach den aktuellen allgemein anerkannten Regeln der Technik (vgl. dazu \textcolor{blue}{auf Norm verweisen}) keinen eindeutigen objektiven Maßstab, der zur Beurteilung angelegt werden könnte. Stattdessen beruht die Graphitklassifizierung auf einer visuellen Einschätzung der Spezialisten, welche die Beurteilung der Proben vornehmen. Die Norm DIN ISO 945-1 definiert dabei die Grundlagen, auf denen eine solche Beurteilung zu erfolgen hat. Was also als noch tolerierbar gilt, entscheidet der versierte Nutzer in gewissen Grenzen selbst und wie die Erfahrungen zeigen, existieren teils nicht unerhebliche Abweichungen bei der Einschätzung. 
 
 \section{Erzeugung von Bildern mit unterschiedlichen Ausgangskalibrierungen}
 
 
 \section{Statistische Versuchsplanung}
 
+
+\noindent\textcolor{red}{todo:  beschreiben...}  
+
 \subsection{Systemanalyse}
-Definition der Zielgrößen sowie Bestimmung der Einfluss- und Störgrößen...
+Die Aufgabe, einen allgemeingültigen Anordnungsklassifikator zu entwickeln, der die beschriebenen Anforderungen erfüllt, ist im Grunde die Lösung eines Optimierungsproblems. Dabei ist es erforderlich zu untersuchen, welche Abhängigkeiten zwischen den \textbf{Einflussgrößen} und Zielgrößen zu bestehen, was zunächst vereinfacht in Abbildung \ref{fig:BlackBox} dargestellt is.
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1, scale=0.7, every node/.style={scale=0.7}]
+		%uncomment if require: \path (0,222); %set diagram left start at 0, and has height of 222
+		
+		%Flowchart: Process [id:dp31407792865997985] 
+		\draw  [fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=0.45 ][line width=2.25]  (147,92) -- (356,92) -- (356,186.35) -- (147,186.35) -- cycle ;
+		%Right Arrow [id:dp008081388677440904] 
+		\draw  [fill={rgb, 255:red, 248; green, 231; blue, 28 }  ,fill opacity=1 ][line width=1.5]  (199,14) -- (199,56) -- (209,56) -- (189,84) -- (169,56) -- (179,56) -- (179,14) -- cycle ;
+		%Right Arrow [id:dp584717372432416] 
+		\draw  [fill={rgb, 255:red, 248; green, 231; blue, 28 }  ,fill opacity=1 ][line width=1.5]  (315,14) -- (315,56) -- (325,56) -- (305,84) -- (285,56) -- (295,56) -- (295,14) -- cycle ;
+		%Right Arrow [id:dp8933598607947869] 
+		\draw  [fill={rgb, 255:red, 184; green, 233; blue, 134 }  ,fill opacity=1 ][line width=1.5]  (70,130) -- (112,130) -- (112,120) -- (140,140) -- (112,160) -- (112,150) -- (70,150) -- cycle ;
+		%Right Arrow [id:dp43249460780861937] 
+		\draw  [fill={rgb, 255:red, 184; green, 233; blue, 134 }  ,fill opacity=1 ][line width=1.5]  (363,129) -- (405,129) -- (405,119) -- (433,139) -- (405,159) -- (405,149) -- (363,149) -- cycle ;
+		%Shape: Rectangle [id:dp02676070817238141] 
+		\draw  [line width=3.75]  (5.68,-39.65) -- (514.68,-39.65) -- (514.68,210.35) -- (5.68,210.35) -- cycle ;
+		
+		% Text Node
+		\draw (156,-24) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize] [align=left] {{\scriptsize \textbf{Steuergrößen }}};
+		% Text Node
+		\draw (278,-24) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\scriptsize \textbf{Störgrößen}}};
+		% Text Node
+		\draw (266,224.4) node [anchor=north west][inner sep=0.75pt]    {$$};
+		% Text Node
+		\draw (151,-6.6) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$\{x_{1} ,\ x_{2} ,\ ...,\ x_{n}\}$};
+		% Text Node
+		\draw (267,-6.6) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$\{v_{1} ,\ v_{2} ,\ ...,\ v_{n}\}$};
+		% Text Node
+		\draw (439,127) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {\textbf{Zielgrößen}};
+		% Text Node
+		\draw (439,137.4) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$y_{1} ,\ y_{2} ,\ ...,\ y_{3}$};
+		% Text Node
+		\draw (13,136) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {\textbf{Eingaben}};
+		% Text Node
+		\draw (177,129) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {\begin{minipage}[lt]{108.95844000000001pt}\setlength\topsep{0pt}
+				\begin{center}
+					\textbf{Versuchsraum}\\\textbf{Ursache-/Wirkunsbez.}
+				\end{center}
+		\end{minipage}};
+	\end{tikzpicture}
+	\label{fig:BlackBox}
+	\caption{Usache-/Wirkungsbeziehungen als Black-Box-Modell}
+\end{figure}
+
+\noindent Daher werden im Folgenden sowohl die Ziel-/ und Einflussgrößen eingehend beschrieben.
+
+\subsection{Definition der Zielgrößen}
+
+\textcolor{blue}{Hinweis: Mehrgrößenoptimierungsproblem $\to$ Kombination der Einzelwerte zu einer gewichteten Summe...}
+
+
+
+\subsection{Definition der Einflussgrößen}
+
 
 \subsection{Modellbildung}
-\begin{enumerate}
-	\item Untersuchung der Wirkung von Einflussgrößen auf die Zielgrößen und deren Wechselwirkungen
-	\item Bestimmung der Messpunkten pro Einflussgröße (Minimal- und Maximalwerte)
-\end{enumerate}
 
 \subsection{Versuchsplanaufbau}
 
@@ -245,7 +327,7 @@ Definition der Zielgrößen sowie Bestimmung der Einfluss- und Störgrößen...
 
 \subsection{Modellierung und algorithmische Beschreibung der Implementierung}
 
-\section{Erzeugung von Bildern mit verschiedenen Ausgangskalibrierungen}
+\section{Verwendung von Bildern mit verschiedenen Ausgangskalibrierungen}
 
 \section{Skalierung der erzeugten Bilder (einstufig/mehrstufig)}
 
