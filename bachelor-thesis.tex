@@ -47,7 +47,7 @@ parskip = half
 \counterwithout{figure}{chapter}
 \counterwithout{table}{chapter}
 
-\usepackage[hidelinks]{hyperref}
+\usepackage[hidelinks, plainpages=false, pdfpagelabels]{hyperref}
 
 
 \newenvironment{tableEnum}{\begin{varwidth}[t]{\linewidth}\begin{compactenum}[1)]}{\end{compactenum}\end{varwidth}\vspace{0.08cm}}
@@ -143,25 +143,36 @@ parskip = half
 \chapter{Einleitung}
 \label{ch:Einleitung}
 
-\boxed{\textcolor{blue}{\textbf{2-3 Seiten}}}
+Bei Gusseisen handelt es sich um eine Eisen-Kohlenstoff-Legierung die, verglichen mit Stahl, einen wesentlich höheren Kohlenstoffgehalt von mehr als 2 bis 3,8 \% aufweist. Aufgrund der hervorragenden gießtechnischen Eigenschaften des Werkstoffes (geringer Schmelzpunkt sowie dünnflüssige Schmelze) ergeben sich für den Konstrukteur hohe Freiheitsgrade in der Formgebung wodurch eine besonders wirtschaftliche Fertigung ermöglicht wird. Der sich daraus ergebende immense Bedarf an Gusserzeugnissen wird besonders deutlich, wenn man sich die weltweite Gussproduktion anschaut, die sich im beispielsweise Jahr 2019 auf über 98 Millionen Tonnen belief. Der größte Produzent ist China mit 48,75 und Deutschland liegt mit 4,95 Millionen Tonnen auf Platz 5 \cite{Statista2021}.
 \\\\
-\textcolor{blue}{\textbf{(1) Was ist Gusseisen und welche wirtschaftliche Bedeutung hat der Werkstoff?}}
-\\\\
-\textcolor{blue}{\textbf{(2) Wie wird Gusseisen hergestellt und wie entstehen dabei unterschiedliche Graphitstrukturen überhaupt?}}
-\\\\
-\textcolor{blue}{\textbf{(3) Welche Typen von Gusseisen gibt es?}}
-\\\\
-\textcolor{blue}{\textbf{(4) Welche Bedeutung hat die Qualität des Gusseisenwerkstoffes mit Bezug auf unterschiedliche typische Verwendungszwecke - mit Beispiel?}}
-\\\\
-\textcolor{blue}{\textbf{(5) Warum ist eine korrekte Klassifikation von Gusseisenwerkstoffen wichtig?}}
-\\\\
-\textcolor{blue}{\textbf{(6) Welche Graphitmorphologien müssen bei normgerechter Klassifizierung berücksichtigt werden?}}
-\\\\
-\textcolor{blue}{\textbf{(6) Wie erfolgt die Klassifikation heute in der Praxis und welche Nachteile sind damit verbunden?}}
-\\\\
-\textcolor{blue}{\textbf{(7) Was sind die Vorteile digitaler Bildverarbeitung in diesem Kontext und wo liegen die Grenzen?}}
+Der bei Herstellung des Werkstoffes zugeführte Kohlenstoff führt zu Graphiteinlagerungen, deren Form- und Gefügeausbildung sich durch die Schmelz- und Abkühlungsbedingungen bei der Herstellung ganz wesentlich beeinflussen lassen. Demnach unterscheidet man grundsätzlich die in Abbildung 1 dargestellten Arten von Gusseisen:
 
-\newpage
+\begin{figure}[h]
+	\label{fig:GraphitTypes}
+	\begin{subfigure}{0.32\textwidth}
+		\centering
+		\boxed{\includegraphics[scale=0.5]{pics/lamellengraphit}}
+		\caption{Lamellengraphit (GJL)}
+	\end{subfigure}\hfill
+	\begin{subfigure}{0.32\textwidth}
+		\centering
+		\boxed{\includegraphics[scale=0.5]{pics/kugelgraphit}}
+		\caption{Kugelgraphit (GJS)}
+	\end{subfigure}\hfill
+	\begin{subfigure}{0.32\textwidth}
+		\centering
+		\boxed{\includegraphics[scale=0.5]{pics/vermiculargraphit}}
+		\caption{Vermiculargraphit (GJV)}
+	\end{subfigure}
+	\caption{Typen von Gusseisen nach Art der Graphitpartikelausbildung \cite{GiessereiLex2021}}
+\end{figure}
+
+\noindent Dabei unterscheiden sich die Gusseisenwerkstoffe nicht nur hinsichtlich der Form und Struktur ihrer Graphiteinlagerungen, sondern vor allem auch in Bezug auf die damit unmittelbar in Zusammenhang stehenden mechanischen Eigenschaften, wie bspw. Zug- und Druckfestigkeit, Bruchsicherheit oder plastische Verformbarkeit. Das bedeutet, dass bei Kräfteeinwirkung je nach Art unterschiedliche Spannungskonzentrationen in den Graphiteinschlüssen entstehen und der jeweilige Werkstoff sich somit mehr oder weniger für bestimmte Verwendungszwecke eignet.
+\\\\
+\noindent Die wichtigsten Abnehmer für von Gusswerkstoffen sind der Straßenfahrzeugbau mit fast 60~\% sowie der Maschinenbau mit 25 bis 30~\% der gesamten Gusslieferungen \cite{BDGuss01}.
+
+
+
 
 \chapter{Grundlagen}
 \label{ch:Grundlagen}
@@ -175,7 +186,7 @@ parskip = half
 \subsection{Mechanische Eigenschaften von Lamellengraphit}
 \label{subsec:MechanischeEigenschaften}
 
-\subsection{Einteilung von Gusseisen mit Lamellengraphit entsprechend den mechanischen\\ Eigenschaften}
+\subsection{Einteilung von Gusseisen mit Lamellengraphit entsprechend den mechanischen Eigenschaften}
 \label{subsec:EinteilungLamellengraphit}
 
 \section{Grundlagen der Bildverarbeitung}
@@ -184,10 +195,10 @@ parskip = half
 \subsection{Bildrepräsentation und Farbräume}
 \label{Bildrep}
 
-\subsection{Skalierung und Interpolationsverfahren}
+\subsection{Bildskalierung und Interpolationsverfahren}
 \label{subsec:SkalierungUndInterpolation}
 
-\section{Beschreibung der verwendeten Methoden zur statistischen Analyse}
+\section{Statistische Versuchsplanung}
 \label{sec:MethodenStatAnalyse}
 
 
@@ -198,7 +209,7 @@ parskip = half
 \section{Metallographie und Analytik}
 \label{sec:MetallographieAnalytik}
 
-\subsection{Lichtmikroskopie für die Erstellung von Bildproben}
+\subsection{Lichtmikrokopie für die Erstellung von Bildproben}
 \label{subsec:Lichtmikroskopie}
 
 \subsection{Bildmaterial}
@@ -231,7 +242,7 @@ Bei einem allgemeingültigen Anordnungsklassifikator müsste der Nutzer lediglic
 \label{sec:DefAnforderungenAnordnKlas}
 Die Vorgehensweise zur Erstellung eines Anordnungsklassifikators in Kapitel \ref{subsec: ErstellungAnordnungsklassifAMGuss} bereits beschrieben. Dies ist für den Nutzer mit einem nicht unerheblichen Aufwand verbunden. Hinzu kommt eine gewisse Fehleranfälligkeit, da für jede Messung der in Bezug auf die Bildkalibrierung richtige Klassifikator für die Messung ausgewählt werden muss.
 \\\\
-Das Gütekriterium an einen solchen Klassifikator ist, die durch Skalierung (bzw. Interpolation) hervorgerufenen und in Kapitel \ref{sec:Problemstellung} bereits näher beschriebenen Messfehler auf ein \textbf{tolerierbares} Maß hin zu minimieren. Allerdings gibt es jedoch, nach den aktuellen allgemein anerkannten Regeln der Technik (vgl. dazu \textcolor{blue}{auf Norm verweisen}) keinen eindeutigen objektiven Maßstab, der zur Beurteilung angelegt werden könnte. Stattdessen beruht die Graphitklassifizierung auf einer visuellen Einschätzung der Spezialisten, welche die Beurteilung der Proben vornehmen. Die Norm DIN ISO 945-1 definiert dabei die Grundlagen, auf denen eine solche Beurteilung zu erfolgen hat. Was also als noch tolerierbar gilt, entscheidet der versierte Nutzer in gewissen Grenzen selbst und wie die Erfahrungen zeigen, existieren teils nicht unerhebliche Abweichungen bei der Einschätzung. 
+\noindent Das Gütekriterium an einen solchen Klassifikator ist, die durch Skalierung (bzw. Interpolation) hervorgerufenen und in Kapitel \ref{sec:Problemstellung} bereits näher beschriebenen Messfehler auf ein \textbf{tolerierbares} Maß hin zu minimieren. Allerdings gibt es jedoch, nach den aktuellen allgemein anerkannten Regeln der Technik (vgl. dazu \textcolor{blue}{auf Norm verweisen}) keinen eindeutigen objektiven Maßstab, der zur Beurteilung angelegt werden könnte. Stattdessen beruht die Graphitklassifizierung auf einer visuellen Einschätzung der Spezialisten, welche die Beurteilung der Proben vornehmen. Die Norm DIN ISO 945-1 definiert dabei die Grundlagen, auf denen eine solche Beurteilung zu erfolgen hat. Was also als noch tolerierbar gilt, entscheidet der versierte Nutzer in gewissen Grenzen selbst und wie die Erfahrungen zeigen, existieren teils nicht unerhebliche Abweichungen bei der Einschätzung. 
 
 \section{Erzeugung von Bildern mit unterschiedlichen Ausgangskalibrierungen}
 
@@ -242,11 +253,9 @@ Das Gütekriterium an einen solchen Klassifikator ist, die durch Skalierung (bzw
 \noindent\textcolor{red}{todo:  beschreiben...}  
 
 \subsection{Systemanalyse}
-Die Aufgabe, einen allgemeingültigen Anordnungsklassifikator zu entwickeln, der die beschriebenen Anforderungen erfüllt, ist im Grunde die Lösung eines Optimierungsproblems. Dabei ist es erforderlich zu untersuchen, welche Abhängigkeiten zwischen den \textbf{Einflussgrößen} und Zielgrößen zu bestehen, was zunächst vereinfacht in Abbildung \ref{fig:BlackBox} dargestellt is.
-
-\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
-
-\begin{figure}[h]
+Die Aufgabe, einen allgemeingültigen Anordnungsklassifikator zu entwickeln, der die beschriebenen Anforderungen erfüllt, ist im Grunde die Lösung eines Optimierungsproblems. Dabei ist es erforderlich zu untersuchen, welche Abhängigkeiten zwischen den \textbf{Einflussgrößen} und Zielgrößen zu bestehen, was zunächst vereinfacht in Abbildung dargestellt is.
+       
+\begin{figure}[H]
 	\centering
 	\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1, scale=0.7, every node/.style={scale=0.7}]
 		%uncomment if require: \path (0,222); %set diagram left start at 0, and has height of 222
@@ -269,7 +278,7 @@ Die Aufgabe, einen allgemeingültigen Anordnungsklassifikator zu entwickeln, der
 		% Text Node
 		\draw (278,-24) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\scriptsize \textbf{Störgrößen}}};
 		% Text Node
-		\draw (266,224.4) node [anchor=north west][inner sep=0.75pt]    {$$};
+		\draw (266,224.4) node [anchor=north west][inner sep=0.75pt]    {$ $};
 		% Text Node
 		\draw (151,-6.6) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$\{x_{1} ,\ x_{2} ,\ ...,\ x_{n}\}$};
 		% Text Node
@@ -287,20 +296,17 @@ Die Aufgabe, einen allgemeingültigen Anordnungsklassifikator zu entwickeln, der
 				\end{center}
 		\end{minipage}};
 	\end{tikzpicture}
-	\label{fig:BlackBox}
 	\caption{Usache-/Wirkungsbeziehungen als Black-Box-Modell}
 \end{figure}
 
-\noindent Daher werden im Folgenden sowohl die Ziel-/ und Einflussgrößen eingehend beschrieben.
 
 \subsection{Definition der Zielgrößen}
 
 \textcolor{blue}{Hinweis: Mehrgrößenoptimierungsproblem $\to$ Kombination der Einzelwerte zu einer gewichteten Summe...}
 
-
+xyxyyxxxy
 
 \subsection{Definition der Einflussgrößen}
-
 
 \subsection{Modellbildung}
 
@@ -313,8 +319,6 @@ Die Aufgabe, einen allgemeingültigen Anordnungsklassifikator zu entwickeln, der
 \subsection{Anwendung \textit{einstufiger} Skalierungen auf die erzeugten Bilder}
 
 \subsection{Anwendung \textit{mehrstufiger} Skalierungen auf die erzeugten Bilder}
-
-
 
 
 \chapter{Umsetzung}
@@ -351,13 +355,15 @@ Die Aufgabe, einen allgemeingültigen Anordnungsklassifikator zu entwickeln, der
 
 \subsection{Kennzahlenvergleich und Interpretation}
 
-
-
-
 \chapter{Zusammenfassung und Auswertung}
+
 \section{Zusammenfassung}
+
 \section{Auswertung}
 
+
+\bibliographystyle{IEEEtran}
+\bibliography{literature}
 
 
 
