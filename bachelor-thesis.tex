@@ -193,6 +193,25 @@ Der bei Herstellung des Werkstoffes zugeführte Kohlenstoff führt zu Graphitein
 \subsection{Einteilung von Gusseisen mit Lamellengraphit entsprechend den mechanischen Eigenschaften}
 \label{subsec:EinteilungLamellengraphit}
 
+\subsection{Metallographie und Analytik}
+\label{sec:MetallographieAnalytik}
+
+\subsection{Lichtmikrokopie für die Erstellung von Bildproben}
+\label{subsec:Lichtmikroskopie}
+
+\subsection{Methoden zur Bestimmung der Anordnungsklassen A-E gemäß EN ISO 945-1}
+\label{subsec:MethodenBestAnordnungsklassen}
+Werden Gusseisenwerkstoffe mit Lamellengraphit nach DIN EN ISO 945-1 untersucht, müssen die darin enthaltenen Graphitbestandteile nach dem Beizeichnungssystem für die Klassifizierung von Graphit in Gusseisen klassifiziert  werden \cite[Seite 6]{ISO945}. Grundlage für eine solche Klassifizierung sind die in der Norm angegebenen Richtreihenbilder für die Graphitanordnung, wonach insgesamt 5 verschiedene Anordnungsklassen unterschieden werden. Diese sind in der folgenden Abbildung \ref{fig:Anordnungsklassen} wiedergegeben.
+
+\begin{figure}[H]
+	\centering
+	\boxed{\includegraphics[scale=0.7]{pics/Anordnungsklassen}}
+	\caption{Richtreihenbilder für die Graphitanordnung\\ (Form \uproman{1} / Lamellengraphit) \cite[Seite 8]{ISO945}}
+	\label{fig:Anordnungsklassen}
+\end{figure}
+
+\noindent Diese sogenannten Richtreihenbilder kommen in metallographischen Laboren zum Einsatz und dienen den entsprechenden Experten als Grundlage zur visuellen Bestimmung der in einer Probe vorliegenden Mikrostruktur. Somit ist der Vergleich von tatsächlichen Mikrostrukturen mit diesen schematischen Bildern von der subjektiven Einschätzung eines Metallographen abhängig \cite[Seite 27]{ISO945}.
+
 \section{Grundlagen der Bildverarbeitung}
 \label{GrundlagenBildverarbeitung}
 
@@ -1121,52 +1140,48 @@ Während bei der Linearen Interpolation (siehe Seite \pageref{par:LinearInterpol
 \label{sec:MethodenStatAnalyse}
 
 
-
 \chapter{Ausgangssituation}
 \label{ch:Ausgangssituation}
+Ziel dieses Kapitels ist es die Ausgangssituation, also die mit dieser Arbeit verbundenen Bedingungen im Detail darzulegen, um damit die Grundlage für eine schlüssige Präsentation des Lösungskonzeptes im darauf folgenden Kapitel \ref{ch:Konzept} zu schaffen.
+\\\\
+Im Abschnitt \ref{sec:BestimmungMikrostrukturAMGuss} wird zunächst auf die Bedeutung des Einsatzes digitaler Bildverarbeitung zur Analyse von Gusseisen eingegangen und die Software AMGuss vorgestellt. Dabei wird sowohl der vollständige Ablaufs zur Durchführung einer Lamellengraphit-Auswertung mit AMGuss beschrieben als auch auf die Bedeutung eines Anordnungsklassifikators in diesem Kontext eingegangen und die Erstellung eines Solchen im Detail beschrieben. Dies ist zum weiteren Verständnis dieser Arbeit vor allem deshalb von Belang, weil für die Erfüllung der Zielsetzung dieser Arbeit eine umfangreiche statistische Analyse erforderlich sein wird. Um die Daten dafür zu generieren, müssen mit sehr vielen Bildern zahlreiche Messungen  mit unterschiedlichen Parametern durchgeführt werden, weshalb der Prozess zur Durchführung einer Messung auch vollständig automatisiert werden soll. Schließlich werden die durch eine Messung erzeugten Messergebnisse einer genaueren Betrachtung unterzogen und erläutert.
+\\\\
+Ergänzend dazu wird im Abschnitt \ref{subsec:Bildmaterial} auf das zur Verfügung stehende Bildmaterial eingegangen und das Kapitel schließt mit einer ausführlichen Problembeschreibung in Abschnitt \ref{sec:Problemstellung}.
 
-\section{Metallographie und Analytik}
-\label{sec:MetallographieAnalytik}
-
-\subsection{Lichtmikrokopie für die Erstellung von Bildproben}
-\label{subsec:Lichtmikroskopie}
-
-\subsection{Bildmaterial}
-\label{subsec:Bildmaterial}
-
-\section{Bestimmung der Mikrostruktur von Gusseisen mit AMGuss}
+\section{Einsatz digitaler Bildverarbeitung zur Analyse der Mikrostruktur von Gusseisen (AMGuss)}
 \label{sec:BestimmungMikrostrukturAMGuss}
+Wegen der mit rein visueller Qualitätskontrolle verbundenen Probleme, die bereits in Kapitel \ref{subsec:MethodenBestAnordnungsklassen} auf Seite \pageref{subsec:MethodenBestAnordnungsklassen} dargelegt wurden, war ein automatisch ablaufendes Analyseverfahren zur Bestimmung der Mikrostruktur von Gusseisen, erweitert um Bilddokumentation und Bildarchivierung, ein großes Anliegen in den Laboren der Eisengießereien. Dadurch sollte eines der Grundanliegen des Qualitätsmanagements erfüllt werden, nämlich die quantitative Charakterisierung des Gussvorgangs durch Bereitstellung aussagekräftiger Messparameter und Objektivierung der Messergebnisse. Aus diesem Anliegen heraus entstand ein Forschungsprojekt mit der Zielsetzung, die Grundlage zur Entwicklung eines marktreifen Software-Produktes zu schaffen, mit dem sich alle geforderten Normparameter der Mikrostruktur von Gusseisen automatisch (oder zumindest halbautomatisch) bestimmen lassen. \cite[Seite 3]{AMGuss2007}.
+\\\\
+Das Ergebnis dieses Forschungsprojektes ist die Software AMGuss (\textbf{A}nalyse der \textbf{M}ikrostruktur von \textbf{Guss}eisen) die eine normgerechte \cite{ISO945} (halb-)automatische Bestimmung der Mikrostruktur von Gusseisen ermöglicht. Da die vorliegende Arbeit nur der Weiterentwicklung einer Teilfunktionalität dieser Software gewidmet ist, nämlich der Lamellengraphit-Auswertung, beschränken sich die weiteren Ausführungen in diesem Abschnitt auf lediglich deren genauere Beschreibung. 
+\\\\
+kiosfdadaiogiogf....
 
-\subsection{Kalibrierung}
-\label{subsec:Kalibrierung}
 
 \subsection{Erstellung eines Anordnungsklassifikators für die Lamellengraphit-Auswertung}
 \label{subsec: ErstellungAnordnungsklassifAMGuss}
-Werden Gusseisenwerkstoffe mit Lamellengraphit nach DIN EN ISO 945-1 untersucht, müssen die darin enthaltenen Graphitbestandteile nach dem Beizeichnungssystem für die Klassifizierung von Graphit in Gusseisen klassifiziert  werden \cite{ISO945}. Grundlage für eine solche Klassifizierung sind die in der Norm angegebenen Richtreihenbilder für die Graphitanordnung, wonach insgesamt 5 verschiedene Anordnungsklassen unterschieden werden. Diese sind in der folgenden Abbildung \ref{fig:Anordnungsklassen}} wiedergegeben.
+
+\noindent Aufgrund unterschiedlicher Laborbedingungen, können in der Praxis Probenbilder mit unterschiedlichen Kalibrierungen (Pixelgröße in $\mu m/\text{Pixel}$) zur Messung vorliegen. Allerdings ist das für die eindeutige, exakte Analyse und Zuordnung (siehe Abbildung \ref{fig:Anordnungsklassen} auf Seite \pageref{fig:Anordnungsklassen}) problematisch, da die Unterscheidungsmerkmale der Anordnungsklassen verschwimmen und somit nicht mehr eindeutig identifiziert werden können. Daher  ist es für die Durchführung einer Lamellenguss-Auswertung mit der Software AMGuss erforderlich, manuell einen Anordnungsklassifikator für unterschiedliche Ausgangskalibrierungen zu erstellen. Dabei werden in etwa 20-30 mit \textbf{derselben} Kalibrierung aufgenommenen Probenbildern, die darin vorliegenden lamellaren Graphitstrukturen gemäß der Anordnungsklassen markiert und auf der Grundlage dessen ein Klassifikator trainiert. Wichtig dabei ist, dass in den Trainingsbildern auch alle Anordnungsklassen vertreten sind und richtig markiert werden.
+\\\\
+Dafür stellt das Programm AMGuss dem Nutzer eine entsprechende Funktionalität bereit, wie in Abbildung \ref{fig:ErstAnordnungsklass} dargestellt.
+
 
 \begin{figure}[H]
 	\centering
-	\boxed{\includegraphics[scale=0.7]{pics/Anordnungsklassen}}
-	\caption{Anordnungsklassen A-E (Form \uproman{1}) nach DIN EN ISO 945-1}
-	\label{fig:Anordnungsklassen}
-\end{figure}
-
-\noindent Zur Durchführung einer Lamellenguss-Auswertung mit AMGuss ist es erforderlich, manuell einen Anordnungsklassifikator zu erstellen. Dafür stellt das Programm dem Nutzer eine entsprechende Funktionalität bereit (Abbildung \ref{fig:ErstAnordnungsklass}).
-
-\begin{figure}[H]
-	\centering
-	\boxed{\includegraphics[scale=1.8]{pics/ErstAnordnungsklass}}
+	\boxed{\includegraphics[scale=1.6]{pics/ErstAnordnungsklass}}
 	\caption{Erstellung eines Anordnungsklassifikators in AMGuss}
 	\label{fig:ErstAnordnungsklass}
 \end{figure}
 
+\noindent Grundlage für die Erstellung eines Klassifikators ist eine geladene Bildserie, die zuvor erstellt worden sein muss. Dabei ist anzugeben, mit welcher Kalibrierung  die Bilder der Serie aufgenommen wurden. Diese ist, wie in Kapitel \ref{subsec:Lichtmikroskopie} bereits gezeigt wurde,  wiederum abhängig von der Chipgröße der verwendeten Kamera (z.B. $\nicefrac{1}{2}$ Zoll in der Diagonale)  sowie der eingesetzten Optik bestehend aus Lichtweg, Objektiv und Zwischenadapter. Das in Abbildung \ref{fig:ErstAnordnungsklass} (links) dargestellte Bild einer Lamellenguss-Probe hat bspw. eine Kalibrierung von $1~\mu m/\text{Pixel}$. 
+\\\\
+Im kleinen Fenster (oben rechts) lässt sich dann eine Anordnungsklasse auswählen, der gewünschte Markierungsstil einstellen und die gemäß der gewählten Anordnungsklasse vorkommende Strukturen im Bild entsprechend markieren. Im Bild links ist dies an den hellgrün markierten Strukturen zu erkennen. Hat der Nutzer dann (ggf. auch in mehreren Bildern) Markierungen für die Anordnungsklassen A bis E hinzugefügt, wird über die Funktion „Initialisieren“ (im mittleren Fenster oben) ein Anordnungsklassifikator erstellt. Dieser kann dann abgespeichert und für Messungen an Bildern werden, deren Kalibrierung dieselbe ist wie die der Bilder, die zur Erstellung des Anordnungsklassifikators verwendet wurden.
 
-
-\subsection{Methoden zur Bestimmung der Anordnungstypen A-E von Lamellengraphit}
-\label{subsec:AnordnungstypenLamellengraphit}
 
 \subsection{Bewertungsergebnisse einer Lamellengraphit-Auswertung}
 \label{subsec:ErgebnisseAMGuss}
+
+\section{Zur Verfügung stehendes Bildmaterial}
+\label{subsec:Bildmaterial}
 
 \section{Problemstellung}
 \label{sec:Problemstellung}
