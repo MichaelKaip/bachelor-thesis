@@ -1164,7 +1164,167 @@ Während bei der Linearen Interpolation (siehe Seite \pageref{par:LinearInterpol
 
 
 \section{Statistische Versuchsplanung}
-\label{sec:MethodenStatAnalyse}
+\label{sec:StatVersPlanung}
+Statistische Versuchsplanung wird häufig in der Industrie eingesetzt, um Prozesse zu optimieren. Folgende Gründe können dafür ausschlaggebend sein \cite{kleppmann_2020}:
+
+\begin{itemize}
+	\item Der Funktionsumfang der Produkte muss erhöht werden, um die Anforderungen der Kunden immer besser erfüllen zu können.
+	\item Die Kosten müssen gesenkt werden, z.B. durch geringere Materialkosten oder höhere
+	Ausbeute.
+	\item Die Entwicklungszeit neuer Produkte und ihre Durchlaufzeit in der Fertigung müssen
+	immer weiter verkürzt werden.
+\end{itemize}
+
+\noindent Diese Verbesserungen können nicht allein durch Analyse von Daten aus der Fertigung und kritisches Nachdenken erreicht werden. Dazu sind die Zusammenhänge in Entwicklung, Fertigung und Qualitätsmanagement zu kompliziert und vielschichtig. Um den Einfluss von Designänderungen auf die Eigenschaften eines neuen Produktes oder den Einfluss von Änderungen von Prozessparametern auf das Prozessergebnis zu bestimmen,
+sind gezielte Versuche notwendig \cite{kleppmann_2020}.
+\\\\
+\noindent Diese werden mit dem Ziel durchgeführt, die komplexen Ursache-/Wirkungszusammenhänge zwischen einer oder mehrerer Stör-/ Steuergrößen und verschiedener Zielgrößen untersuchen und verstehen zu können. Es geht also darum sichtbar zumachen, welche Auswirkungen die Veränderung der Einflussgrößen auf ein bestimmtes Ergebnis haben. Dadurch wird eine gezielte Ergebnisbeeinflussung ermöglicht. Das Verhältnis zwischen Eingabe und Ausgabe (Ergebnis/Zielgröße) wird auch als Prozess bezeichnet. Zur Veranschaulichung dient die nachstehende Abbildung \ref{fig:ProzessDoe}.
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1, scale=1.0, every node/.style={scale=1.0}]
+		%uncomment if require: \path (0,222); %set diagram left start at 0, and has height of 222
+		
+		%Shape: Rectangle [id:dp9587460691430016] 
+		\draw  [color={rgb, 255:red, 74; green, 74; blue, 74 }  ,draw opacity=1 ][fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (80,60) -- (564,60) -- (564,280) -- (80,280) -- cycle ;
+		%Shape: Rectangle [id:dp8844267253059725] 
+		\draw  [color={rgb, 255:red, 248; green, 231; blue, 28 }  ,draw opacity=1 ][fill={rgb, 255:red, 248; green, 231; blue, 28 }  ,fill opacity=1 ] (220,172) -- (420,172) -- (420,252) -- (220,252) -- cycle ;
+		%Straight Lines [id:da8411829174990819] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=4.5]    (273,128) -- (273,160) ;
+		\draw [shift={(273,168)}, rotate = 270] [fill={rgb, 255:red, 126; green, 211; blue, 33 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (24.11,-11.58) -- (0,0) -- (24.11,11.58) -- cycle    ;
+		%Straight Lines [id:da7471836258073241] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=4.5]    (374,128) -- (374,160) ;
+		\draw [shift={(374,168)}, rotate = 270] [fill={rgb, 255:red, 126; green, 211; blue, 33 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (24.11,-11.58) -- (0,0) -- (24.11,11.58) -- cycle    ;
+		%Notched Right Arrow [id:dp19574990057369157] 
+		\draw  [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][fill={rgb, 255:red, 126; green, 211; blue, 33 }  ,fill opacity=1 ] (432,195.75) -- (502.2,195.75) -- (502.2,181) -- (549,210.5) -- (502.2,240) -- (502.2,225.25) -- (432,225.25) -- (446.75,210.5) -- cycle ;
+		%Notched Right Arrow [id:dp2222830717379538] 
+		\draw  [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][fill={rgb, 255:red, 126; green, 211; blue, 33 }  ,fill opacity=1 ] (93,195.75) -- (163.2,195.75) -- (163.2,181) -- (210,210.5) -- (163.2,240) -- (163.2,225.25) -- (93,225.25) -- (107.75,210.5) -- cycle ;
+		
+		% Text Node
+		\draw (243.06,198.75) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 74; green, 74; blue, 74 }  ,opacity=1 ,rotate=-0.19] [align=left] {\begin{minipage}[lt]{111.75pt}\setlength\topsep{0pt}
+				\begin{center}
+					\textbf{{\large PROZESS}}\\{\scriptsize \textbf{\textit{Ursache-/Wirgungsbez.}}}
+				\end{center}
+				
+		\end{minipage}};
+		% Text Node
+		\draw (322,76) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 74; green, 74; blue, 74 }  ,opacity=1 ] [align=left] {\begin{minipage}[lt]{72.94pt}\setlength\topsep{0pt}
+				\begin{center}
+					\textbf{Störgrößen}\\{\scriptsize \textbf{\textit{(nicht beeinflussbar)}}}\\
+				\end{center}
+				
+		\end{minipage}};
+		% Text Node
+		\draw (222,76) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 74; green, 74; blue, 74 }  ,opacity=1 ] [align=left] {\begin{minipage}[lt]{69.03pt}\setlength\topsep{0pt}
+				\begin{center}
+					\textbf{Steuergrößen}\\{\scriptsize \textbf{\textit{(beinfussbar)}}}
+				\end{center}
+				
+		\end{minipage}};
+		% Text Node
+		\draw (452,201) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize,color={rgb, 255:red, 74; green, 74; blue, 74 }  ,opacity=1 ] [align=left] {\textbf{AUSGABE/}\\\textbf{ERGEBNIS}};
+		% Text Node
+		\draw (113,206) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize,color={rgb, 255:red, 74; green, 74; blue, 74 }  ,opacity=1 ] [align=left] {\textbf{EINGABE}};
+	\end{tikzpicture}
+	\caption{Prozessmodell zur statistischen Versuchsplanung}
+	\label{fig:ProzessDoe}
+\end{figure}
+
+\noindent Wie in der Abbildung zu erkennen, wird die Eingabe innerhalb des Prozesses von verschiedenen Größen beeinflusst, was entsprechende Auswirkungen auf das Ergebnis hat. Außerdem zu erkennen ist eine Unterteilung der Einflussgrößen in Steuer- und Störgrößen. Das geschieht deshalb, weil es Einflussfaktoren geben kann, die während des Prozessverlaufs nicht beeinflusst werden können. Ein Beispiel dafür wäre etwa die Außentemperatur in einer Fabrikhalle, die negative Einflüsse auf die Präzisionsgenauigkeit eines Industrieroboters haben kann, da sich das Material, aus dem der Roboter gefertigt ist (meistens Stahl) bei hohen Temperaturen (also zur Sommerzeit) ausdehnt. Im Rahmen einer Systemanalyse ist dieser Faktor zwar von hoher Relevanz, kann aber in der Praxis oftmals, wenn überhaupt, nur sehr begrenzt beeinflusst werden. Steuergrößen wären hier dann z.B. die einzelnen Einstellparameter innerhalb der kinematischen Kette des Roboters, welche gezielt beeinflussbar sind und in direktem Zusammenhang mit der Präzisionsgenauigkeit stehen.
+\\\\
+Um nun die richtigen Einstellungen in Abhängigkeit von der Außentemperatur zu finden wäre es natürlich denkbar und möglich, immer nur einen Parameter bei unterschiedlichen Temperaturen zu verändern und so die optimale Einstellung bezogen auf die Genauigkeit für jeden der einzelnen Parameter zu finden \textbf{(Ein-Faktoren-Experiment)}. Diese Vorgehensweise führt aber deshalb oft nicht zum optimalen Ergebnis, da hierbei nur jeder einzelne Parameter in Abhängigkeit von der Temperatur untersucht wurde, aber nicht die Wechselbeziehungen zwischen den Steuer- und Störgrößen untereinander.
+\\\\
+\noindent Was in diesem Modell also noch fehlt, um zu einer ganzheitlichen Analyse zu gelangen, ist die Einbeziehung dieser Wechselwirkungen  in das Modell \textbf{(Gitterlinien-Experiment)}. Denn nur durch die Betrachtung der Gesamtdynamik eines Systems ist es möglich, ein globales Optimum zu finden. Bezogen auf das o.g. Beispiel mit dem Industrieroboter können auf diese Weise Erkenntnisse darüber gewonnen werden, wie genau sich die Außentemperatur auf verschiedene Parameter der kinematischen Kette des Roboters (unter Einbeziehung der Wechselwirkungen zwischen den Steuergrößen untereinander) auswirkt und wie diese in Abhängigkeit von der Außentemperatur angepasst werden müssen, um das Ergebnis (hier: Präzisionsgenauigkeit) in die gewünschte Richtung zu beeinflussen. Im Rahmen einer statistischen Versuchsplanung wir genau dieses Ziel verfolgt.
+\\\\
+Nach \cite{schiefer_2018} kann zwischen den in nachstehender Abbildung xyz dargestellten Versuchsplänen unterschieden werden:
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1, scale=0.7, every node/.style={scale=0.7}]
+		%uncomment if require: \path (0,222); %set diagram left start at 0, and has height of 222
+		
+	%Shape: Rectangle [id:dp5078039108352421] 
+	\draw  [color={rgb, 255:red, 74; green, 74; blue, 74 }  ,draw opacity=1 ][line width=1.5]  (38,65) -- (500,65) -- (500,455) -- (38,455) -- cycle ;
+	%Shape: Rectangle [id:dp13785643688738514] 
+	\draw  [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=1 ][line width=2.25]  (192,237) -- (358,237) -- (358,272) -- (192,272) -- cycle ;
+	
+	% Text Node
+	\draw (208,246) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\Large \textbf{\textcolor[rgb]{0.49,0.83,0.13}{Versuchspläne}}}};
+	% Text Node
+	\draw (67,92) node [anchor=north west][inner sep=0.75pt]   [align=left] {\begin{minipage}[lt]{142.35pt}\setlength\topsep{0pt}
+			\begin{center}
+				\textbf{\textcolor[rgb]{0.29,0.29,0.29}{vollständig faktorieller }}\\\textbf{\textcolor[rgb]{0.29,0.29,0.29}{Versuchsplan}}\\{\footnotesize \textcolor[rgb]{0.29,0.29,0.29}{Dabei werden die Einflussfaktoren }}\\{\footnotesize \textcolor[rgb]{0.29,0.29,0.29}{in ihren Stufen vollständig kombiniert und gleichzeitig variiert.}}
+			\end{center}
+			
+	\end{minipage}};
+	% Text Node
+	\draw (291,337) node [anchor=north west][inner sep=0.75pt]   [align=left] {\begin{minipage}[lt]{142.63pt}\setlength\topsep{0pt}
+			\begin{center}
+				\textbf{\textcolor[rgb]{0.29,0.29,0.29}{teilfaktorieller Versuchsplan}}\\{\footnotesize \textcolor[rgb]{0.29,0.29,0.29}{Ist bei der Aufgabenstellung nicht die }}\\{\footnotesize \textcolor[rgb]{0.29,0.29,0.29}{vollständige Wechselwirkung der }}\\{\footnotesize \textcolor[rgb]{0.29,0.29,0.29}{Einflussgrößen auf die Zielgröße }}\\{\footnotesize \textcolor[rgb]{0.29,0.29,0.29}{von Interesse, lässt sich der }}\\{\footnotesize \textcolor[rgb]{0.29,0.29,0.29}{Versuchsplan reduzieren.}}
+			\end{center}
+			
+	\end{minipage}};
+	% Text Node
+	\draw (286,107) node [anchor=north west][inner sep=0.75pt]   [align=left] {\begin{minipage}[lt]{135.17pt}\setlength\topsep{0pt}
+			\begin{center}
+				\textbf{\textcolor[rgb]{0.29,0.29,0.29}{faktorieller Versuchsplan }}\\\textbf{\textcolor[rgb]{0.29,0.29,0.29}{mit Zentralpunkt}}\\{\footnotesize \textcolor[rgb]{0.29,0.29,0.29}{Wird verwendet, um zu überprüfen }}\\{\footnotesize \textcolor[rgb]{0.29,0.29,0.29}{ob Nichtlinearitäten vorliegen.}}
+			\end{center}
+			
+	\end{minipage}};
+	% Text Node
+	\draw (52,335) node [anchor=north west][inner sep=0.75pt]   [align=left] {\begin{minipage}[lt]{148.78pt}\setlength\topsep{0pt}
+			\begin{center}
+				\textbf{\textcolor[rgb]{0.29,0.29,0.29}{lateinische Quadrate}}\\{\footnotesize \textcolor[rgb]{0.29,0.29,0.29}{Nur dann sinnvoll, wenn gesichert ist, }}\\{\footnotesize \textcolor[rgb]{0.29,0.29,0.29}{dass Wechselwirkungen zwischen den }}\\{\footnotesize \textcolor[rgb]{0.29,0.29,0.29}{Einflussgrößen keine Rolle spielen oder }}\\{\footnotesize \textcolor[rgb]{0.29,0.29,0.29}{vernachlässigt \ werden können.}}
+			\end{center}
+			
+	\end{minipage}};
+	% Connection
+	\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=3]    (260.2,271) -- (211.89,326.47) ;
+	\draw [shift={(207.95,331)}, rotate = 311.05] [fill={rgb, 255:red, 126; green, 211; blue, 33 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (16.97,-8.15) -- (0,0) -- (16.97,8.15) -- cycle    ;
+	% Connection
+	\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=3]    (288.99,271) -- (336.2,328.37) ;
+	\draw [shift={(340.01,333)}, rotate = 230.55] [fill={rgb, 255:red, 126; green, 211; blue, 33 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (16.97,-8.15) -- (0,0) -- (16.97,8.15) -- cycle    ;
+	% Connection
+	\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=3]    (261.1,237) -- (215.85,181.65) ;
+	\draw [shift={(212.05,177)}, rotate = 410.73] [fill={rgb, 255:red, 126; green, 211; blue, 33 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (16.97,-8.15) -- (0,0) -- (16.97,8.15) -- cycle    ;
+	% Connection
+	\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=3]    (289.82,237) -- (338.19,181.52) ;
+	\draw [shift={(342.14,177)}, rotate = 491.09] [fill={rgb, 255:red, 126; green, 211; blue, 33 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (16.97,-8.15) -- (0,0) -- (16.97,8.15) -- cycle    ;
+	\end{tikzpicture}
+	\caption{Arten von Versuchsplänen}
+	\label{fig:Versuchsplaene}
+\end{figure}
+
+\noindent Welcher Versuchsplan der Richtige ist, hängt von der jeweiligen Aufgabenstellung ab. Da in der vorliegenden Arbeit eine statistische Auswertung anhand eines \textbf{vollständig faktoriellen Versuchsplans} erfolgt, beschränken sich die weiteren Ausführungen in diesem Kapitel auf dessen detaillierter Beschreibung.
+\\\\
+\noindent Von elementarer Bedeutung ist es zu wissen, wie viele \textbf{Einflussfaktoren (k)} im Rahmen einer Untersuchung vorliegen und im Modell entsprechend zu berücksichtigen sind und welche \textbf{Variationsstufen (n)} innerhalb eines Faktors möglich sind. Die Anzahl der durchzuführenden Versuche (z) kann dann allgemein wie folgt berechnet werden:
+\\\\
+\begin{equation}
+	z = n^k
+\end{equation}
+\\\\
+\noindent Hat das zu untersuchende System also 3 zu berücksichtigende Faktoren, die jeweils in 2 Stufen $(+/-)$ variiert werden können, müssen bei einem vollständig faktoriellen Versuchsplan also $3^2 = 8$ Versuche durchgeführt werden. Der sich daraus ergebende Versuchsplan ist in folgender Tabelle xyz dargestellt.
+
+\begin{table}[H]
+	\centering
+	\caption{Versuchsplan mit 3 Einflussfaktoren und jeweils 2 Faktorstufenkombinationen}
+	\label{tab:Versuchsplan}
+	\begin{tabular}{@{}cccc@{}}
+		\toprule[3pt]
+		\multicolumn{1}{l}{\textbf{\begin{tabular}[c]{@{}l@{}}Anzahl\\ Versuche\end{tabular}}} & \multicolumn{3}{l}{\textbf{\begin{tabular}[c]{@{}l@{}}Faktorstufen-\\ kombinationen\end{tabular}}} \\ \midrule[3pt]
+		\multicolumn{1}{l}{\textbf{}}                                                          & \textbf{A}                      & \textbf{B}                      & \textbf{C}                     \\ \midrule
+		\textbf{1}                                                                             & -                               & -                               & -                              \\ \midrule
+		\textbf{2}                                                                             & -                               & -                               & +                              \\ \midrule
+		\textbf{3}                                                                             & -                               & +                               & -                              \\ \midrule
+		\textbf{4}                                                                             & -                               & +                               & +                              \\ \midrule
+		\textbf{5}                                                                             & +                               & -                               & -                              \\ \midrule
+		\textbf{6}                                                                             & +                               & -                               & +                              \\ \midrule
+		\textbf{7}                                                                             & +                               & +                               & -                              \\ \midrule
+		\textbf{8}                                                                             & +                               & +                               & +                              \\ \bottomrule[3pt]
+	\end{tabular}
+\end{table}
+
+
 
 
 \chapter{Ausgangssituation}
@@ -1289,57 +1449,398 @@ Die Vorgehensweise zur Erstellung eines Anordnungsklassifikators in Kapitel \ref
 
 \section{Erzeugung von Bildern mit unterschiedlichen Ausgangskalibrierungen}
 
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1, scale=0.7, every node/.style={scale=0.7}]
+		%uncomment if require: \path (0,222); %set diagram left start at 0, and has height of 222
+		
+		%Straight Lines [id:da8513951726256912] 
+		\draw [line width=0.75]  [dash pattern={on 0.84pt off 2.51pt}]  (252,80) -- (252,320) ;
+		%Straight Lines [id:da5456588557389066] 
+		\draw [line width=1.5]    (172,420) -- (412,420) ;
+		%Straight Lines [id:da6601013014749395] 
+		\draw [line width=1.5]    (172,180) -- (172,420) ;
+		%Straight Lines [id:da3287587582519509] 
+		\draw [line width=1.5]    (172,180) -- (412,180) ;
+		%Straight Lines [id:da8891201835694393] 
+		\draw [line width=1.5]    (252,80) -- (172,180) ;
+		%Straight Lines [id:da8301479230800961] 
+		\draw [line width=1.5]    (492,80) -- (412,180) ;
+		%Straight Lines [id:da897285446062482] 
+		\draw [line width=1.5]    (492,320) -- (412,420) ;
+		%Straight Lines [id:da291618853913844] 
+		\draw [line width=1.5]    (492,80) -- (492,320) ;
+		%Straight Lines [id:da27301051400697607] 
+		\draw [line width=1.5]    (252,80) -- (492,80) ;
+		%Straight Lines [id:da03595133060933242] 
+		\draw [line width=0.75]  [dash pattern={on 0.84pt off 2.51pt}]  (252,320) -- (492,320) ;
+		%Straight Lines [id:da5805598360719648] 
+		\draw [line width=0.75]  [dash pattern={on 0.84pt off 2.51pt}]  (252,320) -- (172,420) ;
+		%Straight Lines [id:da009429095814716959] 
+		\draw    (201,413) -- (201,426) ;
+		%Straight Lines [id:da6408604526403883] 
+		\draw    (304,414) -- (304,427) ;
+		%Straight Lines [id:da5720641419192563] 
+		\draw [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ]   (230,414) -- (230,427) ;
+		%Straight Lines [id:da3865033621633087] 
+		\draw    (183,414) -- (183,427) ;
+		%Straight Lines [id:da7586148570180449] 
+		\draw    (261,414) -- (261,427) ;
+		%Straight Lines [id:da6213998766294877] 
+		\draw    (412,414) -- (412,427) ;
+		%Straight Lines [id:da21868777946411622] 
+		\draw    (172,414) -- (172,427) ;
+		%Shape: Parallelogram [id:dp6855290487769707] 
+		\draw  [fill={rgb, 255:red, 126; green, 211; blue, 33 }  ,fill opacity=0.83 ] (252,200) -- (492,200) -- (412,300) -- (172,300) -- cycle ;
+		%Shape: Square [id:dp5568502450606261] 
+		\draw  [fill={rgb, 255:red, 74; green, 74; blue, 74 }  ,fill opacity=1 ] (304,224) -- (374,224) -- (374,294) -- (304,294) -- cycle ;
+		%Shape: Square [id:dp11497079395910248] 
+		\draw  [fill={rgb, 255:red, 74; green, 74; blue, 74 }  ,fill opacity=1 ] (294,234) -- (364,234) -- (364,304) -- (294,304) -- cycle ;
+		%Shape: Square [id:dp9507633897127776] 
+		\draw  [fill={rgb, 255:red, 74; green, 74; blue, 74 }  ,fill opacity=1 ] (285,244) -- (355,244) -- (355,314) -- (285,314) -- cycle ;
+		%Shape: Square [id:dp2885472363956254] 
+		\draw  [fill={rgb, 255:red, 74; green, 74; blue, 74 }  ,fill opacity=1 ] (273,256) -- (343,256) -- (343,326) -- (273,326) -- cycle ;
+		%Shape: Square [id:dp9167567864275155] 
+		\draw  [fill={rgb, 255:red, 74; green, 74; blue, 74 }  ,fill opacity=1 ] (262,268) -- (332,268) -- (332,338) -- (262,338) -- cycle ;
+		
+		%Straight Lines [id:da21914875225668995] 
+		\draw [line width=1.5]    (412,180) -- (412,420) ;
+		
+		% Text Node
+		\draw (276,284) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 255; green, 255; blue, 255 }  ,opacity=1 ] [align=left] {\begin{minipage}[lt]{28.8pt}\setlength\topsep{0pt}
+				\begin{center}
+					232\\Bilder
+				\end{center}
+				
+		\end{minipage}};
+		% Text Node
+		\draw (506,199.71) node [anchor=north] [inner sep=0.75pt]  [font=\normalsize,rotate=-270] [align=left] {\textbf{Interpolationsmodi}};
+		% Text Node
+		\draw (159,430) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {0,15};
+		% Text Node
+		\draw (172,443) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {0,20};
+		% Text Node
+		\draw (186,430) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {0,30};
+		% Text Node
+		\draw (218,430) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize,color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ] [align=left] {(0,50)};
+		% Text Node
+		\draw (250,442) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {0,70};
+		% Text Node
+		\draw (292,430) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {1,10};
+		% Text Node
+		\draw (401,430) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {1,90};
+		% Text Node
+		\draw (197,397) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize,color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ] [align=left] {(Zielkalibrierung)};
+		% Text Node
+		\draw (438,410) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\scriptsize - Nearest Neighbor}};
+		% Text Node
+		\draw (461,380) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {\mbox{-} Linear};
+		% Text Node
+		\draw (483,349) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {\mbox{-} Cubic};
+		% Text Node
+		\draw (492,334) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {\mbox{-} Area};
+		% Text Node
+		\draw (501,322) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {\mbox{-} Lanczos};
+		% Text Node
+		\draw (450,394) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\scriptsize - Nearest Neighbor} {\scriptsize / Exact}};
+		% Text Node
+		\draw (472,364) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {\mbox{-} Linear / Exact};
+		% Text Node
+		\draw (192,463) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize] [align=left] {\textbf{Ausgangskalibrierungen}};
+		% Text Node
+		\draw (138.21,183.34) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize,rotate=-308.72] [align=left] {\textbf{Interpolationsverfahren}};
+		% Text Node
+		\draw (422.19,183.01) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize,color={rgb, 255:red, 65; green, 117; blue, 5 }  ,opacity=1 ,rotate=-308.57] [align=left] {\begin{minipage}[lt]{45.99pt}\setlength\topsep{0pt}
+				\begin{center}
+					\textbf{schrittweise }\\\textbf{Skalierung}
+				\end{center}
+				
+		\end{minipage}};
+		% Text Node
+		\draw (431.9,300.81) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize,color={rgb, 255:red, 65; green, 117; blue, 5 }  ,opacity=1 ,rotate=-308.09] [align=left] {\textbf{Vollskalierung}};
+	\end{tikzpicture}
+	\caption{Planungsmodell (1) zur Erzeugung von Versuchsbildern}
+	\label{fig:Planungsmodell(1)}
+\end{figure}
 
-\section{Statistische Versuchsplanung}
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1, scale=1.0, every node/.style={scale=1.0}]
+		%uncomment if require: \path (0,222); %set diagram left start at 0, and has height of 222
+		
+		%Shape: Rectangle [id:dp6366412495734111] 
+		\draw  [fill={rgb, 255:red, 74; green, 74; blue, 74 }  ,fill opacity=1 ] (53.75,200) -- (110,200) -- (110,255.26) -- (53.75,255.26) -- cycle ;
+		%Shape: Rectangle [id:dp751718043193554] 
+		\draw  [fill={rgb, 255:red, 74; green, 74; blue, 74 }  ,fill opacity=1 ] (45.71,207.89) -- (101.96,207.89) -- (101.96,263.16) -- (45.71,263.16) -- cycle ;
+		%Shape: Rectangle [id:dp8955994284702644] 
+		\draw  [fill={rgb, 255:red, 74; green, 74; blue, 74 }  ,fill opacity=1 ] (38.48,215.79) -- (94.73,215.79) -- (94.73,271.05) -- (38.48,271.05) -- cycle ;
+		%Shape: Rectangle [id:dp5207514318052735] 
+		\draw  [fill={rgb, 255:red, 74; green, 74; blue, 74 }  ,fill opacity=1 ] (28.84,225.26) -- (85.09,225.26) -- (85.09,280.53) -- (28.84,280.53) -- cycle ;
+		%Shape: Rectangle [id:dp8155725825356159] 
+		\draw  [fill={rgb, 255:red, 74; green, 74; blue, 74 }  ,fill opacity=1 ] (20,234.74) -- (76.25,234.74) -- (76.25,290) -- (20,290) -- cycle ;
+		%Rounded Rect [id:dp8565749595273766] 
+		\draw  [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=0.12 ] (165,48) .. controls (165,43.58) and (168.58,40) .. (173,40) -- (252,40) .. controls (256.42,40) and (260,43.58) .. (260,48) -- (260,72) .. controls (260,76.42) and (256.42,80) .. (252,80) -- (173,80) .. controls (168.58,80) and (165,76.42) .. (165,72) -- cycle ;
+		%Rounded Rect [id:dp6075836530317975] 
+		\draw  [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=0.12 ] (163,109) .. controls (163,104.58) and (166.58,101) .. (171,101) -- (252,101) .. controls (256.42,101) and (260,104.58) .. (260,109) -- (260,133) .. controls (260,137.42) and (256.42,141) .. (252,141) -- (171,141) .. controls (166.58,141) and (163,137.42) .. (163,133) -- cycle ;
+		%Rounded Rect [id:dp0325477461297643] 
+		\draw  [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=0.12 ] (163,169) .. controls (163,164.58) and (166.58,161) .. (171,161) -- (252,161) .. controls (256.42,161) and (260,164.58) .. (260,169) -- (260,193) .. controls (260,197.42) and (256.42,201) .. (252,201) -- (171,201) .. controls (166.58,201) and (163,197.42) .. (163,193) -- cycle ;
+		%Rounded Rect [id:dp3162904694467472] 
+		\draw  [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=0.12 ] (163,228) .. controls (163,223.58) and (166.58,220) .. (171,220) -- (252,220) .. controls (256.42,220) and (260,223.58) .. (260,228) -- (260,252) .. controls (260,256.42) and (256.42,260) .. (252,260) -- (171,260) .. controls (166.58,260) and (163,256.42) .. (163,252) -- cycle ;
+		%Rounded Rect [id:dp3035992482144214] 
+		\draw  [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=0.12 ] (163,289) .. controls (163,284.58) and (166.58,281) .. (171,281) -- (252,281) .. controls (256.42,281) and (260,284.58) .. (260,289) -- (260,313) .. controls (260,317.42) and (256.42,321) .. (252,321) -- (171,321) .. controls (166.58,321) and (163,317.42) .. (163,313) -- cycle ;
+		%Rounded Rect [id:dp2836577100042894] 
+		\draw  [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=0.12 ] (163,349) .. controls (163,344.58) and (166.58,341) .. (171,341) -- (252,341) .. controls (256.42,341) and (260,344.58) .. (260,349) -- (260,373) .. controls (260,377.42) and (256.42,381) .. (252,381) -- (171,381) .. controls (166.58,381) and (163,377.42) .. (163,373) -- cycle ;
+		%Rounded Rect [id:dp9146993081319426] 
+		\draw  [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=0.12 ] (163,408) .. controls (163,403.58) and (166.58,400) .. (171,400) -- (252,400) .. controls (256.42,400) and (260,403.58) .. (260,408) -- (260,432) .. controls (260,436.42) and (256.42,440) .. (252,440) -- (171,440) .. controls (166.58,440) and (163,436.42) .. (163,432) -- cycle ;
+		%Rounded Rect [id:dp3049260414034314] 
+		\draw  [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=0.12 ] (420,88) .. controls (420,83.58) and (423.58,80) .. (428,80) -- (504,80) .. controls (508.42,80) and (512,83.58) .. (512,88) -- (512,112) .. controls (512,116.42) and (508.42,120) .. (504,120) -- (428,120) .. controls (423.58,120) and (420,116.42) .. (420,112) -- cycle ;
+		%Rounded Rect [id:dp829472062905211] 
+		\draw  [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=0.12 ] (420,149) .. controls (420,144.58) and (423.58,141) .. (428,141) -- (504,141) .. controls (508.42,141) and (512,144.58) .. (512,149) -- (512,173) .. controls (512,177.42) and (508.42,181) .. (504,181) -- (428,181) .. controls (423.58,181) and (420,177.42) .. (420,173) -- cycle ;
+		%Rounded Rect [id:dp5049349195701525] 
+		\draw  [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=0.12 ] (420,388) .. controls (420,383.58) and (423.58,380) .. (428,380) -- (504,380) .. controls (508.42,380) and (512,383.58) .. (512,388) -- (512,412) .. controls (512,416.42) and (508.42,420) .. (504,420) -- (428,420) .. controls (423.58,420) and (420,416.42) .. (420,412) -- cycle ;
+		%Rounded Rect [id:dp7024977089857076] 
+		\draw  [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=0.12 ] (420,207) .. controls (420,202.58) and (423.58,199) .. (428,199) -- (504,199) .. controls (508.42,199) and (512,202.58) .. (512,207) -- (512,231) .. controls (512,235.42) and (508.42,239) .. (504,239) -- (428,239) .. controls (423.58,239) and (420,235.42) .. (420,231) -- cycle ;
+		%Rounded Rect [id:dp7889794089989934] 
+		\draw  [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=0.12 ] (420,266) .. controls (420,261.58) and (423.58,258) .. (428,258) -- (504,258) .. controls (508.42,258) and (512,261.58) .. (512,266) -- (512,290) .. controls (512,294.42) and (508.42,298) .. (504,298) -- (428,298) .. controls (423.58,298) and (420,294.42) .. (420,290) -- cycle ;
+		%Rounded Rect [id:dp17780665664929307] 
+		\draw  [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=0.12 ] (420,328) .. controls (420,323.58) and (423.58,320) .. (428,320) -- (504,320) .. controls (508.42,320) and (512,323.58) .. (512,328) -- (512,352) .. controls (512,356.42) and (508.42,360) .. (504,360) -- (428,360) .. controls (423.58,360) and (420,356.42) .. (420,352) -- cycle ;
+		%Rounded Rect [id:dp08184078829998631] 
+		\draw  [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][fill={rgb, 255:red, 126; green, 211; blue, 33 }  ,fill opacity=1 ] (300,188) .. controls (300,183.58) and (303.58,180) .. (308,180) -- (373,180) .. controls (377.42,180) and (381,183.58) .. (381,188) -- (381,212) .. controls (381,216.42) and (377.42,220) .. (373,220) -- (308,220) .. controls (303.58,220) and (300,216.42) .. (300,212) -- cycle ;
+		%Rounded Rect [id:dp9437055363891322] 
+		\draw  [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][fill={rgb, 255:red, 126; green, 211; blue, 33 }  ,fill opacity=1 ] (301,269) .. controls (301,264.58) and (304.58,261) .. (309,261) -- (374,261) .. controls (378.42,261) and (382,264.58) .. (382,269) -- (382,293) .. controls (382,297.42) and (378.42,301) .. (374,301) -- (309,301) .. controls (304.58,301) and (301,297.42) .. (301,293) -- cycle ;
+		%Straight Lines [id:da4572029334299341] 
+		\draw [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][line width=1.5]    (80,180) -- (157.78,63.33) ;
+		\draw [shift={(160,60)}, rotate = 483.69] [fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (11.61,-5.58) -- (0,0) -- (11.61,5.58) -- cycle    ;
+		%Straight Lines [id:da6541321425934448] 
+		\draw [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][line width=1.5]    (120,180) -- (157.78,123.33) ;
+		\draw [shift={(160,120)}, rotate = 483.69] [fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (11.61,-5.58) -- (0,0) -- (11.61,5.58) -- cycle    ;
+		%Straight Lines [id:da08973193824238446] 
+		\draw [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][line width=1.5]    (120,240) -- (157.78,183.33) ;
+		\draw [shift={(160,180)}, rotate = 483.69] [fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (11.61,-5.58) -- (0,0) -- (11.61,5.58) -- cycle    ;
+		%Straight Lines [id:da22636709326479676] 
+		\draw [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][line width=1.5]    (120,240) -- (156,240) ;
+		\draw [shift={(160,240)}, rotate = 180] [fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (11.61,-5.58) -- (0,0) -- (11.61,5.58) -- cycle    ;
+		%Straight Lines [id:da5566318785301065] 
+		\draw [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][line width=1.5]    (120,240) -- (157.78,296.67) ;
+		\draw [shift={(160,300)}, rotate = 236.31] [fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (11.61,-5.58) -- (0,0) -- (11.61,5.58) -- cycle    ;
+		%Straight Lines [id:da4869416201679271] 
+		\draw [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][line width=1.5]    (120,300) -- (157.78,356.67) ;
+		\draw [shift={(160,360)}, rotate = 236.31] [fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (11.61,-5.58) -- (0,0) -- (11.61,5.58) -- cycle    ;
+		%Straight Lines [id:da7241225236235966] 
+		\draw [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][line width=1.5]    (80,300) -- (158.34,417.5) ;
+		\draw [shift={(160,420)}, rotate = 236.31] [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][line width=1.5]    (14.21,-4.28) .. controls (9.04,-1.82) and (4.3,-0.39) .. (0,0) .. controls (4.3,0.39) and (9.04,1.82) .. (14.21,4.28)   ;
+		%Straight Lines [id:da33530746923265875] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (260,60) -- (300,200) ;
+		%Straight Lines [id:da40286884223752195] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (260,120) -- (300,200) ;
+		%Straight Lines [id:da11222683072358719] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (260,180) -- (300,200) ;
+		%Straight Lines [id:da39699658044921193] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (260,240) -- (300,200) ;
+		%Straight Lines [id:da6504122724693813] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (260,300) -- (300,200) ;
+		%Straight Lines [id:da19199893350929242] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (260,360) -- (300,200) ;
+		%Straight Lines [id:da8260837866362043] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (260,420) -- (300,200) ;
+		%Straight Lines [id:da6370346711010084] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (260,420) -- (300,280) ;
+		%Straight Lines [id:da20414839850127708] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (260,360) -- (300,280) ;
+		%Straight Lines [id:da18864076317673573] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (260,300) -- (300,280) ;
+		%Straight Lines [id:da9343508628518289] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (260,240) -- (300,280) ;
+		%Straight Lines [id:da04517305353552259] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (260,180) -- (300,280) ;
+		%Straight Lines [id:da24567568618653834] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (260,120) -- (300,280) ;
+		%Straight Lines [id:da8425395757812855] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (260,60) -- (300,280) ;
+		%Straight Lines [id:da678033786205831] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (380,200) -- (420,100) ;
+		%Straight Lines [id:da10268204898510325] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (380,200) -- (420,160) ;
+		%Straight Lines [id:da034281361725659654] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (380,200) -- (420,220) ;
+		%Straight Lines [id:da2643278430637781] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (380,200) -- (420,280) ;
+		%Straight Lines [id:da4741075133489321] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (380,200) -- (420,340) ;
+		%Straight Lines [id:da8533320850791501] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (380,200) -- (420,400) ;
+		%Straight Lines [id:da25537012675579795] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (380,280) -- (420,100) ;
+		%Straight Lines [id:da11787503920002229] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (380,280) -- (420,160) ;
+		%Straight Lines [id:da6232291480480245] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (380,280) -- (420,220) ;
+		%Straight Lines [id:da13449975611434883] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (380,280) -- (420,280) ;
+		%Straight Lines [id:da6379073358336698] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (380,280) -- (420,340) ;
+		%Straight Lines [id:da8648604964482902] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (380,280) -- (420,400) ;
+		%Shape: Rectangle [id:dp9373282017478466] 
+		\draw  [fill={rgb, 255:red, 74; green, 74; blue, 74 }  ,fill opacity=1 ] (547.5,200) -- (603.75,200) -- (603.75,255.26) -- (547.5,255.26) -- cycle ;
+		%Shape: Rectangle [id:dp8258119442037437] 
+		\draw  [fill={rgb, 255:red, 74; green, 74; blue, 74 }  ,fill opacity=1 ] (555.46,207.89) -- (611.71,207.89) -- (611.71,263.16) -- (555.46,263.16) -- cycle ;
+		%Shape: Rectangle [id:dp040967609209594746] 
+		\draw  [fill={rgb, 255:red, 74; green, 74; blue, 74 }  ,fill opacity=1 ] (564.23,215.79) -- (620.48,215.79) -- (620.48,271.05) -- (564.23,271.05) -- cycle ;
+		%Shape: Rectangle [id:dp3042156197876449] 
+		\draw  [fill={rgb, 255:red, 74; green, 74; blue, 74 }  ,fill opacity=1 ] (574.59,225.26) -- (630.84,225.26) -- (630.84,280.53) -- (574.59,280.53) -- cycle ;
+		%Shape: Rectangle [id:dp22955626125957718] 
+		\draw  [fill={rgb, 255:red, 74; green, 74; blue, 74 }  ,fill opacity=1 ] (583.75,234.74) -- (640,234.74) -- (640,290) -- (583.75,290) -- cycle ;
+		%Straight Lines [id:da3121848936924858] 
+		\draw [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][line width=1.5]    (520,100) -- (577.6,176.8) ;
+		\draw [shift={(580,180)}, rotate = 233.13] [fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (11.61,-5.58) -- (0,0) -- (11.61,5.58) -- cycle    ;
+		%Straight Lines [id:da4083043177775638] 
+		\draw [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][line width=1.5]    (520,160) -- (537.17,177.17) ;
+		\draw [shift={(540,180)}, rotate = 225] [fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (11.61,-5.58) -- (0,0) -- (11.61,5.58) -- cycle    ;
+		%Straight Lines [id:da46948645691108726] 
+		\draw [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][line width=1.5]    (520,220) -- (537.17,237.17) ;
+		\draw [shift={(540,240)}, rotate = 225] [fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (11.61,-5.58) -- (0,0) -- (11.61,5.58) -- cycle    ;
+		%Straight Lines [id:da6497409957223708] 
+		\draw [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][line width=1.5]    (520,280) -- (537.17,262.83) ;
+		\draw [shift={(540,260)}, rotate = 495] [fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (11.61,-5.58) -- (0,0) -- (11.61,5.58) -- cycle    ;
+		%Straight Lines [id:da6279553174742234] 
+		\draw [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][line width=1.5]    (520,340) -- (537.17,322.83) ;
+		\draw [shift={(540,320)}, rotate = 495] [fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (11.61,-5.58) -- (0,0) -- (11.61,5.58) -- cycle    ;
+		%Straight Lines [id:da9804292425008414] 
+		\draw [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][line width=1.5]    (520,400) -- (577.6,323.2) ;
+		\draw [shift={(580,320)}, rotate = 486.87] [fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (11.61,-5.58) -- (0,0) -- (11.61,5.58) -- cycle    ;
+		
+		% Text Node
+		\draw (170,55) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {Nearest Neighbor};
+		% Text Node
+		\draw (172,106) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {\begin{minipage}[lt]{56.71pt}\setlength\topsep{0pt}
+				\begin{center}
+					Nearest Neighbor\\Exact
+				\end{center}
+				
+		\end{minipage}};
+		% Text Node
+		\draw (197,177) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\scriptsize Linear}};
+		% Text Node
+		\draw (183,235) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\scriptsize Linear Exact}};
+		% Text Node
+		\draw (196,296) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\scriptsize Cubic}};
+		% Text Node
+		\draw (198,355) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\scriptsize Area}};
+		% Text Node
+		\draw (190,415) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\scriptsize Lanczos}};
+		% Text Node
+		\draw (304,196) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\scriptsize \textbf{Vollskalierung}}};
+		% Text Node
+		\draw (309,260) node [anchor=north west][inner sep=0.75pt]   [align=left] {\begin{minipage}[lt]{44pt}\setlength\topsep{0pt}
+				\begin{center}
+					\textbf{{\scriptsize schrittweise}}\\\textbf{{\scriptsize Skalierung}}
+				\end{center}
+				
+		\end{minipage}};
+		% Text Node
+		\draw (435,97) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {$\displaystyle 0,15\ \nicefrac{\mu m}{\text{Pixel}}$};
+		% Text Node
+		\draw (435,158) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {$\displaystyle 0,20\ \nicefrac{\mu m}{\text{Pixel}}$};
+		% Text Node
+		\draw (435,215) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {$\displaystyle 0,30\ \nicefrac{\mu m}{\text{Pixel}}$};
+		% Text Node
+		\draw (435,274) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {$\displaystyle 0,70\ \nicefrac{\mu m}{\text{Pixel}}$};
+		% Text Node
+		\draw (434,336) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {$\displaystyle 1,10\ \nicefrac{\mu m}{\text{Pixel}}$};
+		% Text Node
+		\draw (434,396) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {$\displaystyle 1,90\ \nicefrac{\mu m}{\text{Pixel}}$};
+		% Text Node
+		\draw (589.07,248.37) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 255; green, 255; blue, 255 }  ,opacity=1 ] [align=left] {\begin{minipage}[lt]{33.93pt}\setlength\topsep{0pt}
+				\begin{center}
+					19.488\\Bilder
+				\end{center}
+				
+		\end{minipage}};
+		% Text Node
+		\draw (27.32,248.37) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 255; green, 255; blue, 255 }  ,opacity=1 ] [align=left] {\begin{minipage}[lt]{28.8pt}\setlength\topsep{0pt}
+				\begin{center}
+					232\\Bilder
+				\end{center}
+				
+		\end{minipage}};
+	\end{tikzpicture}
+	\caption{Planungsmodell (2) zur Erzeugung von Versuchsbildern}
+	\label{fig:Planungsmodell(2)}
+\end{figure}
 
 
-\noindent\textcolor{red}{todo:  beschreiben...}  
+\section{Das Analysekonzept}
+
+Wie in Kapitel \ref{sec:StatVersPlanung} auf Seite \pageref{sec:StatVersPlanung} bereits umfänglich dargelegt, ist die statistische Versuchsplanung immer dann ein hervorragendes Werkzeug wenn es darum geht
+
 
 \subsection{Systemanalyse}
 Die Aufgabe, einen allgemeingültigen Anordnungsklassifikator zu entwickeln, der die beschriebenen Anforderungen erfüllt, ist im Grunde die Lösung eines Optimierungsproblems. Dabei ist es erforderlich zu untersuchen, welche Abhängigkeiten zwischen den \textbf{Einflussgrößen} und Zielgrößen zu bestehen, was zunächst vereinfacht in Abbildung dargestellt is.
        
 \begin{figure}[H]
 	\centering
-	\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1, scale=0.7, every node/.style={scale=0.7}]
+	\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1, scale=1.2, every node/.style={scale=1.2}]
 		%uncomment if require: \path (0,222); %set diagram left start at 0, and has height of 222
 		
-		%Flowchart: Process [id:dp31407792865997985] 
-		\draw  [fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=0.45 ][line width=2.25]  (147,92) -- (356,92) -- (356,186.35) -- (147,186.35) -- cycle ;
-		%Right Arrow [id:dp008081388677440904] 
-		\draw  [fill={rgb, 255:red, 248; green, 231; blue, 28 }  ,fill opacity=1 ][line width=1.5]  (199,14) -- (199,56) -- (209,56) -- (189,84) -- (169,56) -- (179,56) -- (179,14) -- cycle ;
-		%Right Arrow [id:dp584717372432416] 
-		\draw  [fill={rgb, 255:red, 248; green, 231; blue, 28 }  ,fill opacity=1 ][line width=1.5]  (315,14) -- (315,56) -- (325,56) -- (305,84) -- (285,56) -- (295,56) -- (295,14) -- cycle ;
-		%Right Arrow [id:dp8933598607947869] 
-		\draw  [fill={rgb, 255:red, 184; green, 233; blue, 134 }  ,fill opacity=1 ][line width=1.5]  (70,130) -- (112,130) -- (112,120) -- (140,140) -- (112,160) -- (112,150) -- (70,150) -- cycle ;
-		%Right Arrow [id:dp43249460780861937] 
-		\draw  [fill={rgb, 255:red, 184; green, 233; blue, 134 }  ,fill opacity=1 ][line width=1.5]  (363,129) -- (405,129) -- (405,119) -- (433,139) -- (405,159) -- (405,149) -- (363,149) -- cycle ;
-		%Shape: Rectangle [id:dp02676070817238141] 
-		\draw  [line width=3.75]  (5.68,-39.65) -- (514.68,-39.65) -- (514.68,210.35) -- (5.68,210.35) -- cycle ;
+		%Shape: Rectangle [id:dp7648707069859968] 
+		\draw  [color={rgb, 255:red, 74; green, 74; blue, 74 }  ,draw opacity=1 ][fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (60,40) -- (560,40) -- (560,260) -- (60,260) -- cycle ;
+		%Shape: Rectangle [id:dp6660539300811295] 
+		\draw  [color={rgb, 255:red, 248; green, 231; blue, 28 }  ,draw opacity=1 ][fill={rgb, 255:red, 248; green, 231; blue, 28 }  ,fill opacity=1 ] (236,152) -- (436,152) -- (436,232) -- (236,232) -- cycle ;
+		%Straight Lines [id:da04096259435488303] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=4.5]    (289,108) -- (289,140) ;
+		\draw [shift={(289,148)}, rotate = 270] [fill={rgb, 255:red, 126; green, 211; blue, 33 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (24.11,-11.58) -- (0,0) -- (24.11,11.58) -- cycle    ;
+		%Straight Lines [id:da9081230453690534] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=4.5]    (390,108) -- (390,140) ;
+		\draw [shift={(390,148)}, rotate = 270] [fill={rgb, 255:red, 126; green, 211; blue, 33 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (24.11,-11.58) -- (0,0) -- (24.11,11.58) -- cycle    ;
+		%Shape: Rectangle [id:dp9833999336185018] 
+		\draw  [fill={rgb, 255:red, 74; green, 74; blue, 74 }  ,fill opacity=1 ] (113.75,147) -- (170,147) -- (170,202.26) -- (113.75,202.26) -- cycle ;
+		%Shape: Rectangle [id:dp6474898484381659] 
+		\draw  [fill={rgb, 255:red, 74; green, 74; blue, 74 }  ,fill opacity=1 ] (105.71,154.89) -- (161.96,154.89) -- (161.96,210.16) -- (105.71,210.16) -- cycle ;
+		%Shape: Rectangle [id:dp28214539132657324] 
+		\draw  [fill={rgb, 255:red, 74; green, 74; blue, 74 }  ,fill opacity=1 ] (97.48,163.79) -- (153.73,163.79) -- (153.73,219.05) -- (97.48,219.05) -- cycle ;
+		%Shape: Rectangle [id:dp8208799659588357] 
+		\draw  [fill={rgb, 255:red, 74; green, 74; blue, 74 }  ,fill opacity=1 ] (87.84,173.26) -- (144.09,173.26) -- (144.09,228.53) -- (87.84,228.53) -- cycle ;
+		%Shape: Rectangle [id:dp42497443725878625] 
+		\draw  [fill={rgb, 255:red, 74; green, 74; blue, 74 }  ,fill opacity=1 ] (78,182.74) -- (134.25,182.74) -- (134.25,238) -- (78,238) -- cycle ;
+		%Notched Right Arrow [id:dp7255518395939695] 
+		\draw  [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=0.52 ][fill={rgb, 255:red, 126; green, 211; blue, 33 }  ,fill opacity=1 ] (175,182) -- (205,182) -- (205,172) -- (225,192) -- (205,212) -- (205,202) -- (175,202) -- (185,192) -- cycle ;
+		%Notched Right Arrow [id:dp4043296670143506] 
+		\draw  [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][fill={rgb, 255:red, 126; green, 211; blue, 33 }  ,fill opacity=1 ] (444,182) -- (501.6,182) -- (501.6,172) -- (540,192) -- (501.6,212) -- (501.6,202) -- (444,202) -- (454,192) -- cycle ;
 		
 		% Text Node
-		\draw (156,-24) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize] [align=left] {{\scriptsize \textbf{Steuergrößen }}};
-		% Text Node
-		\draw (278,-24) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\scriptsize \textbf{Störgrößen}}};
-		% Text Node
-		\draw (266,224.4) node [anchor=north west][inner sep=0.75pt]    {$ $};
-		% Text Node
-		\draw (151,-6.6) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$\{x_{1} ,\ x_{2} ,\ ...,\ x_{n}\}$};
-		% Text Node
-		\draw (267,-6.6) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$\{v_{1} ,\ v_{2} ,\ ...,\ v_{n}\}$};
-		% Text Node
-		\draw (439,127) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {\textbf{Zielgrößen}};
-		% Text Node
-		\draw (439,137.4) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$y_{1} ,\ y_{2} ,\ ...,\ y_{3}$};
-		% Text Node
-		\draw (13,136) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {\textbf{Eingaben}};
-		% Text Node
-		\draw (177,129) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {\begin{minipage}[lt]{108.95844000000001pt}\setlength\topsep{0pt}
+		\draw (260.06,175.75) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 74; green, 74; blue, 74 }  ,opacity=1 ,rotate=-0.19] [align=left] {\begin{minipage}[lt]{108.72pt}\setlength\topsep{0pt}
 				\begin{center}
-					\textbf{Versuchsraum}\\\textbf{Ursache-/Wirkunsbez.}
+					\textbf{AMGuss (System)}\\{\scriptsize \textbf{\textit{Ursache-/Wirgungsbez.}}}
 				\end{center}
+				
 		\end{minipage}};
+		% Text Node
+		\draw (347,48) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 74; green, 74; blue, 74 }  ,opacity=1 ] [align=left] {\begin{minipage}[lt]{57.69pt}\setlength\topsep{0pt}
+				\begin{center}
+					\textbf{Störgrößen}\\{\scriptsize \textbf{\textit{Ausgangs-}}}\\{\scriptsize \textbf{\textit{kalibrierungen}}}
+				\end{center}
+				
+		\end{minipage}};
+		% Text Node
+		\draw (238,48) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 74; green, 74; blue, 74 }  ,opacity=1 ] [align=left] {\begin{minipage}[lt]{69.03pt}\setlength\topsep{0pt}
+				\begin{center}
+					\textbf{Steuergrößen}\\{\scriptsize \textbf{\textit{Interpolations-}}}\\{\scriptsize \textbf{\textit{algorithmen}}}
+				\end{center}
+				
+		\end{minipage}};
+		% Text Node
+		\draw (83.32,196.37) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 255; green, 255; blue, 255 }  ,opacity=1 ] [align=left] {\begin{minipage}[lt]{32.9pt}\setlength\topsep{0pt}
+				\begin{center}
+					{\scriptsize Eingaben}\\{\scriptsize (Bilder)}
+				\end{center}
+				
+		\end{minipage}};
+		% Text Node
+		\draw (459,188) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize,color={rgb, 255:red, 74; green, 74; blue, 74 }  ,opacity=1 ] [align=left] {\textbf{Zielgrößen}};
 	\end{tikzpicture}
-	\caption{Usache-/Wirkungsbeziehungen als Black-Box-Modell}
+	\caption{Modell zur Darstellung der Ursache-/Wirkungsbeziehungen im Systemkontext}
+	\label{fig:Systemkontextmodell}
 \end{figure}
 
 
@@ -1353,9 +1854,92 @@ xyxyyxxxy
 
 \subsection{Modellbildung}
 
-\subsection{Versuchsplanaufbau}
+\subsection{Aufbau der Versuchsplanung}
 
-\section{Untersuchung der Auswirkungen von Bildskalierungen auf die Reproduzierbarkeit von Messergebnissen unter Anwendung verschiedener Interpolationsverfahren}
+\section{Versuchsdurchführung}
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1, scale=1.0, every node/.style={scale=1.0}]
+		%uncomment if require: \path (0,222); %set diagram left start at 0, and has height of 222
+		
+	%Shape: Rectangle [id:dp03419872242718203] 
+	\draw  [color={rgb, 255:red, 74; green, 74; blue, 74 }  ,draw opacity=1 ][fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (3,21) -- (656,21) -- (656,321) -- (3,321) -- cycle ;
+	%Shape: Rectangle [id:dp218360140301183] 
+	\draw  [fill={rgb, 255:red, 74; green, 74; blue, 74 }  ,fill opacity=1 ] (51.5,102) -- (107.75,102) -- (107.75,157.26) -- (51.5,157.26) -- cycle ;
+	%Shape: Rectangle [id:dp3937315611309855] 
+	\draw  [fill={rgb, 255:red, 74; green, 74; blue, 74 }  ,fill opacity=1 ] (43.46,109.89) -- (99.71,109.89) -- (99.71,165.16) -- (43.46,165.16) -- cycle ;
+	%Shape: Rectangle [id:dp5265848440532068] 
+	\draw  [fill={rgb, 255:red, 74; green, 74; blue, 74 }  ,fill opacity=1 ] (35.23,118.79) -- (91.48,118.79) -- (91.48,174.05) -- (35.23,174.05) -- cycle ;
+	%Shape: Rectangle [id:dp8134408230981591] 
+	\draw  [fill={rgb, 255:red, 74; green, 74; blue, 74 }  ,fill opacity=1 ] (25.59,128.26) -- (81.84,128.26) -- (81.84,183.53) -- (25.59,183.53) -- cycle ;
+	%Shape: Rectangle [id:dp12628310483676164] 
+	\draw  [fill={rgb, 255:red, 74; green, 74; blue, 74 }  ,fill opacity=1 ] (15.75,137.74) -- (72,137.74) -- (72,193) -- (15.75,193) -- cycle ;
+	
+	%Image [id:dp19023457749906703] 
+	\draw (233.53,154.36) node  {\includegraphics[width=116.3pt,height=104.47pt]{pics/measure_1}};
+	%Shape: Circle [id:dp728673139479594] 
+	\draw  [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][fill={rgb, 255:red, 126; green, 211; blue, 33 }  ,fill opacity=1 ] (219,46) .. controls (219,38.82) and (224.82,33) .. (232,33) .. controls (239.18,33) and (245,38.82) .. (245,46) .. controls (245,53.18) and (239.18,59) .. (232,59) .. controls (224.82,59) and (219,53.18) .. (219,46) -- cycle ;
+	%Image [id:dp55818248258904] 
+	\draw (565.53,154.36) node  {\includegraphics[width=116.3pt,height=104.47pt]{pics/measure_1}};
+	%Shape: Circle [id:dp678145460257517] 
+	\draw  [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][fill={rgb, 255:red, 126; green, 211; blue, 33 }  ,fill opacity=1 ] (551,46) .. controls (551,38.82) and (556.82,33) .. (564,33) .. controls (571.18,33) and (577,38.82) .. (577,46) .. controls (577,53.18) and (571.18,59) .. (564,59) .. controls (556.82,59) and (551,53.18) .. (551,46) -- cycle ;
+	%Shape: Rectangle [id:dp8368148107013256] 
+	\draw  [color={rgb, 255:red, 248; green, 231; blue, 28 }  ,draw opacity=1 ][fill={rgb, 255:red, 248; green, 231; blue, 28 }  ,fill opacity=1 ][line width=0.75]  (348,120) -- (443,120) -- (443,160) -- (348,160) -- cycle ;
+	%Shape: Circle [id:dp1828429723656111] 
+	\draw  [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][fill={rgb, 255:red, 126; green, 211; blue, 33 }  ,fill opacity=1 ] (382,94) .. controls (382,86.82) and (387.82,81) .. (395,81) .. controls (402.18,81) and (408,86.82) .. (408,94) .. controls (408,101.18) and (402.18,107) .. (395,107) .. controls (387.82,107) and (382,101.18) .. (382,94) -- cycle ;
+	%Shape: Rectangle [id:dp6879768109790683] 
+	\draw  [color={rgb, 255:red, 248; green, 231; blue, 28 }  ,draw opacity=1 ][fill={rgb, 255:red, 248; green, 231; blue, 28 }  ,fill opacity=1 ] (294,254) -- (499,254) -- (499,305) -- (294,305) -- cycle ;
+	%Bend Up Arrow [id:dp5130011350568686] 
+	\draw  [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][fill={rgb, 255:red, 126; green, 211; blue, 33 }  ,fill opacity=1 ] (240,236) -- (240,269) -- (258,269) -- (258,260) -- (282,278) -- (258,296) -- (258,287) -- (222,287) -- (222,236) -- cycle ;
+	%Bend Up Arrow [id:dp5493434724310982] 
+	\draw  [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][fill={rgb, 255:red, 126; green, 211; blue, 33 }  ,fill opacity=1 ] (562.7,235) -- (562.7,268.55) -- (536.4,268.55) -- (536.4,259.4) -- (512,277.7) -- (536.4,296) -- (536.4,286.85) -- (581,286.85) -- (581,235) -- cycle ;
+	%Shape: Circle [id:dp4252487137635921] 
+	\draw  [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][fill={rgb, 255:red, 126; green, 211; blue, 33 }  ,fill opacity=1 ] (384,227) .. controls (384,219.82) and (389.82,214) .. (397,214) .. controls (404.18,214) and (410,219.82) .. (410,227) .. controls (410,234.18) and (404.18,240) .. (397,240) .. controls (389.82,240) and (384,234.18) .. (384,227) -- cycle ;
+	%Chevron Arrow [id:dp36704668199013146] 
+	\draw  [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][fill={rgb, 255:red, 126; green, 211; blue, 33 }  ,fill opacity=1 ] (118,120) -- (135.4,120) -- (147,140) -- (135.4,160) -- (118,160) -- (129.6,140) -- cycle ;
+	%Chevron Arrow [id:dp38485139245994215] 
+	\draw  [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][fill={rgb, 255:red, 126; green, 211; blue, 33 }  ,fill opacity=1 ] (307,120) -- (324.4,120) -- (336,140) -- (324.4,160) -- (307,160) -- (318.6,140) -- cycle ;
+	%Chevron Arrow [id:dp7077292276832701] 
+	\draw  [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][fill={rgb, 255:red, 126; green, 211; blue, 33 }  ,fill opacity=1 ] (451,120) -- (468.4,120) -- (480,140) -- (468.4,160) -- (451,160) -- (462.6,140) -- cycle ;
+	
+	% Text Node
+	\draw (21.07,149.37) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 255; green, 255; blue, 255 }  ,opacity=1 ] [align=left] {\begin{minipage}[lt]{33.93pt}\setlength\topsep{0pt}
+			\begin{center}
+				19.488\\Bilder
+			\end{center}
+			
+	\end{minipage}};
+	% Text Node
+	\draw (355,128) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize,color={rgb, 255:red, 74; green, 74; blue, 74 }  ,opacity=1 ] [align=left] {\begin{minipage}[lt]{54.7pt}\setlength\topsep{0pt}
+			\begin{center}
+				\textbf{Transformation}\\ $\displaystyle \to 0,5\ \nicefrac{\mu m}{\text{Pixel}}$
+			\end{center}
+			
+	\end{minipage}};
+	% Text Node
+	\draw (511.27,68.52) node [anchor=north west][inner sep=0.75pt]   [align=left] {\textbf{{\scriptsize Messung mit AMGuss}}};
+	% Text Node
+	\draw (559,41) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 74; green, 74; blue, 74 }  ,opacity=1 ] [align=left] {\textbf{3}};
+	% Text Node
+	\draw (390,89) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 74; green, 74; blue, 74 }  ,opacity=1 ] [align=left] {\textbf{2}};
+	% Text Node
+	\draw (179.27,68.52) node [anchor=north west][inner sep=0.75pt]   [align=left] {\textbf{{\scriptsize Messung mit AMGuss}}};
+	% Text Node
+	\draw (227,41) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 74; green, 74; blue, 74 }  ,opacity=1 ] [align=left] {\textbf{1}};
+	% Text Node
+	\draw (391,222) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 74; green, 74; blue, 74 }  ,opacity=1 ] [align=left] {\textbf{4}};
+	% Text Node
+	\draw (304,265) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 74; green, 74; blue, 74 }  ,opacity=1 ] [align=left] {\begin{minipage}[lt]{134.83pt}\setlength\topsep{0pt}
+			\begin{center}
+				Bestimmung der Abweichung\\\textbf{= Zielwert}
+			\end{center}
+			
+	\end{minipage}};
+	\end{tikzpicture}
+	\caption{Schematische Darstellung des Modells zur Versuchsdurchführung}
+	\label{fig:Versuchsdurchführung}
+\end{figure}
 
 \subsection{Messung der Bilder mit AMGuss vor und nach der Skalierung}
 
