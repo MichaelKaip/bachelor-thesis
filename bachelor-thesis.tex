@@ -44,10 +44,12 @@ parskip = half
 \usepackage{mathdots}
 \usepackage{yhmath}
 \usepackage{cancel}
+\usepackage{blindtext}
 
 \usepackage{chngcntr}
 %\counterwithout{figure}{chapter}
 %\counterwithout{table}{chapter}
+
 
 \usepackage[hidelinks, plainpages=false, pdfpagelabels]{hyperref}
 
@@ -77,6 +79,10 @@ parskip = half
 \newenvironment{conditions}
 {\par\vspace{\abovedisplayskip}\noindent\begin{tabular}{>{$}l<{$} @{${}:{}$} l}}
 	{\end{tabular}\par\vspace{\belowdisplayskip}}
+
+
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -210,19 +216,7 @@ Vor diesem Hintergrund ist auch die Software AMGuss entstanden, die von Gießere
 \chapter{Grundlagen}
 \label{ch:Grundlagen}
 
-\section{Lamellengraphit}
-\label{subsec:Lamellengraphit}
-
-\subsection{Mechanische Eigenschaften von Lamellengraphit}
-\label{subsec:MechanischeEigenschaften}
-
-\subsection{Metallographie und Analytik}
-\label{sec:MetallographieAnalytik}
-
-\subsection{Lichtmikrokopie für die Erstellung von Bildproben}
-\label{subsec:Lichtmikroskopie}
-
-\subsection{Klassifikation und Analyse von Gusseisenwerkstoffen mit Lamellengraphit}
+\section{Klassifikation und Analyse von Gusseisenwerkstoffen mit Lamellengraphit}
 \label{subsec:MethodenBestAnordnungsklassen}
 Werden Gusseisenwerkstoffe mit Lamellengraphit nach DIN EN ISO 945-1 untersucht, müssen die darin enthaltenen Graphitbestandteile nach dem Bezeichnungssystem für die Klassifizierung von Graphit in Gusseisen klassifiziert  werden \cite[Seite 6]{ISO945}. Dazu bietet die Norm dem Metallographen sogenannte Richtreihenbilder an, anhand derer eine solche Klassifizierung durch visuelle Beurteilung durchzuführen ist.
 \\\\
@@ -240,12 +234,7 @@ In der Formklasse Lamellengraphit (vgl. Abbildung \ref{fig:GraphitTypes} auf Sei
 \textcolor{red}{Welche Probleme ergeben sich daraus???}
 \\\\
 
-
-\section{Grundlagen der Bildverarbeitung}
-\label{GrundlagenBildverarbeitung}
-
-
-\subsection{Bildskalierung und Interpolationsverfahren}
+\section{Bildskalierung und Interpolationsverfahren}
 \label{subsec:SkalierungUndInterpolation}
 
 Unter Bildskalierung versteht man die Vergrößerung bzw. Verkleinerung von Bildern. Es handelt sich dabei um ein Standardverfahren, welches sowohl im Grafik- und Fotobereich als auch in der digitalen Bildverarbeitung sehr häufig zum Einsatz kommt und von Bildverarbeitungsprogrammen standardmäßig angeboten wird. Da die algorithmische Funktionsweise einer Bildskalierung für das Verständnis der in dieser Arbeit zu lösenden Problemstellung (siehe auch Kapitel \ref{sec:Problemstellung} auf Seite \pageref{sec:Problemstellung}) von zentraler Bedeutung ist, wird diese nun hier genauer Untersucht und beschrieben.
@@ -1061,6 +1050,31 @@ Nach \cite{schiefer_2018} kann zwischen den in nachstehender Abbildung \ref{fig:
 \\\\
 \noindent In Kapitel \ref{ch:Konzept} auf Seite \pageref{ch:Konzept} wird das hier beschriebene Modell eines vollständig faktoriellen Versuchsplanes wieder aufgegriffen und dahingehend erweitert, das eine Anwendung zur Untersuchung der im Rahmen dieser Arbeit zu untersuchenden Fragestellung möglich wird. In Kapitel \ref{ch:Evaluation} auf Seite \pageref{ch:Evaluation} werden die Untersuchungsergebnisse dann anhand dieses Modells schließlich ausgewertet und interpretiert.
 
+\section{Überblick über die Skriptsprache AutoIt}
+\label{sec:UeberblickAutoIt}
+
+Im Rahmen dieser Arbeit wird AutoIt einerseits dazu genutzt, um die zur Evaluation der Wirkungsweise von unterschiedlichen Interpolationsalgorithmen benötigten Daten zu generieren. Dazu ist es nötig, tausende von Lamellenguss-Messungen mit der Software AMGuss durchzuführen. Dies wäre ohne Automatisierung mit einem nicht vertretbaren Zeitaufwand verbunden. Die automatische Durchführung der Messungen mit AutoIt funktioniert dagegen nach einigen Tests sehr gut und der Zeitaufwand lässt sich somit auf etwa 20 Sekunden pro Messung reduzieren.
+\\\\
+\noindent Gemäß offizieller Dokumentation \cite{AutoItDocs} lässt sich AutoIT wie folgt beschreiben:
+\\\\
+\noindent Es handelt sich dabei um eine BASIC-ähnliche Skriptsprache, die zur Automatisierung von Windows-Benutzeroberflächen entwickelt wurde. Es verwendet eine Kombination aus simulierten Tastenanschlägen, Mausbewegungen sowie Fenster- und Steuerungsmanipulationen, um Aufgaben auf eine Weise zu automatisieren, die mit anderen Sprachen (z.B. VBScript und SendKeys) nicht möglich ist.
+\\\\
+\noindent AutoIt wurde ursprünglich für PC-Rollout-Situationen entwickelt, um Tausende von PCs zuverlässig zu automatisieren und zu konfigurieren. Im Laufe der Zeit hat es sich zu einer leistungsstarken Sprache entwickelt, die komplexe Ausdrücke, Benutzerfunktionen, Schleifen und alles andere unterstützt, was erfahrene Skripter erwarten würden. 
+\\\\
+\textbf{Die wichtigsten Eigenschaften kurz zusammengefasst:}
+\begin{itemize}
+	\item Einfach zu erlernende BASIC-ähnliche Syntax
+	\item Simulation von Tastenanschlägen und Mausbewegungen
+	\item Steuerung von Fenstern und Prozessen
+	\item Interaktion mit Standard-Windows-Steuerelementen
+	\item Kompilierung von Skripten zu eigenen ausführbaren Dateien
+	\item Erstellung grafischer Benutzeroberflächen
+	\item COM-Unterstützung
+	\item Reguläre Ausdrücke
+	\item Direkter Aufruf von Funktionen aus externen DLL's sowie von Windows-API-Funktionen
+	\item etc.
+\end{itemize}
+
 \chapter{Ausgangssituation}
 \label{ch:Ausgangssituation}
 Ziel dieses Kapitels ist es die Ausgangssituation, also die mit dieser Arbeit verbundenen Rahmenbedingungen im Detail darzulegen, um damit die Grundlage für eine schlüssige Präsentation des Lösungskonzeptes im darauf folgenden Kapitel \ref{ch:Konzept} zu schaffen.
@@ -1190,7 +1204,7 @@ Somit sind aller erforderlichen Schritte  erledigt und die Lamellengraphit-Auswe
 	\label{fig:LamelloResultArea}
 \end{figure}
 
-\noindent Im Histogramm sind die gemessenen Flächenanteile nach Größenklassen dargestellt. Die Ansicht kann mit der Schätfläche \textbf{\glqq Anordnung\grqq} umgeschaltet und die nach Anordnungsklassen gewichteten Anteile angezeigt werden (Abbildung \ref{fig:LamelloResultArrangementClasses}).
+\noindent Im Histogramm sind die gemessenen Flächenanteile nach Größenklassen dargestellt. Die Ansicht kann mit der Schaltfläche \textbf{\glqq Anordnung\grqq} umgeschaltet und die nach Anordnungsklassen gewichteten Anteile angezeigt werden (Abbildung \ref{fig:LamelloResultArrangementClasses}).
 
 \begin{figure}[H]
 	\centering
@@ -1325,20 +1339,16 @@ Die Vorgehensweise zur Erstellung eines Anordnungsklassifikators wurde in Kapite
 		\draw [line width=0.75]  [dash pattern={on 0.84pt off 2.51pt}]  (252,320) -- (492,320) ;
 		%Straight Lines [id:da5805598360719648] 
 		\draw [line width=0.75]  [dash pattern={on 0.84pt off 2.51pt}]  (252,320) -- (172,420) ;
-		%Straight Lines [id:da009429095814716959] 
-		\draw    (201,413) -- (201,426) ;
 		%Straight Lines [id:da6408604526403883] 
-		\draw    (304,414) -- (304,427) ;
+		\draw    (291,414) -- (291,427) ; 				% 1.10
 		%Straight Lines [id:da5720641419192563] 
-		\draw [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ]   (230,414) -- (230,427) ;
-		%Straight Lines [id:da3865033621633087] 
-		\draw    (183,414) -- (183,427) ;
+		\draw [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ]   (201,414) -- (201,427) ;			% 0.50
 		%Straight Lines [id:da7586148570180449] 
-		\draw    (261,414) -- (261,427) ;
+		\draw    (231,414) -- (231,427) ; 				% 0.70
 		%Straight Lines [id:da6213998766294877] 
-		\draw    (412,414) -- (412,427) ;
+		\draw    (412,414) -- (412,427) ; 				% 1.90
 		%Straight Lines [id:da21868777946411622] 
-		\draw    (172,414) -- (172,427) ;
+		\draw    (172,414) -- (172,427) ;				% 0.30
 		%Shape: Parallelogram [id:dp6855290487769707] 
 		\draw  [fill={rgb, 255:red, 126; green, 211; blue, 33 }  ,fill opacity=0.83 ] (252,200) -- (492,200) -- (412,300) -- (172,300) -- cycle ;
 		%Shape: Square [id:dp5568502450606261] 
@@ -1365,21 +1375,17 @@ Die Vorgehensweise zur Erstellung eines Anordnungsklassifikators wurde in Kapite
 		% Text Node
 		\draw (506,199.71) node [anchor=north] [inner sep=0.75pt]  [font=\normalsize,rotate=-270] [align=left] {\textbf{Interpolationsmodi}};
 		% Text Node
-		\draw (159,430) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {0,15};
+		\draw (159,430) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {0,30};
 		% Text Node
-		\draw (172,443) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {0,20};
+		\draw (190,430) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize,color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ] [align=left] {0,50};
 		% Text Node
-		\draw (186,430) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {0,30};
+		\draw (220,430) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {0,70};
 		% Text Node
-		\draw (218,430) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize,color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ] [align=left] {(0,50)};
+		\draw (280,430) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {1,10};
 		% Text Node
-		\draw (250,442) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {0,70};
+		\draw (400,430) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {1,90};
 		% Text Node
-		\draw (292,430) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {1,10};
-		% Text Node
-		\draw (401,430) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {1,90};
-		% Text Node
-		\draw (197,397) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize,color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ] [align=left] {(Zielkalibrierung)};
+		\draw (197,408) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize, rotate=52.5,color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ] [align=left] {Zielkalibrierung};
 		% Text Node
 		\draw (438,410) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\scriptsize - Nearest Neighbor}};
 		% Text Node
@@ -1395,7 +1401,7 @@ Die Vorgehensweise zur Erstellung eines Anordnungsklassifikators wurde in Kapite
 		% Text Node
 		\draw (472,364) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {\mbox{-} Linear / Exact};
 		% Text Node
-		\draw (192,463) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize] [align=left] {\textbf{Ausgangskalibrierungen}};
+		\draw (203,450) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize] [align=left] {\textbf{Ausgangskalibrierungen}};
 		% Text Node
 		\draw (138.21,183.34) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize,rotate=-308.72] [align=left] {\textbf{Interpolationsverfahren}};
 		% Text Node
@@ -1441,20 +1447,16 @@ Die Vorgehensweise zur Erstellung eines Anordnungsklassifikators wurde in Kapite
 		\draw  [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=0.12 ] (163,349) .. controls (163,344.58) and (166.58,341) .. (171,341) -- (252,341) .. controls (256.42,341) and (260,344.58) .. (260,349) -- (260,373) .. controls (260,377.42) and (256.42,381) .. (252,381) -- (171,381) .. controls (166.58,381) and (163,377.42) .. (163,373) -- cycle ;
 		%Rounded Rect [id:dp9146993081319426] 
 		\draw  [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=0.12 ] (163,408) .. controls (163,403.58) and (166.58,400) .. (171,400) -- (252,400) .. controls (256.42,400) and (260,403.58) .. (260,408) -- (260,432) .. controls (260,436.42) and (256.42,440) .. (252,440) -- (171,440) .. controls (166.58,440) and (163,436.42) .. (163,432) -- cycle ;
-		%Rounded Rect [id:dp3049260414034314] 
-		\draw  [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=0.12 ] (420,88) .. controls (420,83.58) and (423.58,80) .. (428,80) -- (504,80) .. controls (508.42,80) and (512,83.58) .. (512,88) -- (512,112) .. controls (512,116.42) and (508.42,120) .. (504,120) -- (428,120) .. controls (423.58,120) and (420,116.42) .. (420,112) -- cycle ;
-		%Rounded Rect [id:dp829472062905211] 
-		\draw  [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=0.12 ] (420,149) .. controls (420,144.58) and (423.58,141) .. (428,141) -- (504,141) .. controls (508.42,141) and (512,144.58) .. (512,149) -- (512,173) .. controls (512,177.42) and (508.42,181) .. (504,181) -- (428,181) .. controls (423.58,181) and (420,177.42) .. (420,173) -- cycle ;
 		%Rounded Rect [id:dp5049349195701525] 
-		\draw  [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=0.12 ] (420,388) .. controls (420,383.58) and (423.58,380) .. (428,380) -- (504,380) .. controls (508.42,380) and (512,383.58) .. (512,388) -- (512,412) .. controls (512,416.42) and (508.42,420) .. (504,420) -- (428,420) .. controls (423.58,420) and (420,416.42) .. (420,412) -- cycle ;
+		\draw  [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=0.12 ] (417,322) .. controls (417,317.58) and (420.58,314) .. (425,314) -- (501,314) .. controls (505.42,314) and (509,317.58) .. (509,322) -- (509,346) .. controls (509,350.42) and (505.42,354) .. (501,354) -- (425,354) .. controls (420.58,354) and (417,350.42) .. (417,346) -- cycle ;
 		%Rounded Rect [id:dp7024977089857076] 
-		\draw  [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=0.12 ] (420,207) .. controls (420,202.58) and (423.58,199) .. (428,199) -- (504,199) .. controls (508.42,199) and (512,202.58) .. (512,207) -- (512,231) .. controls (512,235.42) and (508.42,239) .. (504,239) -- (428,239) .. controls (423.58,239) and (420,235.42) .. (420,231) -- cycle ;
+		\draw  [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=0.12 ] (417,141) .. controls (417,136.58) and (420.58,133) .. (425,133) -- (501,133) .. controls (505.42,133) and (509,136.58) .. (509,141) -- (509,165) .. controls (509,169.42) and (505.42,173) .. (501,173) -- (425,173) .. controls (420.58,173) and (417,169.42) .. (417,165) -- cycle ;
 		%Rounded Rect [id:dp7889794089989934] 
-		\draw  [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=0.12 ] (420,266) .. controls (420,261.58) and (423.58,258) .. (428,258) -- (504,258) .. controls (508.42,258) and (512,261.58) .. (512,266) -- (512,290) .. controls (512,294.42) and (508.42,298) .. (504,298) -- (428,298) .. controls (423.58,298) and (420,294.42) .. (420,290) -- cycle ;
+		\draw  [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=0.12 ] (417,200) .. controls (417,195.58) and (420.58,192) .. (425,192) -- (501,192) .. controls (505.42,192) and (509,195.58) .. (509,200) -- (509,224) .. controls (509,228.42) and (505.42,232) .. (501,232) -- (425,232) .. controls (420.58,232) and (417,228.42) .. (417,224) -- cycle ;
 		%Rounded Rect [id:dp17780665664929307] 
-		\draw  [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=0.12 ] (420,328) .. controls (420,323.58) and (423.58,320) .. (428,320) -- (504,320) .. controls (508.42,320) and (512,323.58) .. (512,328) -- (512,352) .. controls (512,356.42) and (508.42,360) .. (504,360) -- (428,360) .. controls (423.58,360) and (420,356.42) .. (420,352) -- cycle ;
+		\draw  [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=0.12 ] (417,262) .. controls (417,257.58) and (420.58,254) .. (425,254) -- (501,254) .. controls (505.42,254) and (509,257.58) .. (509,262) -- (509,286) .. controls (509,290.42) and (505.42,294) .. (501,294) -- (425,294) .. controls (420.58,294) and (417,290.42) .. (417,286) -- cycle ;
 		%Rounded Rect [id:dp08184078829998631] 
-		\draw  [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][fill={rgb, 255:red, 126; green, 211; blue, 33 }  ,fill opacity=1 ] (300,188) .. controls (300,183.58) and (303.58,180) .. (308,180) -- (373,180) .. controls (377.42,180) and (381,183.58) .. (381,188) -- (381,212) .. controls (381,216.42) and (377.42,220) .. (373,220) -- (308,220) .. controls (303.58,220) and (300,216.42) .. (300,212) -- cycle ;
+		\draw  [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][fill={rgb, 255:red, 126; green, 211; blue, 33 }  ,fill opacity=1 ] (300,188) .. controls (300,183.58) and (303.58,180) .. (308,180) -- (372,180) .. controls (376.42,180) and (380,183.58) .. (380,188) -- (380,212) .. controls (380,216.42) and (376.42,220) .. (372,220) -- (308,220) .. controls (303.58,220) and (300,216.42) .. (300,212) -- cycle ;
 		%Rounded Rect [id:dp9437055363891322] 
 		\draw  [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][fill={rgb, 255:red, 126; green, 211; blue, 33 }  ,fill opacity=1 ] (301,269) .. controls (301,264.58) and (304.58,261) .. (309,261) -- (374,261) .. controls (378.42,261) and (382,264.58) .. (382,269) -- (382,293) .. controls (382,297.42) and (378.42,301) .. (374,301) -- (309,301) .. controls (304.58,301) and (301,297.42) .. (301,293) -- cycle ;
 		%Straight Lines [id:da4572029334299341] 
@@ -1493,7 +1495,7 @@ Die Vorgehensweise zur Erstellung eines Anordnungsklassifikators wurde in Kapite
 		%Straight Lines [id:da8260837866362043] 
 		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (260,420) -- (300,200) ;
 		%Straight Lines [id:da6370346711010084] 
-		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (260,420) -- (300,280) ;
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (261,420) -- (301,280) ;
 		%Straight Lines [id:da20414839850127708] 
 		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (260,360) -- (300,280) ;
 		%Straight Lines [id:da18864076317673573] 
@@ -1506,30 +1508,6 @@ Die Vorgehensweise zur Erstellung eines Anordnungsklassifikators wurde in Kapite
 		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (260,120) -- (300,280) ;
 		%Straight Lines [id:da8425395757812855] 
 		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (260,60) -- (300,280) ;
-		%Straight Lines [id:da678033786205831] 
-		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (380,200) -- (420,100) ;
-		%Straight Lines [id:da10268204898510325] 
-		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (380,200) -- (420,160) ;
-		%Straight Lines [id:da034281361725659654] 
-		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (380,200) -- (420,220) ;
-		%Straight Lines [id:da2643278430637781] 
-		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (380,200) -- (420,280) ;
-		%Straight Lines [id:da4741075133489321] 
-		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (380,200) -- (420,340) ;
-		%Straight Lines [id:da8533320850791501] 
-		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (380,200) -- (420,400) ;
-		%Straight Lines [id:da25537012675579795] 
-		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (380,280) -- (420,100) ;
-		%Straight Lines [id:da11787503920002229] 
-		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (380,280) -- (420,160) ;
-		%Straight Lines [id:da6232291480480245] 
-		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (380,280) -- (420,220) ;
-		%Straight Lines [id:da13449975611434883] 
-		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (380,280) -- (420,280) ;
-		%Straight Lines [id:da6379073358336698] 
-		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (380,280) -- (420,340) ;
-		%Straight Lines [id:da8648604964482902] 
-		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (380,280) -- (420,400) ;
 		%Shape: Rectangle [id:dp9373282017478466] 
 		\draw  [fill={rgb, 255:red, 74; green, 74; blue, 74 }  ,fill opacity=1 ] (547.5,200) -- (603.75,200) -- (603.75,255.26) -- (547.5,255.26) -- cycle ;
 		%Shape: Rectangle [id:dp8258119442037437] 
@@ -1541,79 +1519,88 @@ Die Vorgehensweise zur Erstellung eines Anordnungsklassifikators wurde in Kapite
 		%Shape: Rectangle [id:dp22955626125957718] 
 		\draw  [fill={rgb, 255:red, 74; green, 74; blue, 74 }  ,fill opacity=1 ] (583.75,234.74) -- (640,234.74) -- (640,290) -- (583.75,290) -- cycle ;
 		%Straight Lines [id:da3121848936924858] 
-		\draw [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][line width=1.5]    (520,100) -- (577.6,176.8) ;
-		\draw [shift={(580,180)}, rotate = 233.13] [fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (11.61,-5.58) -- (0,0) -- (11.61,5.58) -- cycle    ;
-		%Straight Lines [id:da4083043177775638] 
-		\draw [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][line width=1.5]    (520,160) -- (537.17,177.17) ;
-		\draw [shift={(540,180)}, rotate = 225] [fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (11.61,-5.58) -- (0,0) -- (11.61,5.58) -- cycle    ;
-		%Straight Lines [id:da46948645691108726] 
-		\draw [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][line width=1.5]    (520,220) -- (537.17,237.17) ;
-		\draw [shift={(540,240)}, rotate = 225] [fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (11.61,-5.58) -- (0,0) -- (11.61,5.58) -- cycle    ;
-		%Straight Lines [id:da6497409957223708] 
-		\draw [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][line width=1.5]    (520,280) -- (537.17,262.83) ;
-		\draw [shift={(540,260)}, rotate = 495] [fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (11.61,-5.58) -- (0,0) -- (11.61,5.58) -- cycle    ;
-		%Straight Lines [id:da6279553174742234] 
-		\draw [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][line width=1.5]    (520,340) -- (537.17,322.83) ;
-		\draw [shift={(540,320)}, rotate = 495] [fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (11.61,-5.58) -- (0,0) -- (11.61,5.58) -- cycle    ;
+		\draw [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][line width=1.5]    (517,152) -- (572.76,185.16) ;
+		\draw [shift={(576.2,187.2)}, rotate = 210.74] [fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (11.61,-5.58) -- (0,0) -- (11.61,5.58) -- cycle    ;
 		%Straight Lines [id:da9804292425008414] 
-		\draw [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][line width=1.5]    (520,400) -- (577.6,323.2) ;
-		\draw [shift={(580,320)}, rotate = 486.87] [fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (11.61,-5.58) -- (0,0) -- (11.61,5.58) -- cycle    ;
+		\draw [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][line width=1.5]    (516,330) -- (566.11,288.74) ;
+		\draw [shift={(569.2,286.2)}, rotate = 500.54] [fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (11.61,-5.58) -- (0,0) -- (11.61,5.58) -- cycle    ;
+		%Straight Lines [id:da9498348064262745] 
+		\draw [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][line width=1.5]    (514.2,274.2) -- (538.84,258.36) ;
+		\draw [shift={(542.2,256.2)}, rotate = 507.26] [fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (11.61,-5.58) -- (0,0) -- (11.61,5.58) -- cycle    ;
+		%Straight Lines [id:da553143017068322] 
+		\draw [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ][line width=1.5]    (515.2,210.2) -- (539.32,220.44) ;
+		\draw [shift={(543,222)}, rotate = 203] [fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (11.61,-5.58) -- (0,0) -- (11.61,5.58) -- cycle    ;
+		%Straight Lines [id:da012047266101314014] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (380,200) -- (417.2,154.2) ;
+		%Straight Lines [id:da07998854227546759] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (380,200) -- (416.2,212.2) ;
+		%Straight Lines [id:da9142355685686447] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (380,200) -- (416.2,275.2) ;
+		%Straight Lines [id:da27077761445957593] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (380,200) -- (416.2,334.2) ;
+		%Straight Lines [id:da28172695947658655] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (382.2,282.2) -- (417.2,154.2) ;
+		%Straight Lines [id:da3673944670219347] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (382.2,282.2) -- (416.2,212.2) ;
+		%Straight Lines [id:da7120289300410392] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (382.2,282.2) -- (416.2,275.2) ;
+		%Straight Lines [id:da8009655178230701] 
+		\draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ][line width=1.5]    (382.2,282.2) -- (416.2,334.2) ;
 		
 		% Text Node
-		\draw (170,55) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {Nearest Neighbor};
+		\draw (170,57) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {Nearest Neighbor};
 		% Text Node
-		\draw (172,106) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {\begin{minipage}[lt]{56.71pt}\setlength\topsep{0pt}
+		\draw (172,106) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {\begin{minipage}[lt]{56.68pt}\setlength\topsep{0pt}
 				\begin{center}
-					Nearest Neighbor\\Exact
+					Neares Neighbor\\Exact
 				\end{center}
 				
 		\end{minipage}};
 		% Text Node
-		\draw (197,177) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\scriptsize Linear}};
+		\draw (192,177) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\scriptsize Linear}};
 		% Text Node
-		\draw (183,235) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\scriptsize Linear Exact}};
+		\draw (179,234) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\scriptsize Linear Exact}};
 		% Text Node
-		\draw (196,296) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\scriptsize Cubic}};
+		\draw (194,296) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\scriptsize Cubic}};
 		% Text Node
-		\draw (198,355) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\scriptsize Area}};
+		\draw (196,357) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\scriptsize Area}};
 		% Text Node
-		\draw (190,415) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\scriptsize Lanczos}};
+		\draw (190,416) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\scriptsize Lanczos}};
 		% Text Node
-		\draw (304,196) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\scriptsize \textbf{Vollskalierung}}};
+		\draw (302,196) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\scriptsize \textbf{Vollskalierung}}};
 		% Text Node
-		\draw (309,260) node [anchor=north west][inner sep=0.75pt]   [align=left] {\begin{minipage}[lt]{44pt}\setlength\topsep{0pt}
+		\draw (309,259) node [anchor=north west][inner sep=0.75pt]   [align=left] {\begin{minipage}[lt]{43.98pt}\setlength\topsep{0pt}
 				\begin{center}
 					\textbf{{\scriptsize schrittweise}}\\\textbf{{\scriptsize Skalierung}}
 				\end{center}
 				
 		\end{minipage}};
 		% Text Node
-		\draw (435,97) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {$\displaystyle 0,15\ \nicefrac{\mu m}{\text{Pixel}}$};
+		\draw (432,149) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {$\displaystyle 0,30\ \nicefrac{\mu m}{\text{Pixel}}$};
 		% Text Node
-		\draw (435,158) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {$\displaystyle 0,20\ \nicefrac{\mu m}{\text{Pixel}}$};
+		\draw (433,208) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {$\displaystyle 0,70\ \nicefrac{\mu m}{\text{Pixel}}$};
 		% Text Node
-		\draw (435,215) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {$\displaystyle 0,30\ \nicefrac{\mu m}{\text{Pixel}}$};
+		\draw (431,269) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {$\displaystyle 1,10\ \nicefrac{\mu m}{\text{Pixel}}$};
 		% Text Node
-		\draw (435,274) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {$\displaystyle 0,70\ \nicefrac{\mu m}{\text{Pixel}}$};
+		\draw (431,329) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {$\displaystyle 1,90\ \nicefrac{\mu m}{\text{Pixel}}$};
 		% Text Node
-		\draw (434,336) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {$\displaystyle 1,10\ \nicefrac{\mu m}{\text{Pixel}}$};
-		% Text Node
-		\draw (434,396) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {$\displaystyle 1,90\ \nicefrac{\mu m}{\text{Pixel}}$};
-		% Text Node
-		\draw (589.07,248.37) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 255; green, 255; blue, 255 }  ,opacity=1 ] [align=left] {\begin{minipage}[lt]{33.93pt}\setlength\topsep{0pt}
+		\draw (588.36,250) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 255; green, 255; blue, 255 }  ,opacity=1 ] [align=left] {\begin{minipage}[lt]{33.92pt}\setlength\topsep{0pt}
 				\begin{center}
-					19.488\\Bilder
+					12.992\\Bilder
 				\end{center}
 				
 		\end{minipage}};
 		% Text Node
-		\draw (27.32,248.37) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 255; green, 255; blue, 255 }  ,opacity=1 ] [align=left] {\begin{minipage}[lt]{28.8pt}\setlength\topsep{0pt}
+		\draw (27.32,250) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 255; green, 255; blue, 255 }  ,opacity=1 ] [align=left] {\begin{minipage}[lt]{28.8pt}\setlength\topsep{0pt}
 				\begin{center}
 					232\\Bilder
 				\end{center}
 				
 		\end{minipage}};
+		
+		
 	\end{tikzpicture}
+
 	\caption{Planungsmodell (2) zur Erzeugung von Versuchsbildern}
 	\label{fig:Planungsmodell(2)}
 \end{figure}
@@ -1694,16 +1681,14 @@ Die Aufgabe, einen allgemeingültigen Anordnungsklassifikator zu entwickeln, der
 
 
 \subsection{Definition der Zielgrößen}
+\label{subsec:DefZiel}
 
 \textcolor{blue}{Hinweis: Mehrgrößenoptimierungsproblem $\to$ Kombination der Einzelwerte zu einer gewichteten Summe...}
 
 xyxyyxxxy
 
-\subsection{Definition der Einflussgrößen}
+\subsection{Definition der Einfluss- und Störgrößen}
 
-\subsection{Modellbildung}
-
-\subsection{Aufbau der Versuchsplanung}
 
 \section{Versuchsdurchführung}
 
@@ -1790,48 +1775,388 @@ xyxyyxxxy
 	\label{fig:Versuchsdurchführung}
 \end{figure}
 
-\subsection{Messung der Bilder mit AMGuss vor und nach der Skalierung}
-
-\subsection{Anwendung \textit{einstufiger} Skalierungen auf die erzeugten Bilder}
-
-\subsection{Anwendung \textit{mehrstufiger} Skalierungen auf die erzeugten Bilder}
-
 
 \chapter{Umsetzung}
 \label{ch:Umsetzung}
 
 \section{Rahmenbedingungen}
+\label{sec:Rahmenbedingungen}
 
-\subsection{Technologie-Stack}
-\label{subsec:TecStack}
+\section{Aktivitätsdiagramme}
+
+\label{sec:Workflows}
+Aktivitätsdiagramme sind Teil von UML (Unifiend Modelling Language) zur Modellierung von Software-Systemen und ein geeignetes Werkzeug, die Kontroll- und Datenflüsse der für diese Arbeit entwickelten Skript-Bibliothek anschaulich darzustellen. Dadurch werden die zu entwickelnden funktionalen Abläufe eindeutig spezifiziert - und zwar unabhängig davon, wie dies später programmatisch und algorithmisch umgesetzt wird. In den folgenden Unterabschnitten werden nun, nach unterschiedlichen Funktionseinheiten gegliedert, diese anhand von Aktivitätsdiagrammen eindeutig beschrieben, um so dem Leser zunächst einen Überblick über die funktionalen Zusammenhänge zu geben.
+
+\subsection{Erstellung einer Bildserie Mit AMGuss}
+\label{sec:FlowErstellungBildserieAMGuss}
+
+\begin{figure}[H]
+	\centering
+	\boxed{\includegraphics[scale=0.8]{pics/flow_create_picture_set_amguss}}
+	\caption{Aktivitätsdiagramm zur Erstellung einer Bildserie mit AMGuss}
+	\label{fig:FlowBildserieErstellen}
+\end{figure}
+
+\section{Erstellung eines Anordnungsklassifikators mit AMGuss}
+
+\section{Durchführung einer Lamellengraphit-Messung mit AMGuss}
+
+\section{Bildskalierung in unterschiedliche Kalibrierungsstufen}
+
+\section{Fehlerwertberechnung und Datenbreitstellung}
 
 \section{Implementierung}
 
-\subsection{Modellierung und algorithmische Beschreibung der Implementierung}
-\label{subsec:Modellierung}
-
-\section{Verwendung von Bildern mit verschiedenen Ausgangskalibrierungen}
-
-\section{Skalierung der erzeugten Bilder (einstufig/mehrstufig)}
-
-\subsection{Bilineare Interpolation}
-
-\subsection{Bikubische Interpolation}
-
-\subsection{Flächenbasierte Interpolation}
-
-\subsection{Nearest-Neighbor-Interpolation}
-
-\subsection{LANCZOS-Interpolation}
 
 \chapter{Evaluation}
 \label{ch:Evaluation}
 
-\section{Vergleich angewendeten Interpolationsverfahren}
+\section{Auswertung der Analysedaten}
+\label{sec:AuswertungAnalysedaten}
 
-\subsection{Laufzeitkomplexität und Performance}
+\subsection{Auswertung der statistischen Versuchsplanung}
+\label{subsubsec:AuswertungStatVpl}
+Wie in Kapitel \ref{sec:StatVersPlanung} ab Seite \pageref{sec:StatVersPlanung} bereits beschrieben, dient die statistische Versuchsplanung dazu sichtbar zu machen, welchen Einfluss die die unterschiedlichen Faktoren (Steuer- und Störgrößen) auf den Zielwert (Messfehler, siehe dazu auch Kapitel \ref{subsec:DefZiel}) haben.Das Ergebnis zeigt die nachstehende Abbildung \ref{fig:DAPareto} sowie Tabelle \ref{tab:DAPareto}, in der die für das Diagramm berechneten Werte tabellarisch dargestellt werden. 
 
-\subsection{Kennzahlenvergleich und Interpretation}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=14cm, height=\textheight, keepaspectratio]{pics/DA_Pareto}
+	\caption{Pareto-Diagramm der standardisierten Effekte}
+	\label{fig:DAPareto}
+\end{figure}
+
+\begin{table}[H]
+	\caption{Berechnete Mittelwerte (über alle Bilder) zum Pareto-Diagramm der standardisierten Effekte}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{pics/Tab_DA_Pareto}
+		\label{tab:DAPareto}
+	\end{figure}
+\end{table}
+
+\noindent Das Diagramm zeigt die Absolutwerte der standardisierten Effekte, geordnet vom größten zum kleinsten. Ein wichtiger Indikator ist die dargestellte Referenzlinie. Nach \cite{minitab_pareto} ist Methode, die Minitab zum Zeichnen des Pareto-Diagramms der Effekte verwendet, abhängig von den Freiheitsgraden für den Fehlerterm. Wenn dieser einen oder mehrere Freiheitsgrade hat, wird die gelbe Linie im Pareto-Diagramm bei t gezeichnet, wobei $t$ das $1-\nicefrac{\alpha}{2}$ - Quantil einer t-Verteilung mit Freiheitsgraden gleich den Graden von Freiheit für den Fehlerterm ist. Minitab bezeichnet dieses Diagramm als Pareto-Diagramm der standardisierten Effekte. Wenn der Fehlerterm null Freiheitsgrade hat, identifiziert Minitab wichtige Effekte mithilfe des Lenth-Pseudostandardfehlers (PSE). Die rote Linie des Pareto-Diagramms wird dann an der Fehlergrenze gezeichnet, die wie folgt lautet:
+
+\begin{equation}
+	ME = t\cdot PSE
+\end{equation}
+
+\noindent Faktoren die diese Linie überschreiten gelten als statistisch signifikant. 
+\\\\
+Wie in Kapitel \ref{ch:Umsetzung} bereits beschrieben wurden Versuchsplanungen für alle 232 Probebilder separat durchgeführt. Um die im Diagramm dargestellten Werte zu berechnen wurde die Werte aller Einzel-Pareto-Diagramme aufsummiert, durch die Anzahl der Bilder geteilt und auf dieser Grundlage ein Pareto-Diagramm der standardisierten Effekte zu erstellen, welches einen Querschnitt über  alle Probebilder liefert.
+\\\\
+\noindent Vor diesem Hintergrund kann also geschlossen werden, dass die Einflussfaktoren \textbf{Interpolationsmodus} und \textbf{Kalibrierung} sowie die Wechselwirkung beider Faktoren insgesamt betrachtet den größten Einfluss auf die Zielgröße haben.
+\\\\
+\noindent Wenngleich das Pareto-Diagramm dadurch wichtige Hinweise zum Verständnis der Daten liefert und die Haupteffekte sichtbar macht, kann damit nicht festgestellt werden, durch welche Effekte den Wert der Antwortvariablen vergrößert oder verkleinert wird. Um diese Fragestellung zu beantworten, wurden weitere Analysen durchgeführt, die im folgenden beschrieben und ausgewertet werden.
+
+
+\subsection{Analyse der eingesetzten Interpolationsverfahren}
+
+Wie im vorigen Abschnitt schon angedeutet geht es in diesem vor allem darum herauszufinden, wie genau sich die bereits identifizierten Haupteffekte auf die durch Skalierung der Bilder induzierten Messfehler auswirken. Da sich der gesamte Messfehler aus unterschiedlichen Messfehlerkategorien zusammensetzt wird dieser nun, nach einer vorausgehenden Gesamtbetrachtung in seine einzelnen Komponenten zerlegt und diese u.a. mit Methoden der deskriptiven Statistik näher untersucht. Ausgehend von der Gesamtbetrachtung ist es so möglich Schritt für Schritt ein tieferes Verständnis über die Wirkungsweise der unterschiedlichen Einflussgrößen (insbesondere der Interpolationsalgorithmen) auf die Zielgröße zu gewinnen.
+
+\subsubsection{Gesamtfehlerbetrachtung}
+\label{subsubsec:AuswertungGesamtfehlerbetrachtung}
+ In Abschnitt \ref{fig:DAPareto} wurde der \textbf{Interpolationsmodus} als Haupteffekt mit dem größten Einfluss auf die Zielvariable identifiziert. Wie jedoch die folgende Abbildung \ref{fig:DAGesamtAbsolut_Alle} in Verbindung mit Tabelle \ref{tab:DAGesamtAbsolutAlle} zeigt, hat diese Einflussgröße zwar ohne Zweifel den größten Effekt, jedoch nicht in die gewünschte Richtung da es ja darum geht den Messfehler zu minimieren. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=11cm, height=\textheight, keepaspectratio]{pics/DA_Gesamt_Absolut_Alle}
+	\caption{Auswertung des Messfehlers (Gesamt)}
+	\label{fig:DAGesamtAbsolut_Alle}
+\end{figure}
+	
+\begin{table}[H]
+	\centering
+	\caption{Daten zur Auswertung des Messfehlers (Gesamt)}
+	\label{tab:DAGesamtAbsolutAlle}
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{pics/Tab_DA_Gesamt_Absolut_Alle}
+\end{table}
+
+\noindent An den berechneten Mittelwerten in der Tabelle ist zu erkennen, das LANCZOS4 über alle Kategorien den geringsten durchschnittlichen Fehler erzeugt. Allerdings zeigen die Daten auch, das dies nicht repräsentativ für alle Kalibrierungsstufen ist. Man betrachte z.B. Kalibrierungsstufe 0,7 bei Vollskalierung - in diesem Bereich liegt der Fehlerwert von Nächster-Nachbar mit ca. 88,41 etwa 4 Einheiten unter dem von LANCZOS4 mit ca. 92,22. Darüber hinaus ist zu beobachten, dass der Fehler mit zunehmender Ausgangskalibrierung wächst. Vergleicht man etwa am Beispiel von LANCZOS4 die Werte bei Kalibrierung  0,3  und 1,9 $\nicefrac{\mu m}{\text{Pixel}}$ stellt man fest, das der Messfehlerwert bei 1,9 $\nicefrac{\mu m}{\text{Pixel}}$ um fast 57 $\%$ über dem bei Kalibrierung 0,3 liegt. Dadurch zeigt sich, dass die Vergrößerung von Bildern (also Verringerung der Kalibrierung) wohl offensichtlich weniger gut funktioniert als in die entgegengesetzte Richtung.
+\\\\
+Betrachtet man dagegen die Streuungsparameter Standardabweichung und Varianz, ergibt sich ein etwas anderes Bild. Während die Standardabweichung über alle Bereiche hinweg sehr niedrig ausfällt und kaum schwankt ist die Varianz, also die Streuung in den Daten wesentlich höher und schwankt im Bereich von ca. 135,62 bei Kalibrierung 0,3 bis ca. 367,18 bei einer Ausgangskalibrierung von 1,9 $\nicefrac{\mu m}{\text{Pixel}}$ (hier am Beispiel von LANCZOS4) ziemlich stark. Ebenfalls ist auffällig, das die kubische Interpolation in den Kalibrierungsbereichen 0,3 und 1,1 $\nicefrac{\mu m}{\text{Pixel}}$ die niedrigste Varianz, also auch im Vergleich zu LANCZOS4 aufweist.  Die nachstehende Abbildung \ref{fig:DAGesamtStreu1Alle} sowie die dazugehörige Datentabelle \ref{tab:DAGesamtStreu1Alle} geben diesen Zusammenhang sehr gut zu erkennen.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=11cm, height=\textheight, keepaspectratio]{pics/DA_Gesamt_Streu1_Alle}
+	\caption{Streuungsparameter (Standardabweichung u. Varianz) bezogen\\ auf den gesamten Messfehler}
+	\label{fig:DAGesamtStreu1Alle}
+\end{figure}
+	
+\begin{table}[H]
+	\centering
+	\caption{Daten zu den berechneten Streuungsparametern (Standardabweichung u. Varianz) bezogen auf den gesamten Messfehler}
+	\label{tab:DAGesamtStreu1Alle}
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{pics/Tab_DA_Gesamt_Streu1_Alle}
+\end{table}
+
+\noindent Hierbei wird deutlich, dass LANCZOS4, wenn auch den geringsten gesamten Messfehler über alle Bereiche, andererseits in einigen Bereichen eine sehr hohe Varianz besitzt (grüne Datenpunkte), was auf eine hohe Streuung hindeutet. Demgegenüber hat die kubische Interpolation über alle Kategorien die geringste Varianz (rote Datenpunkte). Die Frage, welcher Kandidat die höchste Varianz aufweist, kann nicht eindeutig beantwortet werden, da diese sich kategorial unterscheidet. Die entsprechenden Datenpunkte und Werte sind in der Abbildung in der dem entsprechenden Algorithmus jeweils zugeordneten Farbe ebenfalls eingetragen, jedoch nur für die Vollskalierung, um die Grafik nicht zu sehr zu überlagern. 
+\\\\
+Ein weiteres Streuungsmaß, dass sich zur Beschreibung von Daten sehr gut eignet, ist die Variationsbreite, die zeigt, wie weit die Werte genau streuen. Abbildung \ref{fig:DAGesamtStreu2Alle} i. V. m. Tabelle \ref{tab:DAGesamtStreu2Alle} zeigt diesen Sachverhalt und beschreibt in absoluten Zahlen, wie weit die Messfehlerwerte je Interpolationsalgorithmus, Interpolationsmodi und Stufe der Ausgangskalibrierung streuen. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=11cm, height=\textheight, keepaspectratio]{pics/DA_Gesamt_Streu2_Alle}
+	\caption{Streuungsparameter (Variationsbreite) bezogen auf den gesamten Messfehler}
+	\label{fig:DAGesamtStreu2Alle}
+\end{figure}
+
+\begin{table}[H]
+	\centering
+	\caption{Daten zum berechneten Streuungsparameter (Variationsbreite) bezogen auf den gesamten Messfehler}
+	\label{tab:DAGesamtStreu2Alle}
+	\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{pics/Tab_DA_Gesamt_Streu2_Alle}
+\end{table}
+
+
+\noindent Wie zu erwarten ist auch die Variationsbreite bei LANCZOS4 am geringsten (bezogen auf den Mittelwert), jedoch nicht in allen Kalibrierungsstufen. Betrachtet man bspw. die Kalibrierungsstufe $0,3~\nicefrac{\mu m}{\text{Pixel}}$ ist zu erkennen, das LANCZOS4 im Vergleich zur flächenbasierten Interpolation einen minimal höhere Variationsbreite der Messfehlerwerte aufweist. 
+\\\\
+Die Ergebnisse aus diesem Abschnitt lassen sich wie folgt kurz zusammenfassen:
+\\\\
+\colorbox{gray!10}{
+	\label{box:ErgebnisGesamtauswertung}
+	\begin{minipage}{0.975\textwidth}
+		\textbf{\underline{Ergebnis der Gesamtauswertung:}}\\\\
+		Zusammenfassend kann für diesen Abschnitt festgehalten werden, dass die LANCZOS4-Interpolation zwar im Durchschnitt über alle Bereiche den kleinsten Fehler erzeugt. Jedoch allerdings in einigen Bereichen auch eine höhere Streuung aufweist, als die kubische Interpolation, welche zwar die geringste durchschnittliche Varianz besitzt, aber nicht immer den geringsten Fehler erzeugt.
+		\\\\
+		\noindent Des Weiteren kann festgehalten werden, dass die schrittweise Skalierung tendenziell immer größere Fehler erzeugt, als Voll-Skalierung - sehr wahrscheinlich deshalb, weil sich die Fehler bei der mehrfach-Skalierung addieren. 
+		\\\\
+		\noindent Eine weitere wichtige Beobachtung ist die, dass die Verkleinerung von Bildern wohl offensichtlich generell besser funktioniert als die Vergrößerung, da in den Daten ein genereller Trend zu erkennen ist, wonach der Fehler bei zunehmender Ausgangskalibrierung stetig wächst.
+	\end{minipage}
+}
+\\\\\\
+Da die Gesamtbetrachtung noch keine eindeutige Interpretation zulässt, wird nun im weiteren Verlauf der Analyse der Gesamt-Messfehler in seine Bestandteile zerlegt und zunächst innerhalb der Größenklassen (anzahlgewichtet) genauer untersucht.
+
+\subsubsection{Auswertung nach Größenklassen (anzahlgewichtet)}
+\label{subsubsec:AuswertungGKanz}
+Die Größenklassen (anzahlgewichtet) entsprechen den Histogramm-Werten, welche durch die Software AMGuss bei der Durchführung einer Lamellengraphitauswertung als Teil des Analyseergebnisses berechnet werden. Durch die getrennte Erfassung der Abweichungen in den Originalbildern ist es nun möglich, diese Fehlerkategorie separat zu untersuchen. Wie im vorherigen Abschnitt bereits geschehen erfolgt auch hier zunächst einer Gesamtbetrachtung über die Gesamte Kategorie (bestehend aus 8 Klassen). Zusätzlich wird die Analyse noch durch eine Einzel-Fehleranalyse bezogen auf die 8 Größenklassen erweitert. Abbildung \ref{fig:DAGesamtAbsolutGKanzahl} und die damit verbundene Datenbasis in Tabelle \ref{tab:DAGesamtAbsolutGKanzahl} vergleichen wieder zunächst die verschiedenen Interpolationsalgorithmen je Interpolationsmodi und Kalibrierungsstufe.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=11cm, height=\textheight, keepaspectratio]{pics/DA_Gesamt_Absolut_GKanzahl}
+	\caption{Auswertung des Messfehlers (Gesamt) nach Größenklassen (anzahlgewichtet)}
+	\label{fig:DAGesamtAbsolutGKanzahl}
+\end{figure}
+
+\begin{table}[H]
+	\centering
+	\caption{Daten zu den berechneten Messfehlern nach Größenklassen (anzahlgewichtet)}
+	\label{tab:DAGesamtAbsolutGKanzahl}
+	\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{pics/Tab_DA_Gesamt_Absolut_GKanzahl}
+\end{table}
+
+
+\noindent Was sofort auffällt ist, dass die Kurven sich sehr denen aus der Gesamt-Fehlerbetrachtung im letzten Abschnitt ähneln. Auch hier ist eindeutig der Trend zu erkennen, dass der Fehelr sich mit steigender Ausgangskalibrierung vergrößert und das die Fehler bei der schrittweisen Skalierung immer größer ausfallen, als bei Voll-Skalierung. 
+\\\\
+Wenn auch knapp, weist die LANCZOS4-Interpolation hier mit einem Durchschnittswert von ca. 26,12 den geringsten durchschnittlichen Fehler auf. Allerdings erzeugt dieses Interpolationsverfahren, wie im Diagramm zu erkennen, nur im Bereich von 1,1 $\nicefrac{\mu m}{\text{Pixel}}$ bei schrittweiser Skalierung auch tatsächlich den geringsten absoluten Messfehler, der allerdings höher ist als bei vergleichbarer Voll-Skalierung und daher vernachlässigbar. Die jeweils kleinsten Werte sind in der dem jeweiligen Algorithmus zugeordneten Diagrammfarbe entsprechend gekennzeichnet. Man kann daran gut erkennen das die Frage danach, welcher Algorithmus denn in dieser Größenklasse den kleinsten Fehler erzeugt, noch nicht hinreichend beantwortet werden kann.
+\\\\
+Anhand der Streuungsparameter erkennt man, dass die LANCZOS4-Interpolation, wenn auch den geringsten absoluten Fehler, in den meisten Fällen nicht auch die geringste Varianz besitzt wie man in der Abbildungen \ref{fig:DAGesamtStreu1GKanzahl} und \ref{fig:DAGesamtStreu2GKanzahl} i.V.m  den dazugehörigen Datentabellen \ref{tab:DAGesamtStreu1GKanzahl} und \ref{tab:DAGesamtStreu2GKanzahl} eindeutig ablesen kann.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=11cm, height=\textheight, keepaspectratio]{pics/DA_Gesamt_Streu1_GKanzahl}
+	\caption{Streuungsparameter (Standardabweichung und Varianz) nach Größenklassen (anzahlgewichtet)}
+	\label{fig:DAGesamtStreu1GKanzahl}
+\end{figure}
+
+\begin{table}[H]
+	\centering
+	\caption{Daten zu den berechneten Streuungsparametern (Standardabweichung und Varianz) nach Größenklassen (anzahlgewichtet)}
+	\label{tab:DAGesamtStreu1GKanzahl}
+	\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{pics/Tab_DA_Gesamt_Streu1_GKanzahl}
+\end{table} 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=11cm, height=\textheight, keepaspectratio]{pics/DA_Gesamt_Streu2_GKanzahl}
+	\caption{Streuungsparameter (Variationsbreite) nach Größenklassen (anzahlgewichtet)}
+	\label{fig:DAGesamtStreu2GKanzahl}
+\end{figure}
+
+\begin{table}[H]
+	\centering
+	\caption{Daten zum berechneten Streuungsparameter (Variationsbreite) nach Größenklassen (anzahlgewichtet)}
+	\label{tab:DAGesamtStreu2GKanzahl}
+	\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{pics/Tab_DA_Gesamt_Streu2_GKanzahl}
+\end{table}
+
+\noindent Das bedeutet, dass die Fehlerstreuung über alle Bilder in den meisten Kalibrierungsstufen für andere Algorithmen geringer ausfällt. Im direkten Vergleich mit der Gesamtauswertung (vgl. Abbildung \ref{fig:DAGesamtStreu1Alle}) sind hier zwar wesentlich geringere Varianzen im Bereich von $0,3~-~1,1\nicefrac{\mu m}{\text{Pixel}}$ (bei Voll-Skalierung) die, unabhängig vom Interpolationsalgorithmus, schon fast vernachlässigbar erscheinen. In der Kalibrierungsstufe $1,9\nicefrac{\mu m}{\text{Pixel}}$ ist hingegen wieder eine sehr hohe Streuung gegeben.
+\\\\
+\noindent Wie zu Beginn des Abschnitts bereits angekündigt, erfolgt zur vollständigen Betrachtung dieser Größenklassenkategorie nun noch eine Einzelbetrachtung die zeigt, wie sich der Messfehler in den einzelnen Klassen auswirkt (Abbildung \ref{fig:DAEinzelAbsolutGKanzahl}).
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=11cm, height=\textheight, keepaspectratio]{pics/DA_Einzel_Absolut_GKanzahl}
+	\caption{Auswertung des Messfehlers je Größenklasse im Bereich Größenklassen (anzahlgewichtet)}
+	\label{fig:DAEinzelAbsolutGKanzahl}
+\end{figure}
+
+\noindent Auch wenn sich die Interpolationsalgorithmen sowohl in der Datenbasis als auch visuell im Diagramm kaum unterscheiden lassen, können hier wichtige Zusammenhänge abgeleitet werden. Die wichtigsten Unterscheidungsmerkmale sind außerdem farblich gekennzeichnet. Im Durchschnitt erzeugt LANCZOS4 über alle Kategorien den kleinsten Messfehler, wobei sich ein etwas anderes Bild ergibt, wenn man nach Größenklassen differenziert.
+\\\\
+Beispielsweise fällt beim Vergleich von LANCZOS und flächenbasierter Interpolation auf, dass der Messfehler über alle Kalibrierungsstufen in den Größenklassen 1-3 nahezu gegen Null geht, wohingegen in den Kategorien 4-8 ein starker Anstieg beobachtbar ist.Die LANCZOS-Interpolation weist etwa in der Größenklasse 8 mit 19,52 einen mehr als 10 mal höheren Fehlerwert auf, als in der Größenklasse 5 mit ca. 1,88. Bei der flächenbasierten Interpolation  ist der Unterschied dagegen, mit Werten von ca. 3,71 in Größenklasse 5 sowie 23,62 in Klasse 8, etwas geringer, den hier beträgt das Verhältnis mit ca. 6,4 nur etwas mehr als die Hälfte. 
+\\\\
+Da dieses Beispiel mit LANCZOS und flächenbasierter Interpolation nicht zufällig gewählt wurde, sondern auf der Grundlage einer vorhergehenden Datenanalyse, kann der hier dargestellte Zusammenhang auf alle Kalibrierungsstufen übertragen werden. Auch an der Wiederholung des Musters in der Kurve lässt sich dies sehr gut erkennen. 
+\\\\
+\colorbox{gray!10}{
+	\label{box:ErgebnisGesamtauswertung}
+	\begin{minipage}{0.975\textwidth}
+		\textbf{\underline{Ergebnis der Auswertung nach Größenklassen (anzahlgewichtet):}}
+		\\\\
+		Zusammenfassend kann für diesen Abschnitt festgehalten werden, dass die LANCZOS4-Interpolation mit einem Wert von 26,12 zwar über alle Bereiche zwar den kleinsten durchschnittlichen Fehler erzeugt, jedoch nur im Kalibrierungsbereich von 1,1 $\nicefrac{\mu m}{\text{Pixel}}$ bei schrittweise Skalierung auch tatsächlich den kleinsten absoluten Messfehler. Die Streuungsparameter zeigen jedoch das die LANCZOS-Interpolation nicht immer die niedrigste Varianz in den Daten aufweist, sondern nur im Bereich von 0,7 $\nicefrac{\mu m}{\text{Pixel}}$.
+		\\\\
+		Auch bezogen auf die Größenklassen bestätigt sich die bereits im Abschnitt \ref{subsubsec:AuswertungGesamtfehlerbetrachtung} Beobachtung, dass durch Voll-Skalierung im wesentlich geringere Fehler erzeugt werden, als bei vergleichbarer schrittweisen Skalierung.
+		Ein signifikanter Anstieg ist ab einer Kalibrierungsstufe von 1,1 $\nicefrac{\mu m}{\text{Pixel}}$ erkennbar. Jedoch gilt dies nur für die Größenklassen 4-8, wobei die Fehler in den Klassen 1-3 über alle Kalibrierungsstufen und Interpolationsalgorithmen vergleichsweise vernachlässigbar gering ausfallen.
+	\end{minipage}
+}
+\\\\\\
+
+\subsubsection{Auswertung nach Größenklassen (flächengewichtet)}
+\label{subsubsec:AuswertungGKflaeche}
+Wie schon bei den Größenklassen im vorherigen Abschnitt, teilen sich diese wiederum auf in unterschiedliche Kategorien 1-8. Die Auswertung in diesem Abschnitt erfolgt mit denselben statistischen Methoden, um eine größtmögliche Vergleichbarkeit zu gewährleisten.
+\\\\
+\noindent Abbildung \ref{fig:DAGesamtAbsolutGKflaeche} sowie die Datentabelle \ref{tab:DAGesamtAbsolutGKflaeche} zeigen zunächst wieder das Gesamtbild der Datenverteilung in den unterschiedlichen Kalibrierungsstufen.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=11cm, height=\textheight, keepaspectratio]{pics/DA_Gesamt_Absolut_GKfläche}
+	\caption{Auswertung des Messfehlers (Gesamt) nach Größenklassen (flächengewichtet)}
+	\label{fig:DAGesamtAbsolutGKflaeche}
+\end{figure}
+
+\begin{table}[H]
+	\caption{Messdaten zur Auswertung des Messfehlers (Gesamt) nach Größenklassen (flächengewichtet)}
+	\label{tab:DAGesamtAbsolutGKflaeche}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{pics/Tab_DA_Gesamt_Absolut_GKfläche}
+	\end{figure}
+\end{table}
+
+\noindent Im Vergleich mit den Größenklassen (anzahlgewichtet) ist hier ein ganz ähnlicher Verlauf zu erkennen, allerdings ist es nun die kubische Interpolation (rote Datenpunkte), die mit einem gemittelten Wert von ca. 28,73 über alle Bereiche den geringsten Fehler erzeugt. Jedoch ergibt sich auch wieder ein etwas anderes Bild, wenn man untersucht, für welche Kategorien das letztendlich auch wirklich zutrifft. Die Abbildung zeigt daher jeweils auch die minimalen Werte an, außer in den Fällen in denen die kubische Interpolation tatsächlich auch den geringsten Fehler aufweist. 
+\\\\
+\noindent Die Streuungsparameter Standardabweichung und Varianz zeigen auf den ersten Blick nahezu exakt den selben Verlauf wie in Abschnitt \ref{subsubsec:AuswertungGKanz}, allerdings sind auch unterschiedliche Algorithmen für die jeweils größten und kleinsten Fehler verantwortlich (Abbildung \ref{fig:DAGesamtStreu1GKfläche} i.V.m. Datentabelle \ref{tab:DAGesamtStreu1GKflaeche} sowie Abbildung \ref{fig:DAGesamtStreu2GKfläche} und Datentabelle \ref{tab:DAGesamtStreu2GKflaeche}).
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=11cm, height=\textheight, keepaspectratio]{pics/DA_Gesamt_Streu1_GKfläche}
+	\caption{Streuungsparameter (Standardabweichung u. Varianz) nach Größenklassen (flächengewichtet)}
+	\label{fig:DAGesamtStreu1GKfläche}
+\end{figure}
+
+\begin{table}[H]
+	\caption{Daten zu den berechneten Streuungsparametern (Standardabweichung u. Varianz) nach Größenklassen (flächengewichtet)}
+	\label{tab:DAGesamtStreu1GKflaeche}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{pics/Tab_DA_Gesamt_Streu1_GKfläche}
+	\end{figure}
+\end{table}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=14cm, height=\textheight, keepaspectratio]{pics/DA_Gesamt_Streu2_GKfläche}
+	\caption{Streuungsparameter (Variationsbreite) nach Größenklassen (flächengewichtet)}
+	\label{fig:DAGesamtStreu2GKfläche}
+\end{figure}
+
+\begin{table}[H]
+	\caption{Daten zum berechneten Streuungsparameter (Variationsbreite) nach Größenklassen (flächengewichtet)}
+	\label{tab:DAGesamtStreu2GKflaeche}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{pics/Tab_DA_Gesamt_Streu2_GKfläche}
+	\end{figure}
+\end{table}
+
+\noindent Während die Standardabweichung mit einem Wert von im Mittel ca. 4,35 und einer Variationsbreite von gerade mal ca. 0,42 sehr gering ist und kaum schwankt, zeigen die Varianzen wieder, dass die kubische Interpolation in fast allen Bereichen nur mittelmäßig abschneidet. Das ist an den eingezeichneten minimalen und maximalen Datenpunkten zu erkennen, denn nur im Bereich von 1,1 $\nicefrac{\mu m}{\text{Pixel}}$ (schrittweise Skalierung) weist die kubische Interpolation auch tatsächlich die geringste Varianz auf.
+\\\\
+\noindent Zur Vervollständigung der Analyse in diesem Bereich, folgt nun wieder eine Einzelbetrachtung der Größenklassen (flächengewichtet). In der nachstehenden Abbildung \ref{fig:DAEinzelAbsolutGKflaeche} ist zu erkennen, dass wiederum in den Klassen 4-8 ein signifikanter Anstieg der Fehlerwerte vorliegt.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=14cm, height=\textheight, keepaspectratio]{pics/DA_Einzel_Absolut_GKfläche}
+	\caption{Auswertung des Messfehlers (Einzel) nach Größenklassen (flächengewichtet)}
+	\label{fig:DAEinzelAbsolutGKflaeche}
+\end{figure}
+
+\noindent Für den im Diagramm eingezeichneten Vergleich (rote Datenpunkte) wurde die kubische Interpolation gewählt, weil bei diesem Interpolationsverfahren über alle Größenklassen der geringste durchschnittliche Messfehler auftritt. Dabei ist festzustellen, das bspw. wie hier in Kalibrierungsstufe 1,9 $\nicefrac{\mu m}{\text{Pixel}}$ (Vollskalierung), der Fehlerwert in Größenklasse 8 mit ca. 10,87 nur etwa 3,4 mal höher ist als in Klasse 5 mit ca. 3,15. Außerdem ist sowohl bei Voll- als auch bei der schrittweisen Skalierung jeweils ein Knick in der im Bereich der Größenklasse 7 auffällig, bei dem die Fehlerwerte im verglichen mit Klasse 6 zunächst absinken und dann wieder sehr stark ansteigen. 
+\\\\
+\colorbox{gray!10}{
+	\label{box:Ergebnis der Auswertung nach Größenklassen (flächengewichtet):}
+	\begin{minipage}{0.975\textwidth}
+		\textbf{\underline{Ergebnis der Auswertung nach Größenklassen (flächengewichtet):}}
+		\\\\
+		Es wurde in diesem Teil der Analyse festgestellt, dass die kubische Interpolation mit einem  Fehler von 28,72 einen über alle Bereiche geringsten durchschnittlichen Wert aufweist, aber nur im bei Kalibrierung von 0,7 $\nicefrac{\mu m}{\text{Pixle}}$ bei Voll-Skalierung auch den tatsächlich kleinsten absoluten Wert. Die Streuungsparameter zeigen bei einer konstant sehr niedrigen Standardabweichung, dass bei der die kubischen Interpolation nur im Bereich 1,1 $\nicefrac{\mu m}{\text{Pixel}}$ auch die kleinste Varianz in den Daten gegeben ist.
+		\\\\
+		Wie auch an früherer Stelle schon festgestellt gilt auch hier wieder, dass die Verkleinerung von Bildern geringere Fehler erzeugt, als die Vergrößerung. Bedeutende Anstiege des Fehlers ist auch hier ab Kalibrierungsstufe 1,1 $\nicefrac{\mu m}{\text{Pixel}}$ gegeben, was jedoch wieder nur für die Größenklassen 4-8 zutreffend ist.
+	\end{minipage}
+}
+	
+\subsubsection{Auswertung nach Anordnungsklassen}
+
+Die Bestimmung der Anordnungsklassen ist ebenfalls ein von der Software AMGuss bei Durchführung einer Lamellengraphitauswertung zurückgegebenes Ergebnis, bei dem die Häufigkeiten der gefundenen Anordnungsklassen (vgl. auch Bild \ref{fig:Anordnungsklassen} auf Seite \pageref{fig:Anordnungsklassen}) auch in einem Histogramm dargestellt werden.  Diese Kategorie soll nun abschließend ebenfalls eingehend untersucht werden und im Anschluss daran alle Teilergebnisse zu einer Gesamtauswertung zusammengefasst werden.
+\\\\
+\noindent Die nachstehende Abbildung \ref{fig:DAGesamtAbsolutAKL} i.V.m. Datentabelle \ref{tab:DAGesamtAbsolutAKL} zeigen an, dass die LANCZOS4-Interpolation mit einem durchschnittlichen absoluten Fehlerwert über alle Bilder den geringster Fehler verursacht. Doch bei genauerer Betrachtung stellt sich heraus, dass dies in keinem Bereich dem tatsächlich geringsten absoluten Fehler entspricht. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=11cm, height=\textheight, keepaspectratio]{pics/DA_Gesamt_Absolut_AKL}
+	\caption{Auswertung des Messfehler nach Anordnungsklassen}
+	\label{fig:DAGesamtAbsolutAKL}
+\end{figure}
+
+\begin{table}[H]
+	\caption{Messdaten zur Auswertung des Messfehler nach Anordnungsklassen}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{pics/Tab_DA_Gesamt_Absolut_GKfläche}
+		\label{tab:DAGesamtAbsolutAKL}
+	\end{figure}
+\end{table}
+
+Zu erkennen ist das wieder an den farbig markierten Datenpunkten die ebenfalls angeben, welcher Algorithmus in der jeweiligen Kategorie den geringsten Wert aufweist. Wie man unschwer erkennen kann, ergibt sich auch hier wieder ein sehr unklares Bild, da der Algorithmus, welcher über aller Bilder den geringsten durchschnittlichen Fehler in dieser Kategorie aufweist, nicht derselbe ist, der in den unterschiedlichen Kalibrierungsstufen und Interpolationsmodi auch zum geringsten Fehler führt - und zwar in keinem einzigen Bereich.
+\\\\
+Die Streuungsparameter zeigen ebenfalls hohe Varianzen an, 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=14cm, height=\textheight, keepaspectratio]{pics/DA_Gesamt_Streu1_AKL}
+	\caption{Streuungsparameter (Standardabweichung u. Varianz) nach Anordnungsklassen}
+	\label{fig:DAGesamtStreu1AKL}
+\end{figure}
+
+\begin{table}[H]
+	\caption{Daten zu den berechneten Streuungsparametern (Standardabweichung u. Varianz) nach Anordnungsklassen}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{pics/Tab_DA_Gesamt_Streu1_AKL}
+		\label{tab:DAGesamtStreu1GAKL}
+	\end{figure}
+\end{table}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=14cm, height=\textheight, keepaspectratio]{pics/DA_Gesamt_Streu2_AKL}
+	\caption{Streuungsparameter (Variationsbreite) nach Anordnungsklassen}
+	\label{fig:DAGesamtStreu2AKL}
+\end{figure}
+
+\begin{table}[H]
+	\caption{Daten zum berechneten Streuungsparameter (Variationsbreite) nach Anordnungsklassen}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{pics/Tab_DA_Gesamt_Streu2_AKL}
+		\label{tab:DAGesamtStreu2GAKL}
+	\end{figure}
+\end{table}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=14cm, height=\textheight, keepaspectratio]{pics/DA_Einzel_Absolut_AKL}
+	\caption{Auswertung des Messfehlers (Einzel) nach Anordnungsklassen}
+	\label{fig:DAEinzelAbsolutAKL}
+\end{figure}
+
+Auf Daten wird hier aus Darstellungsgründen verzichtet...
 
 \chapter{Zusammenfassung und Auswertung}
 
