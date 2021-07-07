@@ -1175,14 +1175,6 @@ Um eine Lamellenguss-Auswertung mit der Software AMGuss durchzuführen, müssen 
 
 \noindent Die Bildserie muss danach erneut über den Dialog \textbf{\glqq Bildserien speichern\grqq} abgespeichert werden.
 \\\\
-Die durch diesen Prozess erzeugte .cia-Datei ist eine Textdatei, welche Informationen über das Bild, also den Pfad zum Speicherort und die entsprechende Kalibrierung enthält. Den Inhalt der erzeugten Datei zeigt die nachstehende Abbildung \ref{fig:CiaContent}.
-
-\begin{figure}[H]
-	\centering
-	\boxed{\includegraphics[scale=0.45]{pics/CiaContent}}
-	\caption{Inhalt einer .cia-Datei für eine Bildserie}
-	\label{fig:CiaContent}
-\end{figure}
 
 \noindent In diesem Fall enthält die Serie nur ein Bild. Bei mehreren Bildern werden auch diese hier entsprechend aufgeführt.
 \\\\
@@ -1311,7 +1303,7 @@ Die Vorgehensweise zur Erstellung eines Anordnungsklassifikators wurde in Kapite
 \noindent Die Aufgabe besteht darin zu untersuchen und nachzuweisen, wie sich die Anwendung verschiedener Interpolationsalgorithmen bei der Bildtransformation bzw. Veränderung der Bildskalierungen auf die Messgenauigkeit bei der Durchführung von Lamellengraphitauswertungen mit der Software AMGuss auswirken. 
 
 \section{Erzeugung von Bildern mit unterschiedlichen Ausgangskalibrierungen}
-
+\label{sec:ErzeugungVonBildern}
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1, scale=0.7, every node/.style={scale=0.7}]
@@ -1779,16 +1771,44 @@ xyxyyxxxy
 \chapter{Umsetzung}
 \label{ch:Umsetzung}
 
-\section{Rahmenbedingungen}
-\label{sec:Rahmenbedingungen}
+Dieses Kapitel beschäftigt sich mit der Umsetzung, also dem Teil der vorliegenden Arbeit bei dem es darum ging, die Aufgabe, nämlich insgesamt 12.992 Lamellengraphit-Messungen mit der Software AMGuss zur Datengenerierung, sowie 232 statistische Versuchsplanungen mir der Minitab (einer Statistik-Software) durchzuführen, umzusetzen. Da eine manuelle Durchführung der Messungen jeden zeitlichen Rahmen gesprengt hätte, wurde dieser Prozess weitestgehend automatisiert.
+\\\\
+\noindent Für die Implementierung wurde die Skriptsprache Python gewählt, da diese auch die Möglichkeit bietet, einen objektorientierten Programmierstil umzusetzen. Darüber hinaus war es durch die Einbindung der Bibliothek PyAutoIt möglich, die gesamte Funktionalität von AutoIt (siehe auch Abschnitt \ref{sec:UeberblickAutoIt} auf Seite \pageref{sec:UeberblickAutoIt}) verfügbar und nutzbar zu machen. Dadurch konnte die Automatisierung der durchzuführenden Messungen in Verbindung mit einem objektorientierten Programmierstil sehr gut umgesetzt werden.
+\\\\
+\noindent Nach einer Darstellung der Komponentenstruktur als Überblick über die Implementierung, folgt dann in weiteren Abschnitten die Beschreibung der zu Implementierenden Funktionalität anhand von Aktivitätsdiagrammen und schließlich die Klassendiagramme die zeigen, wie die Objektorientierung dabei geholfen hat, das die einzelnen Aufgaben in Teilaufgaben zerlegt und separat durchgeführt werden konnten.
+
+\newpage
+
+\section{Darstellung der Komponenten}
+\label{sec:Komponentendarstellung}
+
+Wie bereits angedeutet, wurde die Gesamtaufgabe auf verschiedene, aufeinander aufbauende Arbeitsschritte aufgeteilt. Diese Komponenten erzeugen Daten, speichern diese in einer dafür implementierten Datenstruktur, die dann schließlich serialisiert, gespeichert und so für die Nutzung weitere Komponenten verfügbar gemacht wird. Abbildung xyz zeigt die einzelnen Bestandteile wobei anzumerken ist, das diese nicht, wie im herkömmlichen Sinne der objektorientierten Programmierung über implementierte Schnittstellen verbunden sind. Vielmehr handelt es sich um völlig getrennte Funktionseinheiten. Die Pfeil-Konnektoren, welche die Komponenten miteinander verbinden, symbolisieren also Abhängigkeitsbeziehungen in dem Sinne, das die Komponente auf welche die Pfeilspitze zeigt auf die Ergebnisse derjenigen am anderen Endes des Pfeils voraussetzt.
+
+\begin{figure}[H]
+	\centering
+	\boxed{\includegraphics[scale=0.8]{pics/components}}
+	\caption{Darstellung der Systemkomponenten und Abhängigkeiten}
+	\label{fig:Komponentendiagramm}
+\end{figure}
+
+
 
 \section{Aktivitätsdiagramme}
 
 \label{sec:Workflows}
-Aktivitätsdiagramme sind Teil von UML (Unifiend Modelling Language) zur Modellierung von Software-Systemen und ein geeignetes Werkzeug, die Kontroll- und Datenflüsse der für diese Arbeit entwickelten Skript-Bibliothek anschaulich darzustellen. Dadurch werden die zu entwickelnden funktionalen Abläufe eindeutig spezifiziert - und zwar unabhängig davon, wie dies später programmatisch und algorithmisch umgesetzt wird. In den folgenden Unterabschnitten werden nun, nach unterschiedlichen Funktionseinheiten gegliedert, diese anhand von Aktivitätsdiagrammen eindeutig beschrieben, um so dem Leser zunächst einen Überblick über die funktionalen Zusammenhänge zu geben.
+Aktivitätsdiagramme sind Teil von UML (Unifiend Modelling Language) zur Modellierung von Software-Systemen und ein geeignetes Werkzeug, die Kontroll- und Datenflüsse der für diese Arbeit entwickelten Skript-Bibliothek anschaulich darzustellen. Dadurch werden die zu entwickelnden funktionalen Abläufe eindeutig spezifiziert - und zwar unabhängig davon, wie dies später programmatisch und algorithmisch umgesetzt wird. In den folgenden Unterabschnitten werden nun, nach unterschiedlichen Funktionseinheiten gegliedert, diese anhand von Aktivitätsdiagrammen eindeutig beschrieben, um so dem Leser zunächst einen Überblick über die funktionalen Zusammenhänge zu geben. Die Reihenfolge der Darstellung folgt dabei den dargestellten Abhängigkeiten im Komponentendiagramm.
 
-\subsection{Erstellung einer Bildserie Mit AMGuss}
-\label{sec:FlowErstellungBildserieAMGuss}
+\subsection{Bildskalierung in unterschiedliche Kalibrierungsstufen}
+
+Die Erzeugung von Bildern in unterschiedlichen Kalibrierungsstufen entspricht der im Abschnitt \ref{sec:ErzeugungVonBildern} auf Seite \pageref{sec:ErzeugungVonBildern} bereits eingehend beschriebenen Vorgehensweise.
+
+\subsection{Erstellung einer Bildserie mit AMGuss}
+\label{subsec:FlowErstellungBildserieAMGuss}
+
+Um eine Lamellenguss-Auswertung mit der Software AMGuss durchzuführen, sollte für jedes zu messende Bild eine sog. Bildserie vorliegen. Es können grundsätzlich auch Serien mit mehreren Bildern erstellt und auf einmal gemessen werden, jedoch hat sich dies nach Durchführung mehrerer Versuche im vorliegenden Kontext als nicht zweckmäßig erwiesen. Daher wurde für jedes zu messende Bild eine eigene Bildserie erstellt
+\\\\
+\noindent Der funktionale Ablauf dabei ist in der folgenden Abbildung \ref{fig:FlowBildserieErstellen} dargestellt.
+
 
 \begin{figure}[H]
 	\centering
@@ -1797,15 +1817,33 @@ Aktivitätsdiagramme sind Teil von UML (Unifiend Modelling Language) zur Modelli
 	\label{fig:FlowBildserieErstellen}
 \end{figure}
 
-\section{Erstellung eines Anordnungsklassifikators mit AMGuss}
+\noindent Im Ergebnis wird dadurch von AMGuss eine Textdatei.cia erzeugt, welche Informationen über das Bild, also den Pfad zum Speicherort und ggf. noch weitere Bildinformationen enthält. Den Inhalt der erzeugten Datei zeigt die nachstehende Abbildung \ref{fig:CiaContent}.
 
-\section{Durchführung einer Lamellengraphit-Messung mit AMGuss}
+\begin{figure}[H]
+	\centering
+	\boxed{\includegraphics[scale=0.45]{pics/CiaContent}}
+	\caption{Inhalt einer .cia-Datei für eine Bildserie}
+	\label{fig:CiaContent}
+\end{figure}
 
-\section{Bildskalierung in unterschiedliche Kalibrierungsstufen}
+\noindent Am Ende wird die erzeugte cia-Datei gespeichert, sowie auch der Pfad zum Speicherort, so das bei späteren Verwendung darauf zugegriffen werden kann.
 
-\section{Fehlerwertberechnung und Datenbreitstellung}
+\subsection{Durchführung einer Lamellengraphit-Messung mit AMGuss}
+\label{subsec:FlowLamellengussmessung}
 
-\section{Implementierung}
+\begin{figure}[H]
+	\centering
+	\boxed{\includegraphics[scale=0.8]{pics/flow_lamellar_graphite_evaluation}}
+	\caption{Aktivitätsdiagramm zur Durchführung einer Lamellengraphit-Messung mit AMGuss}
+	\label{fig:FlowLamellengussMessung}
+\end{figure}
+
+\section{Extraktion der Messergebnisse aus den mit AMGuss gespeicherten Messungen}
+
+\section{Durchführung der statistischen Analyse mit Minitab}
+
+\section{Datenbereitstellung in Excel}
+
 
 
 \chapter{Evaluation}
