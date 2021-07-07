@@ -1110,117 +1110,6 @@ Im kleinen Fenster (oben rechts) lässt sich dann eine Anordnungsklasse auswähl
 \\\\
 \textcolor{red}{$\to$ Vllt. ein Beispiel eines Klassifikators in den Anhang???}
 
-\subsection{Durchführung einer Lamellengraphit-Auswertung mit AMGuss}
-\label{subsec:LamelloGraphMesssung}
-Zur Erfüllung der Zielsetzung in dieser Arbeit ist eine umfangreiche statistische Analyse durchzuführen, wobei die Daten dafür mit der Software AMGuss generiert werden müssen. Dazu werden sehr viele Messungen notwendig sein, weshalb die Vorgehensweise zur Durchführung einer Messung mit dieser Software hier auch einmal im Detail beschrieben werden soll. Aufbauend darauf wird dann in Kapitel \ref{subsec:Modellierung} ab Seite \pageref{subsec:Modellierung} gezeigt, wie diese Messungen unter Verwendung von AUTOIT (einer Skriptsprache zur automatisierten Steuerung von Windows-Benutzeroberflächen) vollständig automatisiert durchgeführt werden können, was im Rahmen dieser Arbeit dann schließlich auch umgesetzt wird.
-\\\\
-Um eine Lamellenguss-Auswertung mit der Software AMGuss durchzuführen, müssen folgende Voraussetzungen erfüllt sein:
-
-\begin{enumerate}
-	\item Es muss ein oder mehrere Probenbilder mit Lamellengraphit vorliegen und die Kalibrierung in $\nicefrac{\mu m}{\text{Pixel}}$ muss bekannt sein, 
-	\item es muss ein Anordnungsklassifikator für eine Bildkalibrierung erstellt worden sein, die der des zu messenden Probebildes entspricht (vgl. dazu auch Kapitel \ref{subsec: ErstellungAnordnungsklassifAMGuss}) und
-	\item die zu messenden Bilder sollten in einer AMGuss-Bildserie (.cia-Datei) vorliegen.	
-\end{enumerate}
-
-\noindent Abbildung \ref{fig:ImgCalib10} zeigt das Beispiel eines vorliegenden Probenbildes mit Lamellengraphit, welches eine Kalibrierung von $1,0~\nicefrac{\mu m}{\text{Pixel}}$ besitzt.
-
-\begin{figure}[H]
-	\centering
-	\boxed{\includegraphics[scale=0.299]{pics/ImgCalib10}}
-	\caption{Probenbild mit einer Kalibrierung von $1,0~\nicefrac{\mu m}{\text{Pixel}}$}
-	\label{fig:ImgCalib10}
-\end{figure}
-
-\noindent Es wird an dieser Stelle vorausgesetzt, das bereits ein Anordnungsklassifikator für diese Kalibrierung erstellt wurde und daher an dieser Stelle nicht mehr weiter darauf eingegangen.
-\\\\
-\noindent Was nun in Vorbereitung auf die Durchführung der Messung zu tun ist, ist die Erstellung einer Bildserie mit AMGuss. Eine solche kann ein oder mehrere Bilder beinhalten und wird folgendermaßen erstellt:
-\\\\
-\noindent Zunächst wird das Bild mit AMGuss geöffnet und über den Dialog \textbf{\glqq Neue Bildserie\grqq}~zu einer neuen Bildserie hinzugefügt (Aktives Bild in die Bildserie einfügen), wie in folgender Abbildung \ref{fig:ImgAddToSet} dargestellt.
-
-\begin{figure}[H]
-	\centering
-	\boxed{\includegraphics[scale=0.5]{pics/ImgAddToSet}}
-	\caption{Probenbild mit einer Kalibrierung von $1,0~\nicefrac{\mu m}{\text{Pixel}}$}
-	\label{fig:ImgAddToSet}
-\end{figure}
-
-\noindent Das Bild wird daraufhin der Bildserie hinzugefügt wie am linken unteren Rand der Benutzeroberfläche zu erkennen (Abbildung \ref{fig:ImgPicBar}). Die Serie kann nun über den selben Dialog abgespeichert werden (Abbildung \ref{fig:ImgSetSave}).
-
-\begin{minipage}{1.0\linewidth}
-	\begin{minipage}[t]{0.3\linewidth}\vspace{0pt}
-		\begin{figure}[H]
-			\boxed{\includegraphics[scale=0.55]{pics/ImgAddedToSet}}
-			\caption{Probenbild mit einer Kalibrierung von $1,0~\nicefrac{\mu m}{\text{Pixel}}$}
-			\label{fig:ImgPicBar}
-		\end{figure}
-	\end{minipage}
-	\begin{minipage}[t]{0.69\linewidth}\vspace{0pt}
-		\begin{figure}[H]
-			\centering
-			\boxed{\includegraphics[scale=0.4]{pics/ImgSetSave}}
-			\caption{Probenbild mit einer Kalibrierung von $1,0~\nicefrac{\mu m}{\text{Pixel}}$}
-			\label{fig:ImgSetSave}
-		\end{figure}
-	\end{minipage}
-\end{minipage}
-\\\\\\
-\noindent Danach muss die gespeicherte Bildserie über den Dialog \textbf{\glqq Bildserie öffnen\grqq} geöffnet und die Kalibrierung für das Bild in dieser Serie über den Dialog \textbf{\glqq Kalibrierung für Bildserie \grqq} eingegeben werden (Abbildung \ref{fig:ImgSetCalibration}). Der Schritt ist sehr wichtig, da die Software diese Information unbedingt benötigt, um bestimmungsgemäß arbeiten zu können. 
-
-\begin{figure}[H]
-	\centering
-	\boxed{\includegraphics[scale=0.35]{pics/ImgSetCalibration}}
-	\caption{Festlegung der Kalibrierung für eine neue Bildserie}
-	\label{fig:ImgSetCalibration}
-\end{figure}
-
-\noindent Die Bildserie muss danach erneut über den Dialog \textbf{\glqq Bildserien speichern\grqq} abgespeichert werden.
-\\\\
-
-\noindent In diesem Fall enthält die Serie nur ein Bild. Bei mehreren Bildern werden auch diese hier entsprechend aufgeführt.
-\\\\
-Somit sind aller erforderlichen Schritte  erledigt und die Lamellengraphit-Auswertung kann nun durchgeführt werden. Über die Schaltfläche \textbf{\glqq Lamellenguss-Auswertung starten\grqq} muss zunächst bestätigt werden, dass die bereits geöffnete Bildserie Für die Messung verwendet werden soll. Danach erscheint der Dialog zur Auswahl eines Anordnungsklassifikators, der für diese Messung verwendet werden soll.Danach erscheint das in Abbildung \ref{fig:LamelloResultWindowBlank} dargestellte Ergebnisfenster.
-
-\begin{figure}[H]
-	\centering
-	\boxed{\includegraphics[scale=0.6]{pics/LamelloResultWindowBlank}}
-	\caption{Starten einer Lamellenguss-Messung mit AMGuss}
-	\label{fig:LamelloResultWindowBlank}
-\end{figure}
-
-\noindent Über die Schaltfläche \textbf{\glqq Hinzunehmen\grqq} können die gewünschten Bilder zur Messung hinzugefügt und der Messvorgang gestartet werden. Das Ergebnis zeigt Abbildung \ref{fig:LamelloResult}.
-
-\begin{figure}[H]
-	\centering
-	\boxed{\includegraphics[scale=0.6]{pics/LamelloResultArea}}
-	\caption{Ergebnisdarstellung (flächengewichtet) nach Durchführung einer Lamellenguss-Messung}
-	\label{fig:LamelloResultArea}
-\end{figure}
-
-\noindent Im Histogramm sind die gemessenen Flächenanteile nach Größenklassen dargestellt. Die Ansicht kann mit der Schaltfläche \textbf{\glqq Anordnung\grqq} umgeschaltet und die nach Anordnungsklassen gewichteten Anteile angezeigt werden (Abbildung \ref{fig:LamelloResultArrangementClasses}).
-
-\begin{figure}[H]
-	\centering
-	\boxed{\includegraphics[scale=0.6]{pics/LamelloResultArrangementClasses}}
-	\caption{Ergebnisdarstellung (nach Anordnungsklassen) nach Durchführung einer Lamellenguss-Messung}
-	\label{fig:LamelloResultArrangementClasses}
-\end{figure}
-
-\noindent Aus diesem Messergebnis lässt sich dann schließlich über die Schaltfläche \textbf{\glqq Anzeige und Ausgabe des Messprotokolls\grqq}, nach Auswahl des gewünschten Protokoll-Layouts und Bestätigung der Schaltfläche \textbf{\glqq Protokoll anzeigen\grqq} ein Messprotokoll zur Dokumentation der durchgeführten Messung erzeugen (Abbildung \ref{fig:LamelloReport}).
-
-\begin{figure}[H]
-	\centering
-	\boxed{\includegraphics[scale=0.8]{pics/LamelloReport}}
-	\caption{Darstellung eines AMGuss-Messprotokolls}
-	\label{fig:LamelloReport}
-\end{figure}
-
-\noindent Im nächsten Abschnitt dieses Kapitels werden nun die hier dargestellten Messergebnisse einer genaueren Betrachtung unterzogen.
-
-\subsection{Erläuterungen zum Verständnis der Messergebnisse einer Lamellengraphit-Auswertung}
-\label{subsec:ErgebnisseAMGuss}
-Im folgenden werden die Messergebnisse aus den in Abbildung \ref{fig:LamelloReport} dargestellten Messprotokolle entschlüsselt und die Bedeutung einzelner Werte genauer beschrieben. Dabei wird nicht zwischen a) und b) unterschiedenen, da die Werte in beiden Protokollen
-
-
 
 \section{Zur Verfügung stehendes Bildmaterial}
 \label{subsec:Bildmaterial}
@@ -1800,14 +1689,58 @@ Aktivitätsdiagramme sind Teil von UML (Unifiend Modelling Language) zur Modelli
 
 \subsection{Bildskalierung in unterschiedliche Kalibrierungsstufen}
 
-Die Erzeugung von Bildern in unterschiedlichen Kalibrierungsstufen entspricht der im Abschnitt \ref{sec:ErzeugungVonBildern} auf Seite \pageref{sec:ErzeugungVonBildern} bereits eingehend beschriebenen Vorgehensweise.
+Die Erzeugung von Bildern in unterschiedlichen Kalibrierungsstufen entspricht der im Abschnitt \ref{sec:ErzeugungVonBildern} auf Seite \pageref{sec:ErzeugungVonBildern} bereits eingehend beschriebenen Vorgehensweise und die nachstehende \textbf{Abbildung xyz} zeigt den funktionalen Ablauf entsprechend der umgesetzten Implementierung.
+
+\begin{figure}[H]
+	\centering
+	\boxed{\includegraphics[scale=0.8]{pics/scaling_images}}
+	\caption{Aktivitätsdiagramm zur Erstellung einer Bildserie mit AMGuss}
+	\label{fig:Bilskalierung}
+\end{figure}
+
+\noindent Die Skalierung der Bilder erfolgt dabei jeweils in 4 Kalibrierungsstufen, mit 7 verschiedenen Interpolationsalgorithmen, wie in Kapitel \ref{sec:ErzeugungVonBildern} auf Seite \pageref{sec:ErzeugungVonBildern} bereits ausführlich beschrieben wurde. Am Ende des Vorgangs existieren also von jedem Bild insgesamt 56 skalierte Kopien. Die Pfade zu den jeweiligen Speicherorten werden in einer entsprechenden Datenstruktur gespeichert und so für die weitere Verwendung bereitgestellt.
+\\\\
+Es sei an dieser Stelle auf den Unterschied zwischen der schrittweisen und der Vollskalierung hingewiesen. Der Unterschied besteht darin, dass bei der Vollskalierung das Bilder entsprechend dem berechneten Skalierungsfaktor im  einem Schritt berechnet wird. Bei der schrittweisen Skalierung, wird das Bild in mehreren gleichmäßigen Schritten skaliert. Der Skalierungsfaktor berechnet sich in beiden Fällen wie folgt:
+
+\begin{equation}
+	S_{fac} = \frac{\text{aktuelle Kalibrierung}}{Zielkalibrierung}
+\end{equation}
+mit
+\begin{conditions}
+	S_{fac} & Skalierungsfaktor
+\end{conditions}
+
+\noindent Für die Berechnung der Skalierungsschritte gilt zunächst folgende Festlegung:
+\begin{equation}
+	F = 
+	\begin{cases}
+		 2,		&	\text{für } S_{fac} \leq 1,67\\
+		 3, 	&	\text{sonst}
+	\end{cases}
+\end{equation}
+mit
+\begin{conditions}
+	F & Anzahl der Skalierungsschritte
+\end{conditions}
+
+Unter dieser Prämisse berechnet sich dann der Skalierungsfaktor für jeden durchzuführenden Skalierungsschritt mit:
+
+\begin{equation}
+	S_s = \sqrt[F]{S_{fac}}
+\end{equation}
+mit
+\begin{conditions}
+	S_{s} & Skalierungsfaktor / Schritt
+\end{conditions}
+
+\noindent Die auf diese Weise schrittweise skalierten Bilder sind im Ergebnis gleich groß und weisen bei gleicher Ausgangskalibrierung im Ergebnis eine äquivalente Zielkalibrierung (Bildgröße) auf.
+\\\\
+\noindent Analog dazu wird auch die Skalierung der Trainingsbilder durchgeführt, jedoch nur mit Nächster-Nachbar-Interpolation, da bei diesem Interpolationsverfahren die Kanten erhalten bleiben und durch die Skalierung nicht verändert werden. Diese sog. Trainingsbilder sind die Bilder, welche von AMGuss automatisch bei der Erstellung eines Anordnungsklassifikators erzeugt werden (siehe dazu auch Kapitel \ref{subsec: ErstellungAnordnungsklassifAMGuss} auf Seite \pageref{subsec: ErstellungAnordnungsklassifAMGuss}). Für die vorliegende Arbeit wurde ein sog. Standardklassifikator mit insgesamt 50 Bildern (Kalibrierung 0,5 $\nicefrac{\mu m}{\text{Pixel}}$) trainiert die so ausgewählt wurden, das die im Abschnitt \ref{subsec:MethodenBestAnordnungsklassen} auf Seite \pageref{subsec:MethodenBestAnordnungsklassen} etwa in gleichmäßiger Verteilung über alle Bilder vorhanden sind. Der einzige Unterschied bei der Skalierung dieser im Vergleich zu allen anderen Bildern besteht darin, das diese ausschließlich mit der Nächster-Nachbar-Interpolation durchgeführt werden, da hierbei die Kanten bei der Skalierung erhalten bleiben. Dies ist enorm wichtig, weil die so erzeugten neuen Trainingsbilder, die nach Abschluss des Vorgang dann in 4 unterschiedlichen Kalibrierungsstufen vorliegen dazu verwendet werden, neue Klassifikatoren je Kalibrierungsstufe zu erstellen.
 
 \subsection{Erstellung einer Bildserie mit AMGuss}
 \label{subsec:FlowErstellungBildserieAMGuss}
 
-Um eine Lamellenguss-Auswertung mit der Software AMGuss durchzuführen, sollte für jedes zu messende Bild eine sog. Bildserie vorliegen. Es können grundsätzlich auch Serien mit mehreren Bildern erstellt und auf einmal gemessen werden, jedoch hat sich dies nach Durchführung mehrerer Versuche im vorliegenden Kontext als nicht zweckmäßig erwiesen. Daher wurde für jedes zu messende Bild eine eigene Bildserie erstellt
-\\\\
-\noindent Der funktionale Ablauf dabei ist in der folgenden Abbildung \ref{fig:FlowBildserieErstellen} dargestellt.
+Um eine Lamellenguss-Auswertung mit der Software AMGuss durchzuführen, sollte für jedes zu messende Bild eine sog. Bildserie vorliegen. Es können grundsätzlich auch Serien mit mehreren Bildern erstellt und auf einmal gemessen werden, jedoch hat sich dies nach Durchführung mehrerer Versuche im vorliegenden Kontext als nicht zweckmäßig erwiesen. Daher wurde für jedes zu messende Bild eine eigene Bildserie erstellt. Der funktionale Ablauf hierbei ist in der folgenden Abbildung \ref{fig:FlowBildserieErstellen} dargestellt.
 
 
 \begin{figure}[H]
@@ -1826,10 +1759,11 @@ Um eine Lamellenguss-Auswertung mit der Software AMGuss durchzuführen, sollte f
 	\label{fig:CiaContent}
 \end{figure}
 
-\noindent Am Ende wird die erzeugte cia-Datei gespeichert, sowie auch der Pfad zum Speicherort, so das bei späteren Verwendung darauf zugegriffen werden kann.
+\noindent Am Ende wird die erzeugte cia-Datei gespeichert, sowie auch der Pfad zum Speicherort, sodass bei der späteren Verwendung darauf zugegriffen werden kann.
 
 \subsection{Durchführung einer Lamellengraphit-Messung mit AMGuss}
 \label{subsec:FlowLamellengussmessung}
+Die Durchführung der Messungen mit der Software AMGuss bildet, neben der Evaluation in Kapitel \ref{ch:Evaluation} ab Seite \pageref{ch:Evaluation}, den Kern dieser Arbeit. Denn dadurch werden die Daten erzeugt auf der Grundlage dessen erst eine Bewertung der für die Skalierung angewendeten Interpolationsverfahren möglich wird.
 
 \begin{figure}[H]
 	\centering
