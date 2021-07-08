@@ -1561,7 +1561,7 @@ Die Aufgabe, einen allgemeingültigen Anordnungsklassifikator zu entwickeln, der
 \end{figure}
 
 
-\subsection{Definition der Zielgrößen}
+Vgl. dazu\subsection{Definition der Zielgrößen}
 \label{subsec:DefZiel}
 
 \textcolor{blue}{Hinweis: Mehrgrößenoptimierungsproblem $\to$ Kombination der Einzelwerte zu einer gewichteten Summe...}
@@ -1689,13 +1689,13 @@ Aktivitätsdiagramme sind Teil von UML (Unifiend Modelling Language) zur Modelli
 
 \subsection{Bildskalierung in unterschiedliche Kalibrierungsstufen}
 
-Die Erzeugung von Bildern in unterschiedlichen Kalibrierungsstufen entspricht der im Abschnitt \ref{sec:ErzeugungVonBildern} auf Seite \pageref{sec:ErzeugungVonBildern} bereits eingehend beschriebenen Vorgehensweise und die nachstehende \textbf{Abbildung xyz} zeigt den funktionalen Ablauf entsprechend der umgesetzten Implementierung.
+Die Erzeugung von Bildern in unterschiedlichen Kalibrierungsstufen entspricht der im Abschnitt \ref{sec:ErzeugungVonBildern} auf Seite \pageref{sec:ErzeugungVonBildern} bereits eingehend beschriebenen Vorgehensweise und die nachstehende Abbildung \ref{fig:Bildskalierung} zeigt den funktionalen Ablauf.
 
 \begin{figure}[H]
 	\centering
-	\boxed{\includegraphics[scale=0.8]{pics/scaling_images}}
+	\boxed{\includegraphics[scale=0.6]{pics/flow_scaling_images}}
 	\caption{Aktivitätsdiagramm zur Erstellung einer Bildserie mit AMGuss}
-	\label{fig:Bilskalierung}
+	\label{fig:Bildskalierung}
 \end{figure}
 
 \noindent Die Skalierung der Bilder erfolgt dabei jeweils in 4 Kalibrierungsstufen, mit 7 verschiedenen Interpolationsalgorithmen, wie in Kapitel \ref{sec:ErzeugungVonBildern} auf Seite \pageref{sec:ErzeugungVonBildern} bereits ausführlich beschrieben wurde. Am Ende des Vorgangs existieren also von jedem Bild insgesamt 56 skalierte Kopien. Die Pfade zu den jeweiligen Speicherorten werden in einer entsprechenden Datenstruktur gespeichert und so für die weitere Verwendung bereitgestellt.
@@ -1703,18 +1703,18 @@ Die Erzeugung von Bildern in unterschiedlichen Kalibrierungsstufen entspricht de
 Es sei an dieser Stelle auf den Unterschied zwischen der schrittweisen und der Vollskalierung hingewiesen. Der Unterschied besteht darin, dass bei der Vollskalierung das Bilder entsprechend dem berechneten Skalierungsfaktor im  einem Schritt berechnet wird. Bei der schrittweisen Skalierung, wird das Bild in mehreren gleichmäßigen Schritten skaliert. Der Skalierungsfaktor berechnet sich in beiden Fällen wie folgt:
 
 \begin{equation}
-	S_{fac} = \frac{\text{aktuelle Kalibrierung}}{Zielkalibrierung}
+	S_f = \frac{\text{Ausgangskalibrierung}}{Zielkalibrierung}
 \end{equation}
 mit
 \begin{conditions}
-	S_{fac} & Skalierungsfaktor
+	S_f & Skalierungsfaktor
 \end{conditions}
 
 \noindent Für die Berechnung der Skalierungsschritte gilt zunächst folgende Festlegung:
 \begin{equation}
 	F = 
 	\begin{cases}
-		 2,		&	\text{für } S_{fac} \leq 1,67\\
+		 2,		&	\text{für } S_f \leq 1,67\\
 		 3, 	&	\text{sonst}
 	\end{cases}
 \end{equation}
@@ -1726,7 +1726,7 @@ mit
 Unter dieser Prämisse berechnet sich dann der Skalierungsfaktor für jeden durchzuführenden Skalierungsschritt mit:
 
 \begin{equation}
-	S_s = \sqrt[F]{S_{fac}}
+	S_s = \sqrt[F]{S_f}
 \end{equation}
 mit
 \begin{conditions}
@@ -1740,17 +1740,17 @@ mit
 \subsection{Erstellung einer Bildserie mit AMGuss}
 \label{subsec:FlowErstellungBildserieAMGuss}
 
-Um eine Lamellenguss-Auswertung mit der Software AMGuss durchzuführen, sollte für jedes zu messende Bild eine sog. Bildserie vorliegen. Es können grundsätzlich auch Serien mit mehreren Bildern erstellt und auf einmal gemessen werden, jedoch hat sich dies nach Durchführung mehrerer Versuche im vorliegenden Kontext als nicht zweckmäßig erwiesen. Daher wurde für jedes zu messende Bild eine eigene Bildserie erstellt. Der funktionale Ablauf hierbei ist in der folgenden Abbildung \ref{fig:FlowBildserieErstellen} dargestellt.
+Um eine Lamellenguss-Auswertung mit der Software AMGuss durchzuführen, sollte für jedes zu messende Bild eine sog. Bildserie vorliegen. Es können grundsätzlich auch Serien mit mehreren Bildern erstellt und auf einmal gemessen werden, jedoch hat sich dies nach Durchführung mehrerer Versuche im vorliegenden Kontext als nicht zweckmäßig erwiesen. Daher wurde für jedes zu messende Bild eine eigene Bildserie erstellt. Hierbei geht es im Gegensatz zur Bildskalierung darum, die Durchführung der Messungen mit der Software AMGuss zu steuern. Der funktionale Ablauf hierbei ist in der folgenden Abbildung \ref{fig:FlowBildserieErstellen} dargestellt.
 
 
 \begin{figure}[H]
 	\centering
-	\boxed{\includegraphics[scale=0.8]{pics/flow_create_picture_set_amguss}}
+	\boxed{\includegraphics[scale=0.7]{pics/flow_create_picture_set_amguss}}
 	\caption{Aktivitätsdiagramm zur Erstellung einer Bildserie mit AMGuss}
 	\label{fig:FlowBildserieErstellen}
 \end{figure}
 
-\noindent Im Ergebnis wird dadurch von AMGuss eine Textdatei.cia erzeugt, welche Informationen über das Bild, also den Pfad zum Speicherort und ggf. noch weitere Bildinformationen enthält. Den Inhalt der erzeugten Datei zeigt die nachstehende Abbildung \ref{fig:CiaContent}.
+\noindent Im Ergebnis wird dadurch von AMGuss eine Textdatei.cia erzeugt, welche Informationen über das Bild, also den Pfad zum Speicherort und ggf. noch weitere Bildinformationen enthält. Den Inhalt einer solchen Datei zeigt die nachstehende Abbildung \ref{fig:CiaContent}.
 
 \begin{figure}[H]
 	\centering
@@ -1763,21 +1763,110 @@ Um eine Lamellenguss-Auswertung mit der Software AMGuss durchzuführen, sollte f
 
 \subsection{Durchführung einer Lamellengraphit-Messung mit AMGuss}
 \label{subsec:FlowLamellengussmessung}
-Die Durchführung der Messungen mit der Software AMGuss bildet, neben der Evaluation in Kapitel \ref{ch:Evaluation} ab Seite \pageref{ch:Evaluation}, den Kern dieser Arbeit. Denn dadurch werden die Daten erzeugt auf der Grundlage dessen erst eine Bewertung der für die Skalierung angewendeten Interpolationsverfahren möglich wird.
+Die Durchführung der Messungen mit der Software AMGuss bildet, neben der Evaluation in Kapitel \ref{ch:Evaluation} ab Seite \pageref{ch:Evaluation}, den Kern dieser Arbeit.  Denn dadurch werden die Daten erzeugt auf der Grundlage dessen erst eine Bewertung der für die Skalierung angewendeten Interpolationsverfahren möglich wird (Abbildung \ref{fig:FlowLamellengussMessung}). Es geht also hierbei, wie auch schon bei der Erstellung der Bildserien, darum, den Messablauf der Software zu automatisieren.
 
 \begin{figure}[H]
 	\centering
-	\boxed{\includegraphics[scale=0.8]{pics/flow_lamellar_graphite_evaluation}}
+	\boxed{\includegraphics[scale=0.6]{pics/flow_lamellar_graphite_evaluation}}
 	\caption{Aktivitätsdiagramm zur Durchführung einer Lamellengraphit-Messung mit AMGuss}
 	\label{fig:FlowLamellengussMessung}
 \end{figure}
 
-\section{Extraktion der Messergebnisse aus den mit AMGuss gespeicherten Messungen}
+\noindent Nach jeder Einzelmessung werden die Messergebnisse auch hier wieder in der während der Bildskalierung im Ressourcenverzeichnis erstellten Ordnerstruktur gespeichert, genauso wie die Pfade zu den Dateien zur Verwendung für nachfolgende Aufgaben.
 
-\section{Durchführung der statistischen Analyse mit Minitab}
+\subsection{Extraktion der Messergebnisse aus den mit AMGuss gespeicherten Messungen}
+\label{subsec:FlowExtraktionMessergebnisse}
 
-\section{Datenbereitstellung in Excel}
+Bevor die Messdaten ausgewertet werden können, müssen sie in irgendeiner weiterverarbeitbaren Form bereitgestellt werden. AMGuss speichert die Messergebnisse in Form von reinen Textdateien, in denen neben vielen anderen Informationen zur jederzeitigen Wiederherstellung des Messvorgangs vor allem auch die für diese Arbeit wichtigen Messergebnisse zu finden sind. Dies sind die Messwerte zu den Anordnungsklassen A-E sowie den Größenklassen 1-8 (anzahlgewichtet und flächengewichtet), da diese Messwerte repräsentativ zur Beurteilung der Interpolationsverfahren im Hinblick auf die durch Skalierung induzierten Messungenauigkeit sind. Die folgenden beiden Abbildungen zeigen, in welcher Form diese Daten gespeichert sind und zwar für die Anordnungsklassen (Abbildung \ref{fig:KlassifikationsergebnisseAkl}) sowie für die Größenklassen (Abbildung \ref{fig:KlassifikationsergebnisseGK}).
 
+\begin{figure}[H]
+	\centering
+	\boxed{\includegraphics[scale=0.6]{pics/classify_data}}
+	\caption{Beispiel für Speicherung der Messergebnisse für die Anordnungsklassen}
+	\label{fig:KlassifikationsergebnisseAkl}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\boxed{\includegraphics[scale=0.6]{pics/global_size}}
+	\caption{Beispiel für Speicherung der Messergebnisse für die Größenklassen}
+	\label{fig:KlassifikationsergebnisseGK}
+\end{figure}
+
+In diesem Arbeitsschritt besteht also die Aufgabe darin, diese Daten in 13.224 verschiedenen Messergebnisdateien (für jedes Bild eine) zu finden und so zu speichern, dass sie jedem einzelnen Bild eindeutig zugeordnet werden können. Für die Organisation der Datenspeicherung wird an dieser Stelle auf Kapitel \ref{sec:Klassendiagramme} verwiesen. Zunächst soll mit dem im folgenden abgebildete Aktivitätsdiagramm die Aufgabe näher spezifiziert und dokumentiert werden (Abbildung...).
+
+\begin{figure}[H]
+	\centering
+	\boxed{\includegraphics[scale=0.6]{pics/flow_parsing_data}}
+	\caption{Aktivitätsdiagramm zur Extraktion von Messdaten}
+	\label{fig:FlowDatenextraktion}
+\end{figure}
+
+\subsection{Durchführung der statistischen Analyse mit Minitab}
+\label{subsec:FlowDoeMinitab}
+Wie an früherer Stelle bereits beschrieben handelt es sich bei der statistischen Versuchsplanung um eine statistische Methode zur multivariaten Untersuchung von Einflussgrößen sowie der Bestimmung der Haupteffekte in einem System (vgl. dazu auch Abschnitt \ref{sec:StatVersPlanung} auf Seite \pageref{sec:StatVersPlanung}). Diese Analyse wurde mit einer Statistik-Software Namens Minitab ebenfalls automatisiert durchgeführt und das Aktivitätsdiagramm (Abbildung \ref{fig:FlowVersuchsplanung}) zeigt den zu implementierenden funktionalen Ablauf.
+
+\begin{figure}[H]
+	\centering
+	\boxed{\includegraphics[scale=0.6]{pics/flow_doe}}
+	\caption{Aktivitätsdiagramm zur Durchführung der statistischen Versuchsplanungen}
+	\label{fig:FlowVersuchsplanung}
+\end{figure}
+
+\subsection{Datenbereitstellung in Excel}
+\label{subsec:FlowDataToExcel}
+
+Da nun alle Daten erfasst und aufbereitet wurden, erfolgt nun im letzten Schritt die Übergabe nach Excel, damit sie unter Nutzung der in diesen Programm bereitgestellten Funktionen in allen für die Herleitung eines Gesamtergebnisses relevanten Dimensionen ausgewertet werden können. Wie im Komponentendiagramm (Abbildung \ref{fig:Komponentendiagramm} auf Seite \pageref{fig:Komponentendiagramm}) bereits zu erkennen war, muss dieser Schritt nicht zwingend an letzter Stelle durchgeführt werden, sondern ist auch schon nach Extraktion Messergebnisse ()Abschnitt \ref{subsec:FlowExtraktionMessergebnisse}) möglich. Der funktionale Ablauf ist auch hier wieder in Form eines Aktivitätsdiagramms in nachstehender Abbildung \ref{fig:FlowDatenbereitstellung} dargestellt.
+
+\begin{figure}[H]
+	\centering
+	\boxed{\includegraphics[scale=0.6]{pics/flow_data_to_excel}}
+	\caption{Aktivitätsdiagramm zur Bereitstellung der Daten als Excel-Datei}
+	\label{fig:FlowDatenbereitstellung}
+\end{figure}
+
+\section{Funktionale Beschreibung der Klassen}
+\label{sec:Klassendiagramme}
+
+In diesem Abschnitt soll nun beschrieben werden, wie bestimmte Aspekte der Gesamtaufgabe durch die Objektorientierung in der Programmierung sehr effektiv gelöst werden konnten. Das bezieht sich sowohl auf die gesamte Programm- und Datenflussteuerung als auch auf die Persistierung der Daten, ohne dafür eine Datenbank im herkömmlichen Sinne aufzusetzen. Die Datenbank ist somit eine Objektstruktur welche am Anfang der Prozesskette erstellt  wird (vgl dazu auch Abbildung \ref{fig:Komponentendiagramm}), und vor Abschluss eines jeden Prozessschrittes serialisiert und gespeichert (\textbf{Persistierung der Daten}). Bei der Durchführung jedes darauf folgenden Arbeitsschrittes  wird diese Objektstruktur wieder geladen (de-serialisiert) und die Daten werden innerhalb des Programmablaufes zum einen genutzt und zum anderen um neu generierte Daten ergänzt.
+\\\\
+\noindent Diese Objektstruktur umfasst 2 Klassen, die Prozesssteuerrungs- und die Bild-Klasse, welche im nachfolgenden dargestellt und beschrieben werden. Folgende Abbildung \ref{fig:KlassendiagrammUeberblick}  zeigt zunächst das Übersichtsdiagramm beider Klassen zum Überblick. An der Kardinalitäten sowie der eingezeichneten Beziehung wird bereits die Abhängigkeit der Bild-Klasse von der Prozessteuerungs-Klasse erkennbar.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.6]{pics/class_diagram_overview}
+	\caption{Darstellung der Abhängigkeiten zwischen der Prozessteuerungs- und der Bild-Klasse}
+	\label{fig:KlassendiagrammUeberblick}
+\end{figure}
+
+Im folgenden wird nun auf die Darstellung in der vorstehenden Abbildung nochmal konkret eingegangen sowie jede einzelne Klasse noch einmal im Detail modelliert. Die Einzeldarstellungen und Beschreibungen i.V.m Abbildung \ref{label} (einschließlich der Beschreibungen) bilden dann das Gesamtbild zum funktionalen Verständnis der Klassenstruktur in der vorliegenden Arbeit.
+
+
+\subsection{Die Prozessteuerungs-Klasse}
+
+Die Idee dahinter ist, eine übergeordnete Datenstruktur bereitzustellen, die alle Informationen enthält, die ohnehin bei der Ausführung aller beschriebenen Arbeitsschritte mehr oder weniger immer benötigt werden. Das steigert die Benutzbarkeit enorm und ist auch weniger fehleranfällig. Außerdem werden darin alle Funktionalitäten gekapselt die erforderlich sind, um die entsprechenden Aufgaben zu erfüllen auszuführen, wie bspw. die Durchführung einer Lamellengraphit-Messung oder einer Versuchsplanung, wie in Abbildung \ref{fig:KlasseProzessteuerung} dargestellt.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.6]{pics/class_runner}
+	\caption{Darstellung der Prozessteuerungs-Klasse}
+	\label{fig:KlasseProzessteuerung}
+\end{figure}
+
+\noindent Da bereits bei den Instantiierung der Klasse unter anderem aller Pfade der Probenbilder übergeben werden und die Bildobjekte automatisch mit erzeugt werden, muss man danach nichts weiter tun, als in einem Skript die gewünschten Funktionen direkt auf dem Objekt anzuwenden. Bei Betrachtung der Bildklasse im nächsten Abschnitt wird erkennbar, wie die Funktionalität dadurch in eine hierarchisch-logische Struktur gebracht wurde, die dadurch leicht nachvollziehbar und verstehbar wird. Das erleichter die Anwendung, die Wartbarkeit und Erweiterbarkeit.
+
+\subsection{Die Bild-Klasse}
+
+Die Aufgabe der Bild-Klasse, als Teil der Prozesssteuerrungs-Klasse, ist es, sowohl alle bild-bezogenen Operativdaten (wie bspw. die absoluten Pfade zu den 56 für jedes Bild erzeugten skalierten Kopien) sowie auch alle Messergebnisse zu speichern und vorzuhalten. Diese Struktur ist eindeutig und Widerspruchsfrei in dem Sinne, dass sie den Zugriff und die Weiterverarbeitung der ziemlich großen Menge an erzeugten Daten in einer Weise ermöglicht, die einfach und nachvollziehbar ist, da alle bild-spezifischen Informationen an einer Stelle vorliegen. Durch einen Blick auf den Aufbau der Klasse in Abbildung \ref{fig:KlasseBild} wird vieles von dem gesagten offensichtlich.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.6]{pics/class_image}
+	\caption{Darstellung der Bild-Klasse}
+	\label{fig:KlasseBild}
+\end{figure}
+
+\noindent Wie man leicht erkennen kann, sind alle Daten und Information die zu einem Bild gehören auch im jeweiligen Bild-Objekt gespeichert und abrufbar. Das erleichtert die anschließende Datenaufbereitung sehr.
 
 
 \chapter{Evaluation}
