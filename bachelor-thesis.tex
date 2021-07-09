@@ -1610,8 +1610,20 @@ mit
 
 \subsection{Definition der Einfluss- und Störgrößen}
 
+Hierbei geht es nun um die Definition der bereits in \ref{fig:Systemkontextmodell} dargestellten Steuer- und Einflussgrößen. In der vorliegenden Arbeit besteht der Systemkontext aus zwei Steuer- und einer Störgröße, die wie folgt beschrieben werden:
+
+\begin{itemize}
+	\item \textbf{Interpolationsalgorithmus und Interpolationsmodus (Steuergrößen)} \\
+	Dies sind sog. Steuergrößen, da sie direkt beeinflusst werden können. Es stehen insgesamt 7 verschiedene Interpolationsalgorithmen zur Verfügung und die Bilder können sowohl voll als auch schrittweise skaliert werden.
+	\item \textbf{Kalibrierung} \\
+	Diese Größe (in $\nicefrac{\mu m}{\text{Pixel}}$) kann dagegen nicht direkt beeinflusst werden und stellt somit eine Störgröße dar. Schließlich ist es ja das Ziel eines allgemeingültigen Anordnungsklassifikators, das Bilder, unabhängig davon mit welcher Kalibrierung sie aufgenommen wurden, unter Anwendung eines Standardklassifikators gemessen werden können.
+\end{itemize}
+
+\noindent Diese beiden Größen sind später vor allem für die Interpretation der Ergebnisse aus der statistischen Versuchsplanung relevant (vgl. dazu auch Kapitel \ref{ch:Evaluation} und dort insbesondere Abschnitt \ref{subsubsec:AuswertungStatVpl}).
 
 \section{Versuchsdurchführung}
+
+Das Hauptziel in dieser Arbeit besteht darin, Daten zu erfassen, auszuwerten und zu interpretieren. Abbildung \ref{fig:Versuchsdurchführung} veranschaulicht den Ablauf der Versuchsdurchführung.
 
 \begin{figure}[H]
 	\centering
@@ -1661,7 +1673,7 @@ mit
 	% Text Node
 	\draw (21.07,149.37) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 255; green, 255; blue, 255 }  ,opacity=1 ] [align=left] {\begin{minipage}[lt]{33.93pt}\setlength\topsep{0pt}
 			\begin{center}
-				19.488\\Bilder
+				232\\Bilder
 			\end{center}
 			
 	\end{minipage}};
@@ -1695,6 +1707,8 @@ mit
 	\caption{Schematische Darstellung des Modells zur Versuchsdurchführung}
 	\label{fig:Versuchsdurchführung}
 \end{figure}
+
+\noindent Viele der folgenden Darstellungen in dieser Arbeit können vor dem Hintergrund des hier dargestellten Zusammenhangs sehr gut nachvollzogen werden.
 
 
 \chapter{Umsetzung}
@@ -2214,7 +2228,7 @@ Die Bestimmung der Anordnungsklassen ist ebenfalls ein von der Software AMGuss b
 	\end{figure}
 \end{table}
 
-Zu erkennen ist das wieder an den farbig markierten Datenpunkten die ebenfalls angeben, welcher Algorithmus in der jeweiligen Kategorie den geringsten Wert aufweist. Wie man unschwer erkennen kann, ergibt sich auch hier wieder ein sehr unklares Bild, da der Algorithmus, welcher über aller Bilder den geringsten durchschnittlichen Fehler in dieser Kategorie aufweist, nicht derselbe ist, der in den unterschiedlichen Kalibrierungsstufen und Interpolationsmodi auch zum geringsten Fehler führt - und zwar in keinem einzigen Bereich.
+\noindent Zu erkennen ist das wieder an den farbig markierten Datenpunkten die ebenfalls angeben, welcher Algorithmus in der jeweiligen Kategorie den geringsten Wert aufweist. Wie man unschwer erkennen kann, ergibt sich auch hier wieder ein sehr unklares Bild, da der Algorithmus, welcher über aller Bilder den geringsten durchschnittlichen Fehler in dieser Kategorie aufweist, nicht derselbe ist, der in den unterschiedlichen Kalibrierungsstufen und Interpolationsmodi auch zum geringsten Fehler führt - und zwar in keinem einzigen Bereich.
 \\\\
 Die Streuungsparameter zeigen ebenfalls hohe Varianzen an, 
 
@@ -2257,11 +2271,17 @@ Die Streuungsparameter zeigen ebenfalls hohe Varianzen an,
 	\label{fig:DAEinzelAbsolutAKL}
 \end{figure}
 
-Auf Daten wird hier aus Darstellungsgründen verzichtet...
 
-\chapter{Zusammenfassung und Auswertung}
+\chapter{Zusammenfassung und Ausblick}
 
 \section{Zusammenfassung}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=14cm, height=\textheight, keepaspectratio]{pics/DA_Gesamt_GK_Kalib_Benchmark}
+	\caption{Auswertung des Messfehlers (Einzel) nach Anordnungsklassen}
+	\label{fig:DAGesamtKalibBenchmark}
+\end{figure}
 
 \section{Auswertung}
 
