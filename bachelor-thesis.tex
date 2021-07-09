@@ -790,11 +790,9 @@ sind gezielte Versuche notwendig \cite{kleppmann_2020}.
 	\label{fig:ProzessDoe}
 \end{figure}
 
-\noindent Die Abbildung zeigt einen beliebigen Prozess der dadurch gekennzeichnet ist, dass eine Eingabe unter dem Einfluss von verschiedenen Steuer- und Störgrößen ein bestimmtes erzeugt wird. Außerdem zu erkennen ist eine Unterteilung der Einflussgrößen in Steuer- und Störgrößen. Das geschieht deshalb, weil es Einflussfaktoren geben kann, die während des Prozessverlaufs nicht beeinflusst werden können. \textcolor{red}{Ein Beispiel dafür wäre etwa die Außentemperatur in einer Fabrikhalle, die negative Einflüsse auf die Präzisionsgenauigkeit eines Industrieroboters haben kann, da sich das Material, aus dem der Roboter gefertigt ist (meistens Stahl) bei hohen Temperaturen (also zur Sommerzeit) ausdehnt. Im Rahmen einer Systemanalyse ist dieser Faktor zwar von hoher Relevanz, kann aber in der Praxis oftmals, wenn überhaupt, nur sehr begrenzt beeinflusst werden, also eine sog. Störgröße. Die Steuergrößen wären hier dann z.B. die einzelnen Einstellparameter (Gelenkwinkelstellungen des Roboterarmes) innerhalb der kinematischen Kette des Roboters, welche gezielt beeinflussbar sind und in direktem Zusammenhang mit der Präzisionsgenauigkeit stehen.
+\noindent Die Abbildung zeigt einen beliebigen Prozess der dadurch gekennzeichnet ist, dass eine Eingabe unter dem Einfluss von verschiedenen Steuer- und Störgrößen ein bestimmtes Ergebnis erzeugt wird. Außerdem zu erkennen ist eine Unterteilung der Einflussgrößen in Steuer- und Störgrößen. Das geschieht deshalb, weil es Einflussfaktoren geben kann, die während des Prozessverlaufs nicht beeinflusst werden können (wie bspw. die Außentemperatur, etc.).
 \\\\
-Um nun die richtigen Einstellungen in Abhängigkeit von der Außentemperatur zu finden wäre es natürlich denkbar und möglich, immer nur einen Parameter bei unterschiedlichen Temperaturen zu verändern und so die optimale Einstellung bezogen auf die Genauigkeit für jeden der einzelnen Parameter zu finden. Diese Vorgehensweise führt aber deshalb oft nicht zum optimalen Ergebnis, da hierbei nur jeder einzelne Parameter in Abhängigkeit von der Temperatur untersucht wurde, aber nicht die Wechselbeziehungen zwischen den Stör- und den Steuergrößen untereinander.}
-\\\\
-\noindent Was in diesem Modell also noch fehlt, um zu einer ganzheitlichen Analyse zu gelangen, ist die Einbeziehung dieser Wechselwirkungen  in das Modell. Denn nur durch die Betrachtung der Gesamtdynamik eines Systems ist es möglich, ein globales Optimum zu finden. Bezogen auf das o.g. Beispiel mit dem Industrieroboter können auf diese Weise Erkenntnisse darüber gewonnen werden, wie genau sich die Außentemperatur auf verschiedene Parameter der kinematischen Kette des Roboters (unter Einbeziehung der Wechselwirkungen zwischen den Steuergrößen untereinander) auswirkt und wie diese in Abhängigkeit von der Außentemperatur angepasst werden müssten, um das Ergebnis (hier: Präzisionsgenauigkeit) in die gewünschte Richtung zu beeinflussen. Im Rahmen einer statistischen Versuchsplanung wir genau dieses Ziel verfolgt, wobei diese Vorgehensweise auf beliebige Systeme angewendet werden kann, bei denen es darum geht, eine oder mehrere Zielgrößen in Abhängigkeit von mehreren beeinflussenden Faktoren zu optimieren.
+\noindent Was in diesem Modell noch fehlt, um zu einer ganzheitlichen Analyse zu gelangen, ist die Einbeziehung der Wechselwirkungen zwischen den Einflussfaktoren in das Modell. Denn nur durch die Betrachtung der Gesamtdynamik eines Systems ist es möglich, ein globales Optimum zu finden. Im Rahmen einer statistischen Versuchsplanung wir genau dieses Ziel verfolgt, wobei diese Vorgehensweise auf beliebige Systeme angewendet werden kann, bei denen es darum geht, eine oder mehrere Zielgrößen in Abhängigkeit von mehreren beeinflussenden Faktoren zu optimieren. 
 \\\\
 Nach \cite{schiefer_2018} kann zwischen den in nachstehender Abbildung \ref{fig:Versuchsplaene} dargestellten Versuchsplänen unterschieden werden:
 
@@ -1561,12 +1559,54 @@ Die Aufgabe, einen allgemeingültigen Anordnungsklassifikator zu entwickeln, der
 \end{figure}
 
 
-Vgl. dazu\subsection{Definition der Zielgrößen}
+
+\subsection{Definition der Zielgrößen}
 \label{subsec:DefZiel}
 
-\textcolor{blue}{Hinweis: Mehrgrößenoptimierungsproblem $\to$ Kombination der Einzelwerte zu einer gewichteten Summe...}
+Die Definition von Zielgrößen stellt eine wichtige Grundlage für die in dieser Arbeit durchgeführten Untersuchung dar, da damit die Wirkungsweise der Auswirkungen von Interpolation bei der Bildskalierung (vgl. dazu auch Abschnitt \ref{sec:Problemstellung}) quantitative dargestellt und dann im weiteren Verlauf mit statistischen Methoden weiter analysiert werden können, wie das dann auch in Kapitel \ref{ch:Evaluation} ab Seite \pageref{ch:Evaluation} getan wird.
+\\\\
+Bei den Zielgrößen handelt es sich also um Kennzahlen die angeben, wie groß ein Fehler ist. Gemeint sind damit die Messfehler die dadurch entstehen, das ein Bild mit unter Anwendung eines Interpolationsverfahrens skaliert wird, um dadurch die Kalibrierung zu ändern. Jedes skalierte Bild kann dann also mit seinem un-skalierten Original verglichen und die Messfehler ermittelt werden. Nachstehende Gleichung \ref{eq:MFAkl} zeigt zunächst die Berechnung des Messfehlers im Bereich der Anordnungsklassen.
 
-xyxyyxxxy
+\begin{equation}\label{eq:MFAkl}
+	\boxed{\mathbf{MF_{AK}	=	\sum_{i=1}^{5} |\left(AKO_i - AKV_i\right)}|}
+\end{equation}
+mit
+\begin{conditions}
+	AKO	&	Messwert der Anordnungsklasse i im Originalbild mit i $\in$ {a, b, c, d, e}\\
+	AKV	&	Messwert der Anordnungsklasse i Vergleichsbild mit i $\in$ {a, b, c, d, e}
+\end{conditions}
+
+\noindent Wie man sieht, wird dabei einfach jede Anordnungsklasse des Originalbildes mit der des jeweiligen skalierten Vergleichsbildes verglichen und die Beträge der Differenzen über alle Klassen aufsummiert.
+\\\\
+\noindent Weitere wichtige Erkenntnisgewinne könne dadurch erzielt werden, indem die Messfehler nicht nur bezogen auf die Anordnungsklassen, sondern auch in Bezug auf die Größenklassen (anzahl- und flächengewichtet) betrachtet werden, deren Berechnung in den Gleichungen \ref{eq:MFGKa} und \ref{eq:MFGKf} gezeigt wird.
+
+\begin{equation}\label{eq:MFGKa}
+	\boxed{\mathbf{MF_{GKA} = \sum_{j=1}^{8} |\left(GKAO_j - GKAV_j\right)|}}
+\end{equation}
+mit
+\begin{conditions}
+	GKAO	&	Messwert der Größenklasse (anzahlgewichtet) j im Originalbild\\
+	GKAV	&	Messwert der Größenklasse (anzahlgewichtet) j im Vergleichsbild
+\end{conditions}
+
+\noindent \textbf{sowie}
+
+\begin{equation}\label{eq:MFGKf}
+	\boxed{\mathbf{MF_{GKF} = \sum_{k=1}^{8} |\left(GKFO_k - GKFV_k\right)|}}
+\end{equation}
+mit
+\begin{conditions}
+	GKFO	&	Messwert der Größenklasse (flächengewichtet) k im Originalbild\\
+	GKFV	&	Messwert der Größenklasse (flächengewichtet) k im  Vergleichsbild
+\end{conditions}
+
+\noindent Da bei der multivariaten statistischen Analyse, welche im Rahmen der statistischen Versuchsplanung durchgeführt wird, jedoch nur eine Zielgröße möglich ist, werden die berechneten Einzelwerte nun auch noch zu einer Zielgröße $MF_{ges}$ zusammengefasst (Gleichung \ref{eq:MFges}).
+
+\begin{equation}\label{eq:MFges}
+	\boxed{\mathbf{MF_{ges} = MF_{AK} + MF_{GKA} + MF_{GKF}}}
+\end{equation}
+
+\noindent Im nächsten Abschnitt geht es nun darum zu bestimmen, welches die Stör- und welches die Einflussgrößen im zu analysierenden Kontext sind.
 
 \subsection{Definition der Einfluss- und Störgrößen}
 
