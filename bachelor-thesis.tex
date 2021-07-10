@@ -1609,6 +1609,7 @@ mit
 \noindent Im nächsten Abschnitt geht es nun darum zu bestimmen, welches die Stör- und welches die Einflussgrößen im zu analysierenden Kontext sind.
 
 \subsection{Definition der Einfluss- und Störgrößen}
+\label{subsec:DefEinflusStoer}
 
 Hierbei geht es nun um die Definition der bereits in \ref{fig:Systemkontextmodell} dargestellten Steuer- und Einflussgrößen. In der vorliegenden Arbeit besteht der Systemkontext aus zwei Steuer- und einer Störgröße, die wie folgt beschrieben werden:
 
@@ -2207,10 +2208,10 @@ Wie schon bei den Größenklassen im vorherigen Abschnitt, teilen sich diese wie
 }
 	
 \subsubsection{Auswertung nach Anordnungsklassen}
-
-Die Bestimmung der Anordnungsklassen ist ebenfalls ein von der Software AMGuss bei Durchführung einer Lamellengraphitauswertung zurückgegebenes Ergebnis, bei dem die Häufigkeiten der gefundenen Anordnungsklassen (vgl. auch Bild \ref{fig:Anordnungsklassen} auf Seite \pageref{fig:Anordnungsklassen}) auch in einem Histogramm dargestellt werden.  Diese Kategorie soll nun abschließend ebenfalls eingehend untersucht werden und im Anschluss daran alle Teilergebnisse zu einer Gesamtauswertung zusammengefasst werden.
+\label{subsubsec:AuswertungAKL}
+Die Bestimmung der Anordnungsklassen ist ebenfalls ein von der Software AMGuss bei Durchführung einer Lamellengraphitauswertung zurückgegebenes Ergebnis, bei dem die Häufigkeiten der gefundenen Anordnungsklassen (vgl. auch Abbildung \ref{fig:Anordnungsklassen} auf Seite \pageref{fig:Anordnungsklassen}) auch in einem Histogramm dargestellt werden.  Diese Kategorie soll nun abschließend ebenfalls eingehend untersucht werden und im Anschluss daran alle Teilergebnisse zu einer Gesamtauswertung zusammengefasst werden.
 \\\\
-\noindent Die nachstehende Abbildung \ref{fig:DAGesamtAbsolutAKL} i.V.m. Datentabelle \ref{tab:DAGesamtAbsolutAKL} zeigen an, dass die LANCZOS4-Interpolation mit einem durchschnittlichen absoluten Fehlerwert über alle Bilder den geringster Fehler verursacht. Doch bei genauerer Betrachtung stellt sich heraus, dass dies in keinem Bereich dem tatsächlich geringsten absoluten Fehler entspricht. 
+\noindent Die nachstehende Abbildung \ref{fig:DAGesamtAbsolutAKL} i.V.m. Datentabelle \ref{tab:DAGesamtAbsolutAKL} zeigen an, dass die LANCZOS4-Interpolation mit einem durchschnittlichen absoluten Fehlerwert von ca. 28,73 über alle Bilder den geringster Fehler verursacht. Doch bei genauerer Betrachtung stellt sich heraus, dass dies in keinem Bereich dem tatsächlich geringsten absoluten Fehler entspricht. 
 
 \begin{figure}[H]
 	\centering
@@ -2221,48 +2222,48 @@ Die Bestimmung der Anordnungsklassen ist ebenfalls ein von der Software AMGuss b
 
 \begin{table}[H]
 	\caption{Messdaten zur Auswertung des Messfehler nach Anordnungsklassen}
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{pics/Tab_DA_Gesamt_Absolut_GKfläche}
-		\label{tab:DAGesamtAbsolutAKL}
-	\end{figure}
+	\centering
+	\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{pics/Tab_DA_Gesamt_Absolut_GKfläche}
+	\label{tab:DAGesamtAbsolutAKL}
 \end{table}
 
 \noindent Zu erkennen ist das wieder an den farbig markierten Datenpunkten die ebenfalls angeben, welcher Algorithmus in der jeweiligen Kategorie den geringsten Wert aufweist. Wie man unschwer erkennen kann, ergibt sich auch hier wieder ein sehr unklares Bild, da der Algorithmus, welcher über aller Bilder den geringsten durchschnittlichen Fehler in dieser Kategorie aufweist, nicht derselbe ist, der in den unterschiedlichen Kalibrierungsstufen und Interpolationsmodi auch zum geringsten Fehler führt - und zwar in keinem einzigen Bereich.
 \\\\
-Die Streuungsparameter zeigen ebenfalls hohe Varianzen an, 
+Des Weiteren sind ebenfalls hohe Varianzen zu erkennen, wie in folgender Abbildung \ref{fig:DAGesamtStreu1AKL} (i.V.m. Datentabelle \ref{tab:DAGesamtStreu1AKL} dargestellt, wenngleich auch im Unterschied zu den anderen bereits beschriebenen Fehlerbereichen ein etwas andersartiger Zusammenhang vorliegt. Die Streuung in den Daten ist hier über alle Kategorien hinweg etwa gleichbleibend und weist nur in Bereich ab Kalibrierungsstufe 1,1 (bei schrittweiser Skalierung) einen erkennbaren Anstieg auf.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=14cm, height=\textheight, keepaspectratio]{pics/DA_Gesamt_Streu1_AKL}
+	\includegraphics[width=11cm, height=\textheight, keepaspectratio]{pics/DA_Gesamt_Streu1_AKL}
 	\caption{Streuungsparameter (Standardabweichung u. Varianz) nach Anordnungsklassen}
 	\label{fig:DAGesamtStreu1AKL}
 \end{figure}
 
 \begin{table}[H]
 	\caption{Daten zu den berechneten Streuungsparametern (Standardabweichung u. Varianz) nach Anordnungsklassen}
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{pics/Tab_DA_Gesamt_Streu1_AKL}
-		\label{tab:DAGesamtStreu1GAKL}
-	\end{figure}
+	\centering
+	\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{pics/Tab_DA_Gesamt_Streu1_AKL}
+	\label{tab:DAGesamtStreu1AKL}
 \end{table}
+
+\noindent Die über alle Kalibrierungsstufen und Interpolationsmodi gemittelte Varianz ist mit einem Wert von ca. 521,82, allerdings deutlich geringer als bspw. verglichen mit dem Wert der Größenklassen (flächengewichtet) von ca. 8.942. Die auf die selbe Weise berechnet Varianz in den Größenklassen (anzahlgewichtet) weist jedoch mit nur ca. 38,54 den geringsten Wert in dieser Kategorie auf. 
+\\\\
+\noindent Die in Abbildung \ref{fig:DAGesamtStreu2AKL} und Tabelle \ref{tab:DAGesamtStreu2GAKL} dargestellten Variationsbreiten bestätigen diese Zusammenhänge. Jedoch ist hier noch eine Verringerung im Bereich von 1,1 $\nicefrac{\mu m}{\text{Pixel}}$ (bei Vollskalierung) zu erkennen.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=14cm, height=\textheight, keepaspectratio]{pics/DA_Gesamt_Streu2_AKL}
+	\includegraphics[width=11cm, height=\textheight, keepaspectratio]{pics/DA_Gesamt_Streu2_AKL}
 	\caption{Streuungsparameter (Variationsbreite) nach Anordnungsklassen}
 	\label{fig:DAGesamtStreu2AKL}
 \end{figure}
 
 \begin{table}[H]
 	\caption{Daten zum berechneten Streuungsparameter (Variationsbreite) nach Anordnungsklassen}
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{pics/Tab_DA_Gesamt_Streu2_AKL}
-		\label{tab:DAGesamtStreu2GAKL}
-	\end{figure}
+	\centering
+	\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{pics/Tab_DA_Gesamt_Streu2_AKL}
+	\label{tab:DAGesamtStreu2GAKL}
 \end{table}
+
+Bei der Einzelwertbetrachtung (Abbildung \ref{fig:DAEinzelAbsolutAKL}) fällt auf, das die Fehlerwerte in den Anordnungsklassen A und C jeweils rapide ansteigen und danach in etwa gleich steil wieder sinken, wohingegen zwischen Klasse D und E nur ein vergleichsweise geringer Anstieg zu erkennen ist.
 
 \begin{figure}[H]
 	\centering
@@ -2271,20 +2272,46 @@ Die Streuungsparameter zeigen ebenfalls hohe Varianzen an,
 	\label{fig:DAEinzelAbsolutAKL}
 \end{figure}
 
+\noindent Abschließend folgt nun wieder eine kurze Zusammenfassung der Ergebnisse aus diesem Abschnitt.
+\\\\
+\colorbox{gray!10}{
+	\label{box:Ergebnis der Auswertung nach Größenklassen (flächengewichtet):}
+	\begin{minipage}{0.975\textwidth}
+		\textbf{\underline{Ergebnis der Auswertung nach Größenklassen (flächengewichtet):}}
+		\\\\
+		Es wurde in diesem Teil der Analyse festgestellt, dass die kubische Interpolation mit einem  Fehler von 28,73 einen über alle Bereiche geringsten durchschnittlichen, jedoch aber in keinem Bereich auch tatsächlich den kleinsten absoluten Wert aufweist. Die Streuungsparameter zeigen in allen Bereichen  in etwa gleich Hohe Werte für Standardabweichung und Varianz, wobei ab Kalibrierungsstufe 1,1 $\nicefrac{\mu m}{\text{Pixel}}$ (bei schrittweiser Skalierung) ein Anstieg erkennbar ist.
+		\\\\
+		Der zuvor festgestellte Zusammenhang, dass die Verkleinerung von Bildern offensichtlich geringere Fehler erzeugt, als die Vergrößerung, lässt sich hier nicht eindeutig bestätigen.
+	\end{minipage}
+}
 
 \chapter{Zusammenfassung und Ausblick}
 
+Das es die Zielsetzung dieser Arbeit ist, die Möglichkeiten zur Entwicklung einer allgemeingültigen Anordnungsklassifikation für Lamellengraphit zu untersuchen, werden nun die im Kapitel \ref{ch:Evaluation} beschriebenen Analyseergebnisse zu einem Gesamtergebnis zusammengefasst und auf der Grundlage dessen eine Gesamtaussage abgeleitet. Das Kapitel schließt dann mit einem Ausblick in Abschnitt \ref{sec:Ausblick}.
+
 \section{Zusammenfassung}
+
+Bei der vorausgegangenen Analyse wurden in Abschnitt \ref{subsubsec:AuswertungStatVpl} zunächst die Ergebnisse aus der statistischen Versuchsplanung ausgewertet. Dabei wurde bereits deutlich, das die Faktoren Interpolationsmodus und Kalibrierung den größten Einfluss auf den Messfehler haben.
+\\\\
+\noindent Daran anschließend wurden  die durch Bildskalierung und Interpolation hervorgerufen Messfehler nach einer Gesamtfehlerbetrachtung in Abschnitt \ref{subsubsec:AuswertungGesamtfehlerbetrachtung} schrittweise in ihre Bestandteile zerlegt und die Fehler in den Größenklassen (anzahl- und flächengewichtet) in den Abschnitten \ref{subsubsec:AuswertungGKanz} und \ref{subsubsec:AuswertungGKflaeche} sowie in den Anordnungsklassen im \ref{subsubsec:AuswertungAKL} untersucht, wobei die Ergebnisse aus den genannten Abschnitten, jeweils am Ende kurz zusammengefasst wurden.
+\\\\
+\noindent Dabei wurde festgestellt, dass ein Vergleich der Algorithmen nicht ohne weiteres möglich ist, da bspw. bei der Gesamtfehlerbetrachtung der nach Größenklassen (anzahlgewichtet) sowie der nach Anordnungsklassen jeweils die LANCZOS4- Interpolation über alle Kategorien den geringsten Messfehler erzeugt, jedoch nicht immer den geringsten Wert in den unterschiedlichen Kalibrierungsstufen. Das ist insofern problematisch, als das die Kalibrierung, wie bereits in Abschnitt \ref{subsec:DefEinflusStoer} beschrieben wurde, eine Störgröße darstellt und nicht direkt beeinflusst werden kann.
+\\\\
+Allerdings ist das Ergebnis auch im Hinblick auf das Auswertungsinteresse eines Metallographen und Metallographinnen zu bewerten, die sich vor allem für die Messergebnisse in den Größenklassen (flächengewichtet) interessieren, da diese Größe einen größeren Einfluss auf die Materialeigenschaften hat. Vor diesem Hintergrund wurden in einer weiteren Analyse die Größenklassen in Bezug auf die unterschiedlichen Kalibrierungsstufen noch einmal separat betrachtet und dargestellt (Abbildung \ref{fig:DAGesamtKalibBenchmark}.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=14cm, height=\textheight, keepaspectratio]{pics/DA_Gesamt_GK_Kalib_Benchmark}
-	\caption{Gegenüberstellung der Messfehler in den Größenklassen (anzahl- und flächengewichtet)}
+	\includegraphics[width=11cm, height=\textheight, keepaspectratio]{pics/DA_Gesamt_GK_Kalib_Benchmark}
+	\caption{Gegenüberstellung der Messfehler in den Größenklassen (anzahl- und flächengewichtet) je Kalibrierungsstufe}
 	\label{fig:DAGesamtKalibBenchmark}
 \end{figure}
 
-\section{Ausblick}
+\noindent Anhand der Abbildung ist zu erkennen, dass die Fehler in einem Kalibrierungsbereich von 0,3 - 0,5 $\nicefrac{\mu m}{\text{Pixel}}$ zunächst stark abnehmen un dann wieder stark ansteigen. Die eingezeichneten Benchmark-Linien ergeben sich aus den Mittelwerten in der entsprechenden Größenklassenkategorie und es wird vermutet, dass alle Werte, die unterhalb dieser Linie liegen, die in Abschnitt \ref{sec:DefAnforderungenAnordnKlas} auf Seite \pageref{sec:DefAnforderungenAnordnKlas} beschrieben wurden, zu erfüllen. Allerdings ist die Beantwortung der Frage, was den genau ein tolerierbarer Fehlerwert ist, nicht Teil dieser Arbeit. 
+\\\\
+\noindent Abgesehen davon kann jedoch als Ergebnis in dieser Arbeit festgestellt werden, dass die Anwendung eines Standard-Klassifikators nur empfehlenswert bei Bildern mit hoher Auflösung ist, also $< 1,0 \nicefrac{\mu m}{Pixel}$. Das bei heutigen modernen Kameras mit hoher Auflösung immer gegeben, wobei die Kalibrierung bei Bildern die mit älteren Kameramodellen (z.B. PAL-D mit einem Standard-Signal von 768 $\times$ 576 Pixeln) aufgenommen wurden eher bei > 1,0 $\nicefrac{\mu m}{\text{Pixel}}$ liegt.
 
+\section{Ausblick}
+\label{sec:Ausblick}
 
 \bibliographystyle{IEEEtran}
 \bibliography{literature}
