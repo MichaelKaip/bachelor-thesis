@@ -151,7 +151,7 @@ Ich versichere, dass ich die vorliegende Abschlussarbeit selbstständig und ohne
 
 \chapter*{\centering Danksagungen}
 
-Vor allem möchte ich Herrn Prof. Dr.-Ing. Mohammad Abuosba von der HTW Berlin für die Betreuung meiner Bachelorarbeit als Erstgutachter danken, sowie Herrn Dipl.-Mathematiker Ulrich Sonntag von der Gesellschaft zur Förderung angewandter Informatik e.v., der mir die Möglichkeit gegeben hat, dieses spannende Thema im Rahmen meiner Bachelorarbeit zu bearbeiten und mich darüber hinaus auch ausgezeichnet dabei begleitet hat. 
+Vor allem möchte ich Herrn Prof. Dr.-Ing. Mohammad Abuosba von der HTW Berlin für die Betreuung meiner Bachelorarbeit als Erstgutachter danken, sowie Herrn Dipl.-Mathematiker Ulrich Sonntag von der Gesellschaft zur Förderung angewandter Informatik e.V., der mir die Möglichkeit gegeben hat, dieses spannende Thema im Rahmen meiner Bachelorarbeit zu bearbeiten und mich darüber hinaus auch ausgezeichnet dabei begleitet hat. 
 \\\\
 \noindent Mein Dank geht auch an Prof. Dr.-Ing. Jörg Schlingheider, Prof. Dr.-Ing. Frank Neumann, Prof. Dr. Nils Siebel, Prof. Dr. Frank Burghardt und Frau Prof. Dr. Christina Papenfuß von denen ich wirklich viel lernen konnte, um für meinen weiteren beruflichen Lebensweg bestens vorbereitet zu sein.
 \\\\
@@ -258,7 +258,7 @@ In der Formklasse Lamellengraphit (vgl. Abbildung \ref{fig:GraphitTypes} auf Sei
 
 Unter Bildskalierung versteht man die Vergrößerung bzw. Verkleinerung von Bildern. Es handelt sich dabei um ein Standardverfahren, welches sowohl im Grafik- und Fotobereich als auch in der digitalen Bildverarbeitung sehr häufig zum Einsatz kommt und von Bildverarbeitungsprogrammen standardmäßig angeboten wird. Da die algorithmische Funktionsweise einer Bildskalierung für das Verständnis der in dieser Arbeit zu lösenden Problemstellung (siehe auch Kapitel \ref{sec:Problemstellung} auf Seite \pageref{sec:Problemstellung}) von zentraler Bedeutung ist, wird diese nun hier genauer Untersucht und beschrieben.
 \\\\
-Das grundsätzliche Problem bei der Skalierung von Bildern, soll durch Abbildung \ref{fig:ScalingProblem} verdeutlicht werden. Zu sehen ist links ein Bild mit ($4\times 4$) Pixeln und rechts das durch Skalierung erzeugte Bild. Die neue Position eines beliebigen Originalpixels im neu erzeugten (skalierten) Bild ergibt sich durch Multiplikation der ursprünglichen Position mit dem Skalierungsfaktor ($\lambda$).
+Das grundsätzliche Problem bei der Skalierung von Bildern soll durch Abbildung \ref{fig:ScalingProblem} verdeutlicht werden. Zu sehen ist links ein Bild mit ($4\times 4$) Pixeln und rechts das durch Skalierung erzeugte Bild. Die neue Position eines beliebigen Originalpixels im neu erzeugten (skalierten) Bild ergibt sich durch Multiplikation der ursprünglichen Position mit dem Skalierungsfaktor ($\lambda$).
 \begin{figure}[H]
 	\centering
 		\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1, scale=1.2, every node/.style={scale=0.9}]
@@ -719,7 +719,7 @@ Das grundsätzliche Problem bei der Skalierung von Bildern, soll durch Abbildung
 	\caption{Bildskalierung unter Anwendung bilinearer Interpolation}
 	\label{fig:MosaicBilinear}
 \end{figure}
-\noindent Wie zu erkennen, führt die lineare Interpolation dazu, das Kanten sehr unscharf werden und neue Farbverläufe entstehen. Im Bereich der Materialstrukturanalyse, wie später in Kapitel \ref{sec:Problemstellung} auf Seite \pageref{sec:Problemstellung} noch gezeigt wird, kann das (auch bei wesentlich kleineren Skalierungsfaktoren) zu sehr unerwünschten Einflüssen führen und Messergebnisse verfälschen.
+\noindent Wie zu erkennen, führt die bilineare Interpolation dazu, das Kanten sehr unscharf werden und neue Farbverläufe entstehen. Im Bereich der Materialstrukturanalyse, wie später in Kapitel \ref{sec:Problemstellung} auf Seite \pageref{sec:Problemstellung} noch gezeigt wird, kann das (auch bei wesentlich kleineren Skalierungsfaktoren) zu sehr unerwünschten Einflüssen führen und Messergebnisse verfälschen.
 \\\\
 \noindent Abgesehen von diesen sehr einfachen Beispiel der bilinearen Interpolation gibt es jedoch auch noch einige weitere Interpolationsverfahren, bei denen die Modelle zur Approximation der fehlenden Bildinformationen auf wesentlich komplexere Art und Weise berechnet werden. Im Rahmen dieser Arbeit kommen, außer der bereits beschriebenen linearen Interpolation, die folgenden Interpolationsverfahren zum Einsatz:
 \begin{minipage}[t]{0.45\linewidth}\vspace{0pt}
@@ -1020,7 +1020,7 @@ Nach \cite{schiefer_2018} kann zwischen den in nachstehender Abbildung \ref{fig:
 \\\\\\
 \noindent Die sich ergebenden Faktorstufenkombinationen aus der Tabelle beschreiben, bei 3 Einflussfaktoren einen 3-Dimensionalen Raum, wie in Abbildung \ref{fig:Versuchsplan} dargestellt. Dieser wird jeweils durch die minimalen und maximalen Ausprägungen begrenzt und beschreibt den sog. Versuchsraum, der alle möglichen Wirkungen enthält. 
 \\\\
-\noindent Der Vorteil von vollständig faktoriellen Versuchsplänen ist der, dass wirklich alle möglichen Faktorausprägungen und Wirkungen in der Analyse berücksichtigt werden, und somit der Erkenntnisgewinn am größten ist. Allerdings können diese Pläne sehr schnell auch extrem groß werden, wodurch die Durchführung in der Praxis oftmals aus Kosten- und/oder Zeitgründen unmöglich ist. In solchen  Fällen kann dann auf die Verwendung von teilfaktoriellen Plänen ausgewichen werden.
+\noindent Der Vorteil von vollständig faktoriellen Versuchsplänen ist der, dass wirklich alle möglichen Faktorausprägungen und Wirkungen in der Analyse berücksichtigt werden und somit der Erkenntnisgewinn am größten ist. Allerdings können diese Pläne sehr schnell auch extrem groß werden, wodurch die Durchführung in der Praxis oftmals aus Kosten- und/oder Zeitgründen unmöglich ist. In solchen  Fällen kann dann auf die Verwendung von teilfaktoriellen Plänen ausgewichen werden.
 \\\\
 \noindent In Kapitel \ref{ch:Konzept} ab Seite \pageref{ch:Konzept} wird das hier beschriebene Modell eines vollständig faktoriellen Versuchsplanes wieder aufgegriffen und dahingehend erweitert, das eine Anwendung zur Untersuchung der im Rahmen dieser Arbeit zu untersuchenden Fragestellung möglich wird. In Kapitel \ref{ch:Evaluation} ab Seite \pageref{ch:Evaluation} werden die Untersuchungsergebnisse dann anhand dieses Modells schließlich ausgewertet und interpretiert.
 
@@ -1029,7 +1029,7 @@ Nach \cite{schiefer_2018} kann zwischen den in nachstehender Abbildung \ref{fig:
 
 Im Rahmen dieser Arbeit wird AutoIt einerseits dazu genutzt, um die zur Evaluation der Wirkungsweise von unterschiedlichen Interpolationsalgorithmen benötigten Daten zu generieren. Dazu ist es nötig, tausende von Lamellenguss-Messungen mit der Software AMGuss durchzuführen. Dies wäre ohne Automatisierung mit einem nicht vertretbaren Zeitaufwand verbunden. Die automatische Durchführung der Messungen mit AutoIt funktioniert dagegen nach einigen Tests sehr gut und der Zeitaufwand lässt sich somit auf etwa 20 Sekunden pro Messung reduzieren.
 \\\\
-\noindent Gemäß offizieller Dokumentation \cite{AutoItDocs} lässt sich AutoIT wie folgt beschreiben:
+\noindent Gemäß offizieller Dokumentation \cite{AutoItDocs} lässt sich AutoIt wie folgt beschreiben:
 \\\\
 \noindent Es handelt sich dabei um eine BASIC-ähnliche Skriptsprache, die zur Automatisierung von Windows-Benutzeroberflächen entwickelt wurde. Es verwendet eine Kombination aus simulierten Tastenanschlägen, Mausbewegungen sowie Fenster- und Steuerungsmanipulationen, um Aufgaben auf eine Weise zu automatisieren, die mit anderen Sprachen (z.B. VBScript und SendKeys) nicht möglich ist.
 \\\\
@@ -1051,9 +1051,9 @@ Im Rahmen dieser Arbeit wird AutoIt einerseits dazu genutzt, um die zur Evaluati
 
 \chapter{Ausgangssituation}
 \label{ch:Ausgangssituation}
-Ziel dieses Kapitels ist es die Ausgangssituation, also die mit dieser Arbeit verbundenen Rahmenbedingungen im Detail darzulegen, um damit die Grundlage für eine schlüssige Präsentation des Lösungskonzeptes im darauf folgenden Kapitel \ref{ch:Konzept} zu schaffen.
+Ziel dieses Kapitels ist es, die Ausgangssituation, also die mit dieser Arbeit verbundenen Rahmenbedingungen im Detail darzulegen, um damit die Grundlage für eine schlüssige Präsentation des Lösungskonzeptes im darauf folgenden Kapitel \ref{ch:Konzept} zu schaffen.
 \\\\
-Im Abschnitt \ref{sec:BestimmungMikrostrukturAMGuss} wird zunächst auf die Bedeutung des Einsatzes digitaler Bildverarbeitung zur Analyse von Gusseisen eingegangen und in diesem Zusammenhang die Software AMGuss vorgestellt. Dabei wird auf die Bedeutung eines Anordnungsklassifikators eingegangen und die Erstellung eines Solchen im Detail dargestellt (Abschnitt \ref{subsec: ErstellungAnordnungsklassifAMGuss}) und das Kapitel schließt mit einer ausführlichen Problembeschreibung in Abschnitt \ref{sec:Problemstellung}.
+Im Abschnitt \ref{sec:BestimmungMikrostrukturAMGuss} wird zunächst auf die Bedeutung des Einsatzes digitaler Bildverarbeitung zur Analyse von Gusseisen eingegangen und in diesem Zusammenhang die Software AMGuss vorgestellt. Dabei wird auf die Bedeutung eines Anordnungsklassifikators eingegangen und die Erstellung eines solchen im Detail dargestellt (Abschnitt \ref{subsec: ErstellungAnordnungsklassifAMGuss}) und das Kapitel schließt mit einer ausführlichen Problembeschreibung in Abschnitt \ref{sec:Problemstellung}.
 
 \section{Einsatz digitaler Bildverarbeitung zur Analyse der Mikrostruktur von Gusseisen (AMGuss)}
 \label{sec:BestimmungMikrostrukturAMGuss}
@@ -1064,7 +1064,7 @@ Das Ergebnis dieses Forschungsprojektes ist die Software AMGuss (\textbf{A}nalys
 \subsection{Erstellung eines Anordnungsklassifikators für die Lamellengraphit-\\Auswertung}
 \label{subsec: ErstellungAnordnungsklassifAMGuss}
 
-\noindent Aufgrund unterschiedlicher Laborbedingungen, können in der Praxis Probenbilder mit unterschiedlichen Kalibrierungen (in $\mu m/\text{Pixel}$) zur Messung vorliegen. Allerdings ist das für die eindeutige, exakte Analyse und Zuordnung (siehe Abbildung \ref{fig:Anordnungsklassen} auf Seite \pageref{fig:Anordnungsklassen}) problematisch, da die Unterscheidungsmerkmale der Anordnungsklassen verschwimmen und somit nicht mehr eindeutig identifiziert und zugeordnet werden können. Deshalb ist für die Durchführung einer Lamellenguss-Auswertung mit der Software AMGuss, für jede Ausgangskalibrierung vorliegender Bilder ein eigener Anordnungsklassifikator manuell zu erstellen. Dabei werden in etwa 20-30 Probenbildern, die darin vorliegenden lamellaren Graphitstrukturen gemäß der Anordnungsklassen markiert und auf der Grundlage dessen ein Klassifikator trainiert. Wichtig dabei ist zu beachten, dass alle hierfür verwendeten Bilder dieselbe Kalibrierung besitzen, in den Trainingsbildern auch alle Anordnungsklassen vertreten sind und diese richtig markiert werden.
+\noindent Aufgrund unterschiedlicher Laborbedingungen können in der Praxis Probenbilder mit unterschiedlichen Kalibrierungen (in $\mu m/\text{Pixel}$) zur Messung vorliegen. Allerdings ist das für die eindeutige, exakte Analyse und Zuordnung (siehe Abbildung \ref{fig:Anordnungsklassen} auf Seite \pageref{fig:Anordnungsklassen}) problematisch, da die Unterscheidungsmerkmale der Anordnungsklassen verschwimmen und somit nicht mehr eindeutig identifiziert und zugeordnet werden können. Deshalb ist für die Durchführung einer Lamellenguss-Auswertung mit der Software AMGuss für jede Ausgangskalibrierung vorliegender Bilder ein eigener Anordnungsklassifikator manuell zu erstellen. Dabei werden in etwa 20-30 Probenbildern die darin vorliegenden lamellaren Graphitstrukturen gemäß der Anordnungsklassen markiert und auf der Grundlage dessen ein Klassifikator trainiert. Wichtig dabei ist zu beachten, dass alle hierfür verwendeten Bilder dieselbe Kalibrierung besitzen, in den Trainingsbildern auch alle Anordnungsklassen vertreten sind und diese richtig markiert werden.
 \\\\
 Dafür stellt das Programm AMGuss dem Nutzer eine entsprechende Funktionalität bereit, wie in Abbildung \ref{fig:ErstAnordnungsklass} dargestellt.
 
@@ -1083,9 +1083,9 @@ Im kleinen Fenster (oben rechts) lässt sich dann eine Anordnungsklasse auswähl
 \section{Problemstellung}
 \label{sec:Problemstellung}
 
-Die Problematik besteht darin, dass für in unterschiedlichen Vergrößerungen vorliegende Bilder kein universell anwendbarer Klassifikator existiert. Hätte man jedoch einen im System hinterlegten Standardklassifikator, der für Bilder mit einer definierten Kalibrierung anwendbar ist, so könnten durch eine entsprechende Umskalierung in der Kalibrierung abweichende Probenbilder trotzdem vermessen werden. Da sich die Kalibrierung umgekehrt Proportional zur Bildgröße verhält müsste zum Beispiel ein mit einer Ausgangskalibrierung von $1,0~\nicefrac{\mu m}{\text{Pixel}}$ vorliegendes Bild also um den Faktor 2 hoch-skaliert (vergrößert) werden, um die Kalibrierung auf $0,5~\nicefrac{\mu m}{\text{Pixel}}$ zu verändern. Analog dazu wäre es dann natürlich auch möglich, eine zu große Ausgangskalibrierung durch Verkleinerung des Bildes entsprechend anzupassen. Geht man weiter davon aus, das der im System hinterlegte Standard-Klassifikator mit Bildern derselben Kalibrierung erstellt wurde, wäre nun eine korrekte Messung mit diesem Klassifikator möglich. Somit würde der Arbeitsschritt zur manuellen Erstellung und Verwaltung von Klassifikatoren für unterschiedliche Ausgangskalibrierungen wegfallen, die Forderung nach Allgemeingültigkeit wäre damit erfüllt und man würde mit nur einem einzigen Anordnungsklassifikator auskommen.
+Die Problematik besteht darin, dass für in unterschiedlichen Vergrößerungen vorliegende Bilder kein universell anwendbarer Klassifikator existiert. Hätte man jedoch einen im System hinterlegten Standardklassifikator, der für Bilder mit einer definierten Kalibrierung anwendbar ist, so könnten durch eine entsprechende Umskalierung in der Kalibrierung abweichende Probenbilder trotzdem vermessen werden. Da sich die Kalibrierung umgekehrt Proportional zur Bildgröße verhält, müsste zum Beispiel ein mit einer Ausgangskalibrierung von $1,0~\nicefrac{\mu m}{\text{Pixel}}$ vorliegendes Bild also um den Faktor 2 hoch-skaliert (vergrößert) werden, um die Kalibrierung auf $0,5~\nicefrac{\mu m}{\text{Pixel}}$ zu verändern. Analog dazu wäre es dann natürlich auch möglich, ein mit hoher Auflösung aufgenommenes Bild  durch Verkleinerung entsprechend anzupassen. Geht man weiter davon aus, das der im System hinterlegte Standard-Klassifikator mit Bildern derselben Kalibrierung erstellt wurde, wäre nun eine korrekte Messung mit diesem Klassifikator möglich. Somit würde der Arbeitsschritt zur manuellen Erstellung und Verwaltung von Klassifikatoren für unterschiedliche Ausgangskalibrierungen wegfallen, die Forderung nach Allgemeingültigkeit wäre damit erfüllt und man würde mit nur einem einzigen Anordnungsklassifikator auskommen.
 \\\\
-Bei der Skalierung von Bildern ist jedoch zu beachten, das zur Erhaltung der Bildqualität verschiedene Interpolationsalgorithmen zum Einsatz kommen um die sich durch Vergrößerung/Verkleinerung ergebende Differenz der Pixelanzahl zwischen Eingangs- und Ausgangsbild auszugleichen. Im Falle der Vergrößerung ergibt sich, dass das Ausgangsbild entsprechend dem Vergrößerungsfaktor mehr Pixel besitzt als das Eingangsbild und die sich dadurch ergebenden Pixellücken durch Interpolation gefüllt werden müssen. Bei Verkleinerung verhält es sich genau umgekehrt, nur das in diesem Fall die Pixelmenge verkleinert wird. Es liegt auf der Hand, das eine solche Interpolation die Details des Originalbildes nie 100\%-ig erhalten kann, wie in Abschnitt \ref{subsec:SkalierungUndInterpolation} bereits beschrieben wurde. So können zwar für viele praktischen Anwendungsfälle im Grafik- oder Fotobereich sehr gute Ergebnisse erzielt werden, weil das menschliche Auge diese Abweichungen nicht erkennen kann. Allerdings erweist sich die Interpolation im Bereich der bildbasierten Materialstrukturanalyse als problematisch, da sich  die zu analysierenden Strukturen durch die Interpolation verändern und somit die Messergebnisse verfälscht werden. Welche unerwünschten Auswirkungen das im vorliegenden Fall hat, zeigen die folgenden beiden Abbildungen 3.2 und 3.3.
+Bei der Skalierung von Bildern ist jedoch zu beachten, dass zur Erhaltung der Bildqualität verschiedene Interpolationsalgorithmen zum Einsatz kommen, um die sich durch Vergrößerung/Verkleinerung ergebende Differenz der Pixelanzahl zwischen Eingangs- und Ausgangsbild auszugleichen. Im Falle der Vergrößerung ergibt sich, dass das Ausgangsbild entsprechend dem Vergrößerungsfaktor mehr Pixel besitzt als das Eingangsbild und die sich dadurch ergebenden Pixellücken durch Interpolation gefüllt werden müssen. Bei Verkleinerung verhält es sich genau umgekehrt, nur dass in diesem Fall die Pixelmenge verkleinert wird. Es liegt auf der Hand, dass eine solche Interpolation die Details des Originalbildes nie 100\%-ig erhalten kann, wie in Abschnitt \ref{subsec:SkalierungUndInterpolation} bereits beschrieben wurde. So können zwar für viele praktischen Anwendungsfälle im Grafik- oder Fotobereich sehr gute Ergebnisse erzielt werden, weil das menschliche Auge diese Abweichungen nicht erkennen kann. Allerdings erweist sich die Interpolation im Bereich der bildbasierten Materialstrukturanalyse als problematisch, da sich  die zu analysierenden Strukturen durch die Interpolation verändern und somit die Messergebnisse verfälscht werden. Welche unerwünschten Auswirkungen das im vorliegenden Fall hat, zeigen die folgenden beiden Abbildungen 3.2 und 3.3.
 
 \begin{figure}[h]
 	\label{fig:KlassErrorVisuell}
@@ -1461,7 +1461,7 @@ Zur Durchführung der im Rahmen dieser Arbeit durchzuführenden Versuche, steht 
 
 \section{Das Analysekonzept}
 
-Wie in Kapitel \ref{sec:StatVersPlanung} auf Seite \pageref{sec:StatVersPlanung} bereits umfänglich dargelegt, ist die statistische Versuchsplanung immer dann ein hervorragendes Werkzeug wenn es darum geht die Wirkungsweise unterschiedlicher Einflussfaktoren auf eine Zielgröße zu untersuchen. Daher werden nun die dort beschriebenen Zusammenhänge auf den vorliegen Sachverhalt übertragen und angewendet.
+Wie in Kapitel \ref{sec:StatVersPlanung} auf Seite \pageref{sec:StatVersPlanung} bereits umfänglich dargelegt, ist die statistische Versuchsplanung immer dann ein hervorragendes Werkzeug, wenn es darum geht die Wirkungsweise unterschiedlicher Einflussfaktoren auf eine Zielgröße zu untersuchen. Daher werden nun die dort beschriebenen Zusammenhänge auf den vorliegen Sachverhalt übertragen und angewendet.
 
 
 \subsection{Systemanalyse}
@@ -1539,7 +1539,7 @@ Die Aufgabe, einen allgemeingültigen Anordnungsklassifikator zu entwickeln, der
 
 Die Definition von Zielgrößen stellt eine wichtige Grundlage für die in dieser Arbeit durchgeführten Untersuchung dar, da damit die Wirkungsweise der Auswirkungen von Interpolation bei der Bildskalierung (vgl. dazu auch Abschnitt \ref{sec:Problemstellung}) quantitativ dargestellt und dann im weiteren Verlauf mit statistischen Methoden weiter analysiert werden können, wie das dann auch in Kapitel \ref{ch:Evaluation} ab Seite \pageref{ch:Evaluation} getan wird.
 \\\\
-Bei den Zielgrößen handelt es sich also um Kennzahlen die angeben, wie groß ein Fehler ist. Gemeint sind damit die Messfehler die dadurch entstehen, das ein Bild unter Anwendung eines Interpolationsverfahrens skaliert wird, um dadurch die Kalibrierung zu ändern. Jedes skalierte Bild kann dann also mit seinem un-skalierten Original verglichen und die Messfehler ermittelt werden. Nachstehende Gleichung \ref{eq:MFAkl} zeigt zunächst die Berechnung des Messfehlers im Bereich der Anordnungsklassen.
+Bei den Zielgrößen handelt es sich also um Kennzahlen die angeben, wie groß ein Fehler ist. Gemeint sind damit die Messfehler, die dadurch entstehen, das ein Bild unter Anwendung eines Interpolationsverfahrens skaliert wird, um dadurch die Kalibrierung zu ändern. Jedes skalierte Bild kann dann also mit seinem un-skalierten Original verglichen und die Messfehler ermittelt werden. Nachstehende Gleichung \ref{eq:MFAkl} zeigt zunächst die Berechnung des Messfehlers im Bereich der Anordnungsklassen.
 
 \begin{equation}\label{eq:MFAkl}
 	\boxed{\mathbf{MF_{AK}	=	\sum_{i=1}^{5} |\left(AKO_i - AKV_i\right)}|}
@@ -1552,7 +1552,7 @@ mit
 
 \noindent Wie man sieht, wird dabei einfach jede Anordnungsklasse des Originalbildes mit der des jeweiligen skalierten Vergleichsbildes verglichen und die Beträge der Differenzen über alle Klassen aufsummiert.
 \\\\
-\noindent Weitere wichtige Erkenntnisgewinne könne dadurch erzielt werden, indem die Messfehler nicht nur bezogen auf die Anordnungsklassen, sondern auch in Bezug auf die Größenklassen (anzahl- und flächengewichtet) betrachtet werden, deren Berechnung in den Gleichungen \ref{eq:MFGKa} und \ref{eq:MFGKf} gezeigt wird.
+\noindent Weitere wichtige Erkenntnisgewinne können dadurch erzielt werden, indem die Messfehler nicht nur bezogen auf die Anordnungsklassen, sondern auch in Bezug auf die Größenklassen (anzahl- und flächengewichtet) betrachtet werden, deren Berechnung in den Gleichungen \ref{eq:MFGKa} und \ref{eq:MFGKf} gezeigt wird.
 
 \begin{equation}\label{eq:MFGKa}
 	\boxed{\mathbf{MF_{GKA} = \sum_{j=1}^{8} |\left(GKAO_j - GKAV_j\right)|}}
@@ -1598,7 +1598,7 @@ Hierbei geht es nun um die Definition der bereits in Abbildung \ref{fig:Systemko
 
 \section{Versuchsdurchführung}
 
-Das Hauptziel in dieser Arbeit besteht darin, Daten zu erfassen, auszuwerten und zu interpretieren. Abbildung \ref{fig:Versuchsdurchführung} veranschaulicht den Ablauf der Versuchsdurchführung.
+Das Hauptziel in dieser Arbeit besteht darin, spezifische Daten zu erfassen, auszuwerten und zu interpretieren. Abbildung \ref{fig:Versuchsdurchführung} veranschaulicht den Ablauf der Versuchsdurchführung.
 
 \begin{figure}[H]
 	\centering
@@ -1689,16 +1689,16 @@ Das Hauptziel in dieser Arbeit besteht darin, Daten zu erfassen, auszuwerten und
 \chapter{Umsetzung des Konzeptes}
 \label{ch:Umsetzung}
 
-Dieses Kapitel beschäftigt sich mit der Umsetzung, also dem Teil der vorliegenden Arbeit bei dem es darum ging, die Aufgabe, nämlich insgesamt 12.992 Lamellengraphit-Messungen mit der Software AMGuss zur Datengenerierung, sowie 232 statistische Versuchsplanungen mir der Minitab (einer Statistik-Software) durchzuführen, umzusetzen. Da eine manuelle Durchführung der Messungen jeden zeitlichen Rahmen gesprengt hätte, wurde dieser Prozess weitestgehend automatisiert.
+Dieses Kapitel beschäftigt sich mit der Umsetzung, also dem Teil der vorliegenden Arbeit, bei dem es darum ging, die Aufgabe, nämlich insgesamt 12.992 Lamellengraphit-Messungen mit der Software AMGuss zur Datengenerierung, sowie 232 statistische Versuchsplanungen mir der Software Minitab (einer Statistik-Software) durchzuführen, umzusetzen. Da eine manuelle Durchführung der Messungen jeden zeitlichen Rahmen gesprengt hätte, wurde dieser Prozess weitestgehend automatisiert.
 \\\\
 \noindent Für die Implementierung wurde die Skriptsprache Python gewählt, da diese auch die Möglichkeit bietet, einen objektorientierten Programmierstil umzusetzen. Darüber hinaus war es durch die Einbindung der Bibliothek PyAutoIt möglich, die gesamte Funktionalität von AutoIt (siehe auch Abschnitt \ref{sec:UeberblickAutoIt} auf Seite \pageref{sec:UeberblickAutoIt}) verfügbar und nutzbar zu machen. Dadurch konnte die Automatisierung der durchzuführenden Messungen in Verbindung mit einem objektorientierten Programmierstil sehr gut umgesetzt werden.
 \\\\
-\noindent Nach einer Darstellung der Komponentenstruktur als Überblick über die Implementierung, folgt dann in weiteren Abschnitten die Beschreibung der zu Implementierenden Funktionalität anhand von Aktivitätsdiagrammen und schließlich Klassendiagrammen die zeigen, wie die Objektorientierung dabei geholfen hat, das die einzelnen Aufgaben in Teilaufgaben zerlegt und separat durchgeführt werden konnten.
+\noindent Nach einer Darstellung der Komponentenstruktur als Überblick über die Implementierung folgt dann in weiteren Abschnitten die Beschreibung der zu Implementierenden Funktionalität anhand von Aktivitätsdiagrammen und schließlich Klassendiagrammen, die zeigen, wie die Objektorientierung dabei geholfen hat, dass die einzelnen Aufgaben in Teilaufgaben zerlegt und separat durchgeführt werden konnten.
 
 \section{Darstellung der Komponenten}
 \label{sec:Komponentendarstellung}
 
-Wie bereits angedeutet, wurde die Gesamtaufgabe auf verschiedene, aufeinander aufbauende Arbeitsschritte aufgeteilt. Diese Komponenten erzeugen Daten, speichern diese in einer dafür implementierten Datenstruktur, die dann schließlich serialisiert, gespeichert und so für die Nutzung weitere Komponenten verfügbar gemacht wird. Abbildung \ref{fig:Komponentendiagramm} zeigt die einzelnen Bestandteile wobei anzumerken ist, das diese nicht, wie im herkömmlichen Sinne der objektorientierten Programmierung über implementierte Schnittstellen verbunden sind. Vielmehr handelt es sich um völlig getrennte Funktionseinheiten. Die Pfeil-Konnektoren, welche die Komponenten miteinander verbinden, symbolisieren also Abhängigkeitsbeziehungen in dem Sinne, das die Komponente, auf welche die Pfeilspitze zeigt, die Ergebnisse derjenigen am anderen Endes des Pfeils voraussetzt bzw. weiterverarbeitet.
+Wie bereits angedeutet, wurde die Gesamtaufgabe auf verschiedene, aufeinander aufbauende Arbeitsschritte aufgeteilt. Diese Komponenten erzeugen Daten, speichern diese in einer dafür implementierten Datenstruktur, die dann schließlich serialisiert, gespeichert und so für die Nutzung weitere Komponenten verfügbar gemacht wird. Abbildung \ref{fig:Komponentendiagramm} zeigt die einzelnen Bestandteile, wobei anzumerken ist, dass diese nicht, wie im herkömmlichen Sinne der objektorientierten Programmierung über implementierte Schnittstellen verbunden sind. Vielmehr handelt es sich um völlig getrennte Funktionseinheiten. Die Pfeil-Konnektoren, welche die Komponenten miteinander verbinden, symbolisieren also Abhängigkeitsbeziehungen in dem Sinne, dass die Komponente, auf welche die Pfeilspitze zeigt, die Ergebnisse derjenigen am anderen Endes des Pfeils voraussetzt bzw. weiterverarbeitet.
 
 \begin{figure}[H]
 	\centering
@@ -1762,7 +1762,7 @@ mit
 
 \noindent Die auf diese Weise schrittweise skalierten Bilder sind im Ergebnis gleich groß und weisen bei gleicher Ausgangskalibrierung im Ergebnis eine äquivalente Zielkalibrierung (Bildgröße) auf.
 \\\\
-\noindent Analog dazu wird auch die Skalierung der Trainingsbilder durchgeführt, jedoch nur mit Nächster-Nachbar-Interpolation, da bei diesem Interpolationsverfahren die Kanten erhalten bleiben und durch die Skalierung nicht verändert werden. Diese sog. Trainingsbilder sind die Bilder, welche von AMGuss automatisch bei der Erstellung eines Anordnungsklassifikators erzeugt werden (siehe dazu auch Kapitel \ref{subsec: ErstellungAnordnungsklassifAMGuss} auf Seite \pageref{subsec: ErstellungAnordnungsklassifAMGuss}). Für die vorliegende Arbeit wurde ein sog. Standardklassifikator mit insgesamt 50 Bildern (Kalibrierung 0,5 $\nicefrac{\mu m}{\text{Pixel}}$) trainiert die so ausgewählt wurden, das die im Abschnitt \ref{subsec:MethodenBestAnordnungsklassen} auf Seite \pageref{subsec:MethodenBestAnordnungsklassen} dargestellten Anordnungsklassen etwa in gleichmäßiger Verteilung über alle Bilder vorhanden sind.
+\noindent Analog dazu wird auch die Skalierung der Trainingsbilder durchgeführt, jedoch nur mit Nächster-Nachbar-Interpolation, da bei diesem Interpolationsverfahren die Kanten erhalten bleiben und durch die Skalierung nicht verändert werden. Diese sog. Trainingsbilder sind die Bilder, welche von AMGuss automatisch bei der Erstellung eines Anordnungsklassifikators erzeugt werden (siehe dazu auch Kapitel \ref{subsec: ErstellungAnordnungsklassifAMGuss} auf Seite \pageref{subsec: ErstellungAnordnungsklassifAMGuss}). Für die vorliegende Arbeit wurde ein sog. Standardklassifikator mit insgesamt 50 Bildern (Kalibrierung 0,5 $\nicefrac{\mu m}{\text{Pixel}}$) trainiert, die so ausgewählt wurden, dass die im Abschnitt \ref{subsec:MethodenBestAnordnungsklassen} auf Seite \pageref{subsec:MethodenBestAnordnungsklassen} dargestellten Anordnungsklassen etwa in gleichmäßiger Verteilung über alle Bilder vorhanden sind.
 
 \subsection{Erstellung einer Bildserie mit AMGuss}
 \label{subsec:FlowErstellungBildserieAMGuss}
@@ -1790,7 +1790,7 @@ Um eine Lamellenguss-Auswertung mit der Software AMGuss durchzuführen, sollte j
 
 \subsection{Durchführung einer Lamellengraphit-Messung mit AMGuss}
 \label{subsec:FlowLamellengussmessung}
-Die Durchführung der Messungen mit der Software AMGuss bildet, neben der Evaluation in Kapitel \ref{ch:Evaluation} ab Seite \pageref{ch:Evaluation}, den Kern dieser Arbeit.  Denn dadurch werden die Daten erzeugt auf der Grundlage dessen erst eine Bewertung der für die Skalierung angewendeten Interpolationsverfahren möglich wird (Abbildung \ref{fig:FlowLamellengussMessung}). Es geht also hierbei, wie auch schon bei der Erstellung der Bildserien, darum, den Messablauf der Software zu automatisieren.
+Die Durchführung der Messungen mit der Software AMGuss bildet, neben der Evaluation in Kapitel \ref{ch:Evaluation} ab Seite \pageref{ch:Evaluation}, den Kern dieser Arbeit.  Denn dadurch werden die Daten erzeugt, auf der Grundlage dessen erst eine Bewertung der für die Skalierung angewendeten Interpolationsverfahren möglich wird (Abbildung \ref{fig:FlowLamellengussMessung}). Es geht also hierbei, wie auch schon bei der Erstellung der Bildserien, darum, den Messablauf der Software zu automatisieren.
 
 \begin{figure}[H]
 	\centering
@@ -1820,7 +1820,7 @@ Bevor die Messdaten ausgewertet werden können, müssen sie in irgendeiner weite
 	\label{fig:KlassifikationsergebnisseGK}
 \end{figure}
 
-\noindent In diesem Arbeitsschritt besteht also die Aufgabe darin, diese Daten in 13.224 verschiedenen Messergebnisdateien (für jedes Bild eine) zu finden und so zu speichern, dass sie jedem einzelnen Bild eindeutig zugeordnet werden können. Für die Organisation der Datenspeicherung wird an dieser Stelle auf Kapitel \ref{sec:Klassendiagramme} verwiesen. Zunächst soll mit dem im folgenden abgebildete Aktivitätsdiagramm die Aufgabe näher spezifiziert und dokumentiert werden (Abbildung \ref{fig:FlowDatenextraktion}).
+\noindent In diesem Arbeitsschritt besteht also die Aufgabe darin, diese Daten in 13.224 verschiedenen Messergebnisdateien (für jedes Bild eine) zu finden und so zu speichern, dass sie jedem einzelnen Bild eindeutig zugeordnet werden können. Für die Organisation der Datenspeicherung wird an dieser Stelle auf Kapitel \ref{sec:Klassendiagramme} verwiesen. Zunächst soll mit dem im folgenden abgebildeten Aktivitätsdiagramm die Aufgabe näher spezifiziert und dokumentiert werden (Abbildung \ref{fig:FlowDatenextraktion}).
 
 \begin{figure}[H]
 	\centering
@@ -1831,7 +1831,7 @@ Bevor die Messdaten ausgewertet werden können, müssen sie in irgendeiner weite
 
 \subsection{Durchführung der statistischen Analyse mit Minitab}
 \label{subsec:FlowDoeMinitab}
-Wie an früherer Stelle bereits beschrieben handelt es sich bei der statistischen Versuchsplanung um eine statistische Methode zur multivariaten Untersuchung von Einflussgrößen sowie der Bestimmung der Haupteffekte in einem System (vgl. dazu auch Abschnitt \ref{sec:StatVersPlanung} auf Seite \pageref{sec:StatVersPlanung}). Diese Analyse wurde mit einer Statistik-Software Namens Minitab ebenfalls automatisiert durchgeführt und das Aktivitätsdiagramm (Abbildung \ref{fig:FlowVersuchsplanung}) zeigt den zu implementierenden funktionalen Ablauf.
+Wie an früherer Stelle bereits beschrieben, handelt es sich bei der statistischen Versuchsplanung um eine statistische Methode zur multivariaten Untersuchung von Einflussgrößen sowie der Bestimmung der Haupteffekte in einem System (vgl. dazu auch Abschnitt \ref{sec:StatVersPlanung} auf Seite \pageref{sec:StatVersPlanung}). Diese Analyse wurde mit einer Statistik-Software Namens Minitab ebenfalls automatisiert durchgeführt und das Aktivitätsdiagramm (Abbildung \ref{fig:FlowVersuchsplanung}) zeigt den zu implementierenden funktionalen Ablauf.
 
 \begin{figure}[H]
 	\centering
@@ -1843,7 +1843,7 @@ Wie an früherer Stelle bereits beschrieben handelt es sich bei der statistische
 \subsection{Datenbereitstellung in Excel}
 \label{subsec:FlowDataToExcel}
 
-Da nun alle Daten erfasst und aufbereitet wurden, erfolgt nun im letzten Schritt die Übergabe nach Excel, damit sie unter Nutzung der in diesen Programm bereitgestellten Funktionen in allen für die Herleitung eines Gesamtergebnisses relevanten Dimensionen ausgewertet werden können. Wie im Komponentendiagramm (Abbildung \ref{fig:Komponentendiagramm} auf Seite \pageref{fig:Komponentendiagramm}) bereits zu erkennen war, muss dieser Schritt nicht zwingend an letzter Stelle durchgeführt werden, sondern ist auch schon nach Extraktion Messergebnisse (Abschnitt \ref{subsec:FlowExtraktionMessergebnisse}) möglich. Der funktionale Ablauf ist auch hier wieder in Form eines Aktivitätsdiagramms in nachstehender Abbildung \ref{fig:FlowDatenbereitstellung} dargestellt.
+Da nun alle Daten erfasst und aufbereitet wurden, erfolgt nun im letzten Schritt die Übergabe nach Excel, damit sie unter Nutzung der in diesen Programm bereitgestellten Funktionen in allen für die Herleitung eines Gesamtergebnisses relevanten Dimensionen ausgewertet werden können. Wie im Komponentendiagramm (Abbildung \ref{fig:Komponentendiagramm} auf Seite \pageref{fig:Komponentendiagramm}) bereits zu erkennen war, muss dieser Schritt nicht zwingend an letzter Stelle durchgeführt werden, sondern ist auch schon nach Extraktion der Messergebnisse (Abschnitt \ref{subsec:FlowExtraktionMessergebnisse}) möglich. Der funktionale Ablauf ist auch hier wieder in Form eines Aktivitätsdiagramms in nachstehender Abbildung \ref{fig:FlowDatenbereitstellung} dargestellt.
 
 \begin{figure}[H]
 	\centering
@@ -1855,23 +1855,23 @@ Da nun alle Daten erfasst und aufbereitet wurden, erfolgt nun im letzten Schritt
 \section{Klassendiagramme}
 \label{sec:Klassendiagramme}
 
-In diesem Abschnitt soll nun beschrieben werden, wie bestimmte Aspekte der Gesamtaufgabe durch die Objektorientierung in der Programmierung sehr effektiv gelöst werden konnten. Das bezieht sich sowohl auf die gesamte Programm- und Datenflussteuerung als auch auf die Persistierung der Daten, ohne dafür eine Datenbank im herkömmlichen Sinne aufzusetzen. Die Datenbank ist somit eine Objektstruktur welche am Anfang der Prozesskette erstellt (vgl dazu auch Abbildung \ref{fig:Komponentendiagramm}) und vor Abschluss eines jeden Prozessschrittes serialisiert und gespeichert wird (\textbf{Persistierung der Daten}). Bei der Durchführung jedes darauf folgenden Arbeitsschrittes  wird diese Objektstruktur wieder geladen (de-serialisiert) und die Daten werden innerhalb des Programmablaufes zum einen genutzt und zum anderen um neu generierte Daten ergänzt.
+In diesem Abschnitt soll nun beschrieben werden, wie bestimmte Aspekte der Gesamtaufgabe durch die Objektorientierung in der Programmierung sehr effektiv gelöst werden konnten. Das bezieht sich sowohl auf die gesamte Programm- und Datenflussteuerung als auch auf die Persistierung der Daten, ohne dafür eine Datenbank im herkömmlichen Sinne aufzusetzen. Die Datenbank ist somit eine Objektstruktur, welche am Anfang der Prozesskette erstellt (vgl dazu auch Abbildung \ref{fig:Komponentendiagramm}) und vor Abschluss eines jeden Prozessschrittes serialisiert und gespeichert wird (\textbf{Persistierung der Daten}). Bei der Durchführung jedes darauf folgenden Arbeitsschrittes  wird diese Objektstruktur wieder geladen (de-serialisiert) und die Daten werden innerhalb des Programmablaufes zum einen genutzt und zum anderen um neu generierte Daten ergänzt.
 \\\\
 \noindent Diese Objektstruktur umfasst 2 Klassen, die Prozesssteuerrungs- und die Bild-Klasse, welche im nachfolgenden dargestellt und beschrieben werden. Folgende Abbildung \ref{fig:KlassendiagrammUeberblick}  zeigt zunächst das Übersichtsdiagramm beider Klassen zum Überblick. An der Kardinalitäten sowie der eingezeichneten Beziehung wird bereits die Abhängigkeit der Bild-Klasse von der Prozessteuerungs-Klasse erkennbar. Die hier dargestellten Kardinalitäten bedeuten, dass jede Bild-Instanz zu genau einer Prozessteuerungs-Instanz gehört, jeder Prozessteuerungs-Instanz aber n-viele Bild-Instanzen beinhalten kann.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.8]{pics/class_diagram_overview}
-	\caption{Darstellung der Abhängigkeiten zwischen der Prozessteuerungs- und der Bild-Klasse}
+	\caption{Darstellung der Abhängigkeiten zwischen der Prozesssteuerungs- und der Bild-Klasse}
 	\label{fig:KlassendiagrammUeberblick}
 \end{figure}
 
 \noindent Im folgenden wird nun auf die Darstellung in der vorstehenden Abbildung nochmal konkret eingegangen und jede einzelne Klasse noch im Detail modelliert. Die Einzeldarstellungen und Beschreibungen i.V.m Abbildung \ref{fig:Komponentendiagramm} auf Seite \pageref{fig:Komponentendiagramm} bilden dann das Gesamtbild zum funktionalen Verständnis der Klassenstruktur in der vorliegenden Arbeit.
 
 
-\subsection{Die Prozessteuerungs-Klasse}
+\subsection{Die Prozesssteuerungs-Klasse}
 
-Die Idee dahinter ist, eine übergeordnete Datenstruktur bereitzustellen, die alle Informationen enthält, die ohnehin bei der Ausführung aller beschriebenen Arbeitsschritte mehr oder weniger immer benötigt werden. Das steigert die Benutzbarkeit enorm und ist auch weniger fehleranfällig. Außerdem werden darin alle Funktionalitäten gekapselt die erforderlich sind, um die entsprechenden Aufgaben auszuführen, wie bspw. die Durchführung einer Lamellengraphit-Messung oder einer Versuchsplanung, wie in Abbildung \ref{fig:KlasseProzessteuerung} dargestellt.
+Die Idee dahinter ist, eine übergeordnete Datenstruktur bereitzustellen, die alle Informationen enthält, die ohnehin bei der Ausführung aller beschriebenen Arbeitsschritte mehr oder weniger immer benötigt werden. Das steigert die Benutzbarkeit enorm und ist auch weniger fehleranfällig. Außerdem werden darin alle Funktionalitäten gekapselt, die erforderlich sind, um die entsprechenden Aufgaben auszuführen, wie bspw. die Durchführung einer Lamellengraphit-Messung oder einer Versuchsplanung, wie in Abbildung \ref{fig:KlasseProzessteuerung} dargestellt.
 
 \begin{figure}[H]
 	\centering
@@ -1880,11 +1880,11 @@ Die Idee dahinter ist, eine übergeordnete Datenstruktur bereitzustellen, die al
 	\label{fig:KlasseProzessteuerung}
 \end{figure}
 
-\noindent Da bereits bei der Instanziierung der Klasse unter anderem alle Pfade der Probenbilder übergeben werden und die Bildobjekte automatisch mit erzeugt werden, muss man danach nichts weiter tun, als in einem Skript die gewünschten Funktionen direkt auf dem Objekt anzuwenden. Bei Betrachtung der Bildklasse im nächsten Abschnitt wird erkennbar, wie die Funktionalität dadurch in eine hierarchisch-logische Struktur gebracht wurde, die dadurch leicht nachvollziehbar und verstehbar wird. Das erleichtert die Anwendung, Wartbarkeit und Erweiterbarkeit.
+\noindent Da bereits bei der Instanziierung der Klasse unter anderem alle Pfade der Probenbilder übergeben werden und die Bildobjekte automatisch mit erzeugt werden, muss man danach nichts weiter tun, als in einem Skript die gewünschten Funktionen direkt auf das Objekt anzuwenden. Bei Betrachtung der Bildklasse im nächsten Abschnitt wird erkennbar, wie die Funktionalität dadurch in eine hierarchisch-logische Struktur gebracht wurde, die dadurch leicht nachvollziehbar und verstehbar wird. Das erleichtert die Anwendung, Wartbarkeit und Erweiterbarkeit.
 
 \subsection{Die Bild-Klasse}
 
-Die Aufgabe der Bild-Klasse, als Teil der Prozesssteuerrungs-Klasse, ist es, sowohl alle bild-bezogenen Operativdaten (wie bspw. die absoluten Pfade zu den 56 für jedes Bild erzeugten skalierten Kopien) sowie auch alle Messergebnisse zu speichern und vorzuhalten. Diese Struktur ist eindeutig und Widerspruchsfrei in dem Sinne, dass sie den Zugriff und die Weiterverarbeitung der ziemlich großen Menge an erzeugten Daten in einer Weise ermöglicht, die einfach und nachvollziehbar ist, da alle bild-spezifischen Informationen an einer Stelle vorliegen. Durch einen Blick auf den Aufbau der Klasse in Abbildung \ref{fig:KlasseBild} wird vieles von dem gesagten offensichtlich.
+Die Aufgabe der Bild-Klasse, als Teil der Prozesssteuerungs-Klasse, ist es, sowohl alle bild-bezogenen Operativdaten (wie bspw. die absoluten Pfade zu den 56 für jedes Bild erzeugten skalierten Kopien) sowie auch alle Messergebnisse zu speichern und vorzuhalten. Diese Struktur ist eindeutig und widerspruchsfrei in dem Sinne, dass sie den Zugriff und die Weiterverarbeitung der ziemlich großen Menge an erzeugten Daten in einer Weise ermöglicht, die einfach und nachvollziehbar ist, da alle bild-spezifischen Informationen an einer Stelle vorliegen. Durch einen Blick auf den Aufbau der Klasse in Abbildung \ref{fig:KlasseBild} wird vieles von dem gesagten offensichtlich.
 
 \begin{figure}[H]
 	\centering
@@ -1893,7 +1893,7 @@ Die Aufgabe der Bild-Klasse, als Teil der Prozesssteuerrungs-Klasse, ist es, sow
 	\label{fig:KlasseBild}
 \end{figure}
 
-\noindent Wie man leicht erkennen kann, sind alle Daten und Information die zu einem Bild gehören auch im jeweiligen Bild-Objekt gespeichert und abrufbar. Das erleichtert die anschließende Datenaufbereitung sehr.
+\noindent Wie man leicht erkennen kann, sind alle Daten und Information, die zu einem Bild gehören auch, im jeweiligen Bild-Objekt gespeichert und abrufbar. Das erleichtert die anschließende Datenaufbereitung sehr.
 
 
 \chapter{Evaluation}
@@ -1904,7 +1904,7 @@ Die Aufgabe der Bild-Klasse, als Teil der Prozesssteuerrungs-Klasse, ist es, sow
 
 \subsection{Auswertung der statistischen Versuchsplanung}
 \label{subsubsec:AuswertungStatVpl}
-Wie in Kapitel \ref{sec:StatVersPlanung} ab Seite \pageref{sec:StatVersPlanung} bereits beschrieben, dient die statistische Versuchsplanung dazu sichtbar zu machen, welchen Einfluss die die unterschiedlichen Faktoren (Steuer- und Störgrößen) auf den Zielwert haben. Das Ergebnis zeigt die nachstehende Abbildung \ref{fig:DAPareto} sowie Tabelle \ref{tab:DAPareto}, in der die für das Diagramm berechneten Werte tabellarisch dargestellt werden. 
+Wie in Kapitel \ref{sec:StatVersPlanung} ab Seite \pageref{sec:StatVersPlanung} bereits beschrieben, dient die statistische Versuchsplanung dazu, sichtbar zu machen, welchen Einfluss die unterschiedlichen Faktoren (Steuer- und Störgrößen) auf den Zielwert haben. Das Ergebnis zeigt die nachstehende Abbildung \ref{fig:DAPareto} sowie Tabelle \ref{tab:DAPareto}, in der die für das Diagramm berechneten Werte tabellarisch dargestellt werden. 
 
 \begin{figure}[H]
 	\centering
@@ -1920,15 +1920,15 @@ Wie in Kapitel \ref{sec:StatVersPlanung} ab Seite \pageref{sec:StatVersPlanung} 
 	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{pics/Tab_DA_Pareto}
 \end{table}
 
-\noindent Das Diagramm zeigt die Absolutwerte der standardisierten Effekte, geordnet vom größten zum kleinsten. Ein wichtiger Indikator ist die dargestellte Referenzlinie. Nach \cite{minitab_pareto} ist Methode, die Minitab zum Zeichnen des Pareto-Diagramms der standardisierten Effekte verwendet, abhängig von den Freiheitsgraden für den Fehlerterm. Wenn dieser einen oder mehrere Freiheitsgrade hat, wird die gelbe Linie im Pareto-Diagramm bei t gezeichnet, wobei $t$ das $1-\nicefrac{\alpha}{2}$ - Quantil einer t-Verteilung mit Freiheitsgraden gleich den Graden von Freiheit für den Fehlerterm ist. Minitab bezeichnet dieses Diagramm als Pareto-Diagramm der standardisierten Effekte. Wenn der Fehlerterm null Freiheitsgrade hat, identifiziert Minitab wichtige Effekte mithilfe des Lenth-Pseudostandardfehlers (PSE). Die gelbe Linie des Pareto-Diagramms wird dann an der Fehlergrenze gezeichnet, die wie folgt lautet:
+\noindent Das Diagramm zeigt die Absolutwerte der standardisierten Effekte, geordnet vom größten zum kleinsten. Ein wichtiger Indikator ist die dargestellte Referenzlinie. Nach \cite{minitab_pareto} ist die Methode, die Minitab zum Zeichnen des Pareto-Diagramms der standardisierten Effekte verwendet, abhängig von den Freiheitsgraden für den Fehlerterm. Wenn dieser einen oder mehrere Freiheitsgrade hat, wird die gelbe Linie im Pareto-Diagramm bei t gezeichnet, wobei $t$ das $1-\nicefrac{\alpha}{2}$ - Quantil einer t-Verteilung mit Freiheitsgraden gleich den Graden von Freiheit für den Fehlerterm ist. Minitab bezeichnet dieses Diagramm als Pareto-Diagramm der standardisierten Effekte. Wenn der Fehlerterm null Freiheitsgrade hat, identifiziert Minitab wichtige Effekte mithilfe des Lenth-Pseudostandardfehlers (PSE). Die gelbe Linie des Pareto-Diagramms wird dann an der Fehlergrenze gezeichnet, die wie folgt lautet:
 
 \begin{equation}
 	ME = t\cdot PSE
 \end{equation}
 
-\noindent Faktoren die diese Linie überschreiten gelten als statistisch signifikant. 
+\noindent Faktoren, die diese Linie überschreiten, gelten als statistisch signifikant. 
 \\\\
-Wie in Kapitel \ref{ch:Umsetzung} bereits beschrieben wurden Versuchsplanungen für alle 232 Probebilder separat durchgeführt. Um die im Diagramm dargestellten Werte zu berechnen wurde die Werte aller Einzel-Pareto-Diagramme aufsummiert, durch die Anzahl der Bilder geteilt und auf dieser Grundlage ein Pareto-Diagramm der standardisierten Effekte zu erstellen, welches einen Querschnitt über  alle Probebilder liefert.
+Wie in Kapitel \ref{ch:Umsetzung} bereits beschrieben wurden Versuchsplanungen für alle 232 Probebilder separat durchgeführt. Um die im Diagramm dargestellten Werte zu berechnen wurde die Werte aller Einzel-Pareto-Diagramme aufsummiert, durch die Anzahl der Bilder geteilt, um auf dieser Grundlage ein Pareto-Diagramm der standardisierten Effekte zu erstellen, welches einen Querschnitt über  alle Probebilder liefert.
 \\\\
 \noindent Vor diesem Hintergrund kann also geschlossen werden, dass die Einflussfaktoren \textbf{Interpolationsmodus} und \textbf{Kalibrierung} sowie die Wechselwirkung beider Faktoren insgesamt betrachtet den größten Einfluss auf die Zielgröße haben.
 \\\\
@@ -1937,11 +1937,11 @@ Wie in Kapitel \ref{ch:Umsetzung} bereits beschrieben wurden Versuchsplanungen f
 
 \subsection{Analyse der eingesetzten Interpolationsverfahren}
 
-Wie im vorigen Abschnitt schon angedeutet geht es in diesem vor allem darum herauszufinden, wie genau sich die bereits identifizierten Haupteffekte auf die durch Skalierung der Bilder induzierten Messfehler auswirken. Da sich der gesamte Messfehler aus unterschiedlichen Messfehlerkategorien zusammensetzt wird dieser nun, nach einer vorausgehenden Gesamtbetrachtung in seine einzelnen Komponenten zerlegt und mit Methoden der deskriptiven Statistik näher untersucht. Ausgehend von der Gesamtbetrachtung ist es so möglich Schritt für Schritt ein tieferes Verständnis über die Wirkungsweise der unterschiedlichen Einflussgrößen (insbesondere der Interpolationsalgorithmen) auf die Zielgröße zu gewinnen.
+Wie im vorigen Abschnitt schon angedeutet, geht es in diesem vor allem darum herauszufinden, wie genau sich die bereits identifizierten Haupteffekte auf die durch Skalierung der Bilder induzierten Messfehler auswirken. Da sich der gesamte Messfehler aus unterschiedlichen Messfehlerkategorien zusammensetzt, wird dieser nun nach einer vorausgehenden Gesamtbetrachtung in seine einzelnen Komponenten zerlegt und mit Methoden der deskriptiven Statistik näher untersucht. Ausgehend von der Gesamtbetrachtung ist es so möglich Schritt für Schritt ein tieferes Verständnis über die Wirkungsweise der unterschiedlichen Einflussgrößen (insbesondere der Interpolationsalgorithmen) auf die Zielgröße zu gewinnen.
 
 \subsubsection{Gesamtfehlerbetrachtung}
 \label{subsubsec:AuswertungGesamtfehlerbetrachtung}
- In Abschnitt \ref{fig:DAPareto} wurde der \textbf{Interpolationsmodus} als Haupteffekt mit dem größten Einfluss auf die Zielvariable identifiziert. Wie jedoch die folgende Abbildung \ref{fig:DAGesamtAbsolut_Alle} in Verbindung mit Tabelle \ref{tab:DAGesamtAbsolutAlle} zeigt, hat diese Einflussgröße zwar ohne Zweifel den größten Effekt, jedoch nicht in die gewünschte Richtung da es ja darum geht den Messfehler zu minimieren. 
+ In Abschnitt \ref{fig:DAPareto} wurde der \textbf{Interpolationsmodus} als Haupteffekt mit dem größten Einfluss auf die Zielvariable identifiziert. Wie jedoch die folgende Abbildung \ref{fig:DAGesamtAbsolut_Alle} in Verbindung mit Tabelle \ref{tab:DAGesamtAbsolutAlle} zeigt, hat diese Einflussgröße zwar ohne Zweifel den größten Effekt, jedoch nicht in die gewünschte Richtung, da es ja darum geht, den Messfehler zu minimieren. 
 
 \begin{figure}[H]
 	\centering
@@ -1957,9 +1957,9 @@ Wie im vorigen Abschnitt schon angedeutet geht es in diesem vor allem darum hera
 	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{pics/Tab_DA_Gesamt_Absolut_Alle}
 \end{table}
 
-\noindent An den berechneten Mittelwerten in der Tabelle ist zu erkennen, das LANCZOS4 über alle Kategorien den geringsten durchschnittlichen Fehler erzeugt. Allerdings zeigen die Daten auch, das dies nicht repräsentativ für alle Kalibrierungsstufen ist. Man betrachte z.B. Kalibrierungsstufe 0,7 bei Vollskalierung - in diesem Bereich liegt der Fehlerwert von Nächster-Nachbar mit ca. 88,41 etwa 4 Einheiten unter dem von LANCZOS4 mit ca. 92,22. Darüber hinaus ist zu beobachten, dass der Fehler mit zunehmender Ausgangskalibrierung wächst. Vergleicht man etwa am Beispiel von LANCZOS4 die Werte bei Kalibrierung  0,3  und 1,9 $\nicefrac{\mu m}{\text{Pixel}}$ stellt man fest, das der Messfehlerwert bei 1,9 $\nicefrac{\mu m}{\text{Pixel}}$ um fast 57 $\%$ über dem bei Kalibrierung 0,3 liegt. Dadurch zeigt sich, dass die Vergrößerung von Bildern (also Verringerung der Kalibrierung) wohl offensichtlich weniger gut funktioniert als in die entgegengesetzte Richtung.
+\noindent An den berechneten Mittelwerten in der Tabelle ist zu erkennen, dass LANCZOS4 über alle Kategorien den geringsten durchschnittlichen Fehler erzeugt. Allerdings zeigen die Daten auch, dass dies nicht repräsentativ für alle Kalibrierungsstufen ist. Man betrachte z.B. Kalibrierungsstufe 0,7 bei Vollskalierung - in diesem Bereich liegt der Fehlerwert von Nächster-Nachbar mit ca. 88,41 etwa 4 Einheiten unter dem von LANCZOS4 mit ca. 92,22. Darüber hinaus ist zu beobachten, dass der Fehler mit zunehmender Ausgangskalibrierung wächst. Vergleicht man etwa am Beispiel von LANCZOS4 die Werte bei Kalibrierung  0,3  und 1,9 $\nicefrac{\mu m}{\text{Pixel}}$, stellt man fest, dass der Messfehlerwert bei 1,9 $\nicefrac{\mu m}{\text{Pixel}}$ um fast 57 $\%$ über dem bei Kalibrierung 0,3 liegt. Dadurch zeigt sich, dass die Vergrößerung von Bildern (also Verringerung der Kalibrierung) wohl offensichtlich weniger gut funktioniert, als in die entgegengesetzte Richtung.
 \\\\
-Betrachtet man dagegen die Streuungsparameter Standardabweichung und Varianz, ergibt sich ein etwas anderes Bild. Während die Standardabweichung über alle Bereiche hinweg sehr niedrig ausfällt und kaum schwankt ist die Varianz, also die Streuung in den Daten wesentlich höher und schwankt im Bereich von ca. 135,62 bei Kalibrierung 0,3 bis ca. 367,18 bei einer Ausgangskalibrierung von 1,9 $\nicefrac{\mu m}{\text{Pixel}}$ (hier am Beispiel von LANCZOS4) ziemlich stark. Ebenfalls ist auffällig, das die kubische Interpolation in den Kalibrierungsbereichen 0,3 und 1,1 $\nicefrac{\mu m}{\text{Pixel}}$ die niedrigste Varianz, also auch im Vergleich zu LANCZOS4 aufweist.  Die nachstehende Abbildung \ref{fig:DAGesamtStreu1Alle} sowie die dazugehörige Datentabelle \ref{tab:DAGesamtStreu1Alle} geben diesen Zusammenhang sehr gut zu erkennen.
+Betrachtet man dagegen die Streuungsparameter Standardabweichung und Varianz, ergibt sich ein etwas anderes Bild. Während die Standardabweichung über alle Bereiche hinweg sehr niedrig ausfällt und kaum schwankt, ist die Varianz, also die Streuung in den Daten wesentlich höher und schwankt im Bereich von ca. 135,62 bei Kalibrierung 0,3 bis ca. 367,18 bei einer Ausgangskalibrierung von 1,9 $\nicefrac{\mu m}{\text{Pixel}}$ (hier am Beispiel von LANCZOS4) ziemlich stark. Ebenfalls ist auffällig, dass die kubische Interpolation in den Kalibrierungsbereichen 0,3 und 1,1 $\nicefrac{\mu m}{\text{Pixel}}$ die niedrigste Varianz, also auch im Vergleich zu LANCZOS4 aufweist.  Die nachstehende Abbildung \ref{fig:DAGesamtStreu1Alle} sowie die dazugehörige Datentabelle \ref{tab:DAGesamtStreu1Alle} geben diesen Zusammenhang sehr gut zu erkennen.
 
 \begin{figure}[H]
 	\centering
@@ -1977,7 +1977,7 @@ Betrachtet man dagegen die Streuungsparameter Standardabweichung und Varianz, er
 
 \noindent Hierbei wird deutlich, dass LANCZOS4, wenn auch den geringsten gesamten Messfehler über alle Bereiche, andererseits in einigen Bereichen eine sehr hohe Varianz besitzt (grüne Datenpunkte), was auf eine hohe Streuung hindeutet. Demgegenüber hat die kubische Interpolation über alle Kategorien die geringste Varianz (rote Datenpunkte). Die Frage, welcher Kandidat die höchste Varianz aufweist, kann nicht eindeutig beantwortet werden, da diese sich kategorial unterscheidet. Die entsprechenden Datenpunkte und Werte sind in der Abbildung in der dem entsprechenden Algorithmus jeweils zugeordneten Farbe ebenfalls eingetragen, jedoch nur für die Vollskalierung, um die Grafik nicht zu sehr zu überlagern. 
 \\\\
-Ein weiteres Streuungsmaß, dass sich zur Beschreibung von Daten sehr gut eignet, ist die Variationsbreite, die zeigt, wie weit die Werte genau streuen. Abbildung \ref{fig:DAGesamtStreu2Alle} i. V. m. Tabelle \ref{tab:DAGesamtStreu2Alle} zeigt diesen Sachverhalt und beschreibt in absoluten Zahlen, wie weit die Messfehlerwerte je Interpolationsalgorithmus, Interpolationsmodi und Stufe der Ausgangskalibrierung streuen. 
+Ein weiteres Streuungsmaß, das sich zur Beschreibung von Daten sehr gut eignet, ist die Variationsbreite, die zeigt, wie weit die Werte genau streuen. Abbildung \ref{fig:DAGesamtStreu2Alle} i. V. m. Tabelle \ref{tab:DAGesamtStreu2Alle} zeigt diesen Sachverhalt und beschreibt in absoluten Zahlen, wie weit die Messfehlerwerte je Interpolationsalgorithmus, Interpolationsmodi und Stufe der Ausgangskalibrierung streuen. 
 
 \begin{figure}[H]
 	\centering
@@ -1994,7 +1994,7 @@ Ein weiteres Streuungsmaß, dass sich zur Beschreibung von Daten sehr gut eignet
 \end{table}
 
 
-\noindent Wie zu erwarten ist auch die Variationsbreite bei LANCZOS4 am geringsten (bezogen auf den Mittelwert), jedoch nicht in allen Kalibrierungsstufen. Betrachtet man bspw. die Kalibrierungsstufe $0,3~\nicefrac{\mu m}{\text{Pixel}}$ ist zu erkennen, das LANCZOS4 im Vergleich zur flächenbasierten Interpolation einen minimal höhere Variationsbreite der Messfehlerwerte aufweist. 
+\noindent Wie zu erwarten ist auch die Variationsbreite bei LANCZOS4 am geringsten (bezogen auf den Mittelwert), jedoch nicht in allen Kalibrierungsstufen. Betrachtet man bspw. die Kalibrierungsstufe $0,3~\nicefrac{\mu m}{\text{Pixel}}$ ist zu erkennen, das LANCZOS4 im Vergleich zur flächenbasierten Interpolation eine minimal höhere Variationsbreite der Messfehlerwerte aufweist. 
 \\\\
 Die Ergebnisse aus diesem Abschnitt lassen sich wie folgt kurz zusammenfassen:
 \\\\
@@ -2002,7 +2002,7 @@ Die Ergebnisse aus diesem Abschnitt lassen sich wie folgt kurz zusammenfassen:
 	\label{box:ErgebnisGesamtauswertung}
 	\begin{minipage}{0.975\textwidth}
 		\textbf{\underline{Ergebnis der Gesamtfehlerbetrachtung:}}\\\\
-		Zusammenfassend kann für diesen Abschnitt festgehalten werden, dass die LANCZOS4-Interpolation zwar im Durchschnitt über alle Bereiche den kleinsten Fehler erzeugt. Jedoch allerdings in einigen Bereichen auch eine höhere Streuung aufweist, als die kubische Interpolation, welche zwar die geringste durchschnittliche Varianz besitzt, aber nicht immer den geringsten Fehler erzeugt.
+		Zusammenfassend kann für diesen Abschnitt festgehalten werden, dass die LANCZOS4-Interpolation zwar im Durchschnitt über alle Bereiche den kleinsten Fehler erzeugt, jedoch allerdings in einigen Bereichen auch eine höhere Streuung aufweist, als die kubische Interpolation, welche zwar die geringste durchschnittliche Varianz besitzt, aber nicht immer den geringsten Fehler erzeugt.
 		\\\\
 		\noindent Des Weiteren kann festgehalten werden, dass die schrittweise Skalierung tendenziell immer größere Fehler erzeugt, als Voll-Skalierung - sehr wahrscheinlich deshalb, weil sich die Fehler bei der mehrfach-Skalierung addieren. 
 		\\\\
@@ -2014,7 +2014,7 @@ Da die Gesamtbetrachtung noch keine eindeutige Interpretation zulässt, wird nun
 
 \subsubsection{Auswertung nach Größenklassen (anzahlgewichtet)}
 \label{subsubsec:AuswertungGKanz}
-Die Größenklassen (anzahlgewichtet) entsprechen den Histogramm-Werten, welche durch die Software AMGuss bei der Durchführung einer Lamellengraphitauswertung als Teil des Analyseergebnisses berechnet werden. Durch die getrennte Erfassung der Abweichungen in den Originalbildern ist es nun möglich, diese Fehlerkategorie separat zu untersuchen. Wie im vorherigen Abschnitt bereits geschehen erfolgt auch hier zunächst einer Gesamtbetrachtung über die Gesamte Kategorie (bestehend aus 8 Klassen). Zusätzlich wird die Analyse noch durch eine Einzel-Fehleranalyse bezogen auf die 8 Größenklassen erweitert. Abbildung \ref{fig:DAGesamtAbsolutGKanzahl} und die damit verbundene Datenbasis in Tabelle \ref{tab:DAGesamtAbsolutGKanzahl} vergleichen wieder zunächst die verschiedenen Interpolationsalgorithmen je Interpolationsmodi und Kalibrierungsstufe.
+Die Größenklassen (anzahlgewichtet) entsprechen den Histogramm-Werten, welche durch die Software AMGuss bei der Durchführung einer Lamellengraphitauswertung als Teil des Analyseergebnisses berechnet werden. Durch die getrennte Erfassung der Abweichungen in den Originalbildern ist es nun möglich, diese Fehlerkategorie separat zu untersuchen. Wie im vorherigen Abschnitt bereits geschehen, erfolgt auch hier zunächst einer Gesamtbetrachtung über die Gesamte Kategorie (bestehend aus 8 Klassen). Zusätzlich wird die Analyse noch durch eine Einzel-Fehleranalyse bezogen auf die 8 Größenklassen erweitert. Abbildung \ref{fig:DAGesamtAbsolutGKanzahl} und die damit verbundene Datenbasis in Tabelle \ref{tab:DAGesamtAbsolutGKanzahl} vergleichen wieder zunächst die verschiedenen Interpolationsalgorithmen je Interpolationsmodi und Kalibrierungsstufe.
 
 \begin{figure}[H]
 	\centering
@@ -2031,9 +2031,9 @@ Die Größenklassen (anzahlgewichtet) entsprechen den Histogramm-Werten, welche 
 \end{table}
 
 
-\noindent Was sofort auffällt ist, dass die Kurven sich sehr denen aus der Gesamt-Fehlerbetrachtung im letzten Abschnitt ähneln. Auch hier ist eindeutig der Trend zu erkennen, dass der Fehelr sich mit steigender Ausgangskalibrierung vergrößert und das die Fehler bei der schrittweisen Skalierung immer größer ausfallen, als bei Voll-Skalierung. 
+\noindent Was sofort auffällt ist, dass die Kurven sich sehr denen aus der Gesamt-Fehlerbetrachtung im letzten Abschnitt ähneln. Auch hier ist eindeutig der Trend zu erkennen, dass der Fehler sich mit steigender Ausgangskalibrierung vergrößert und dass die Fehler bei der schrittweisen Skalierung immer größer ausfallen, als bei Voll-Skalierung. 
 \\\\
-Wenn auch knapp, weist die LANCZOS4-Interpolation hier mit einem Durchschnittswert von ca. 26,12 den geringsten durchschnittlichen Fehler auf. Allerdings erzeugt dieses Interpolationsverfahren, wie im Diagramm zu erkennen, nur im Bereich von 1,1 $\nicefrac{\mu m}{\text{Pixel}}$ bei schrittweiser Skalierung auch tatsächlich den geringsten absoluten Messfehler, der allerdings höher ist als bei vergleichbarer Voll-Skalierung und daher vernachlässigbar. Die jeweils kleinsten Werte sind in der dem jeweiligen Algorithmus zugeordneten Diagrammfarbe entsprechend gekennzeichnet. Man kann daran gut erkennen das die Frage danach, welcher Algorithmus denn in dieser Größenklasse den kleinsten Fehler erzeugt, noch nicht hinreichend beantwortet werden kann.
+Wenn auch knapp, weist die LANCZOS4-Interpolation hier mit einem Durchschnittswert von ca. 26,12 den geringsten durchschnittlichen Fehler auf. Allerdings erzeugt dieses Interpolationsverfahren, wie im Diagramm zu erkennen, nur im Bereich von 1,1 $\nicefrac{\mu m}{\text{Pixel}}$ bei schrittweiser Skalierung auch tatsächlich den geringsten absoluten Messfehler, der allerdings höher ist als bei vergleichbarer Voll-Skalierung und daher vernachlässigbar. Die jeweils kleinsten Werte sind in der dem jeweiligen Algorithmus zugeordneten Diagrammfarbe entsprechend gekennzeichnet. Man kann daran gut erkennen, dass die Frage danach, welcher Algorithmus denn in dieser Größenklasse den kleinsten Fehler erzeugt, noch nicht hinreichend beantwortet werden kann.
 \\\\
 Anhand der Streuungsparameter erkennt man, dass die LANCZOS4-Interpolation, wenn auch den geringsten absoluten Fehler, in den meisten Fällen nicht auch die geringste Varianz besitzt wie man in der Abbildungen \ref{fig:DAGesamtStreu1GKanzahl} und \ref{fig:DAGesamtStreu2GKanzahl} i.V.m  den dazugehörigen Datentabellen \ref{tab:DAGesamtStreu1GKanzahl} und \ref{tab:DAGesamtStreu2GKanzahl} eindeutig ablesen kann.
 
@@ -2067,7 +2067,7 @@ Anhand der Streuungsparameter erkennt man, dass die LANCZOS4-Interpolation, wenn
 
 \noindent Das bedeutet, dass die Fehlerstreuung über alle Bilder in den meisten Kalibrierungsstufen für andere Algorithmen geringer ausfällt. Im direkten Vergleich mit der Gesamtauswertung (vgl. Abbildung \ref{fig:DAGesamtStreu1Alle}) sind hier zwar wesentlich geringere Varianzen im Bereich von $0,3~-~1,1\nicefrac{\mu m}{\text{Pixel}}$ (bei Voll-Skalierung) die, unabhängig vom Interpolationsalgorithmus, schon fast vernachlässigbar erscheinen. In der Kalibrierungsstufe $1,9\nicefrac{\mu m}{\text{Pixel}}$ ist hingegen wieder eine sehr hohe Streuung gegeben.
 \\\\
-\noindent Wie zu Beginn des Abschnitts bereits angekündigt, erfolgt zur vollständigen Betrachtung dieser Größenklassenkategorie nun noch eine Einzelbetrachtung die zeigt, wie sich der Messfehler in den einzelnen Klassen auswirkt (Abbildung \ref{fig:DAEinzelAbsolutGKanzahl}).
+\noindent Wie zu Beginn des Abschnitts bereits angekündigt, erfolgt zur vollständigen Betrachtung dieser Größenklassenkategorie nun noch eine Einzelbetrachtung, die zeigt, wie sich der Messfehler in den einzelnen Klassen auswirkt (Abbildung \ref{fig:DAEinzelAbsolutGKanzahl}).
 
 \begin{figure}[H]
 	\centering
@@ -2078,7 +2078,7 @@ Anhand der Streuungsparameter erkennt man, dass die LANCZOS4-Interpolation, wenn
 
 \noindent Auch wenn sich die Interpolationsalgorithmen sowohl in der Datenbasis als auch visuell im Diagramm kaum unterscheiden lassen, können hier wichtige Zusammenhänge abgeleitet werden. Die wichtigsten Unterscheidungsmerkmale sind außerdem farblich gekennzeichnet. Im Durchschnitt erzeugt LANCZOS4 über alle Kategorien den kleinsten Messfehler, wobei sich ein etwas anderes Bild ergibt, wenn man nach Größenklassen differenziert.
 \\\\
-Beispielsweise fällt beim Vergleich von LANCZOS und flächenbasierter Interpolation auf, dass der Messfehler über alle Kalibrierungsstufen in den Größenklassen 1-3 nahezu gegen Null geht, wohingegen in den Kategorien 4-8 ein starker Anstieg beobachtbar ist.Die LANCZOS-Interpolation weist etwa in der Größenklasse 8 mit 19,52 einen mehr als 10 mal höheren Fehlerwert auf, als in der Größenklasse 5 mit ca. 1,88. Bei der flächenbasierten Interpolation  ist der Unterschied dagegen, mit Werten von ca. 3,71 in Größenklasse 5 sowie 23,62 in Klasse 8, etwas geringer, den hier beträgt das Verhältnis mit ca. 6,4 nur etwas mehr als die Hälfte. 
+Beispielsweise fällt beim Vergleich von LANCZOS und flächenbasierter Interpolation auf, dass der Messfehler über alle Kalibrierungsstufen in den Größenklassen 1-3 nahezu gegen Null geht, wohingegen in den Kategorien 4-8 ein starker Anstieg beobachtbar ist.Die LANCZOS-Interpolation weist etwa in der Größenklasse 8 mit 19,52 einen mehr als 10 mal höheren Fehlerwert auf, als in der Größenklasse 5 mit ca. 1,88. Bei der flächenbasierten Interpolation  ist der Unterschied dagegen, mit Werten von ca. 3,71 in Größenklasse 5 sowie 23,62 in Klasse 8, etwas geringer, denn hier beträgt das Verhältnis mit ca. 6,4 nur etwas mehr als die Hälfte. 
 \\\\
 Da dieses Beispiel mit LANCZOS und flächenbasierter Interpolation nicht zufällig gewählt wurde, sondern auf der Grundlage einer vorhergehenden Datenanalyse, kann der hier dargestellte Zusammenhang auf alle Kalibrierungsstufen übertragen werden. Auch an der Wiederholung des Musters in der Kurve lässt sich dies sehr gut erkennen. 
 \\\\
@@ -2089,7 +2089,7 @@ Da dieses Beispiel mit LANCZOS und flächenbasierter Interpolation nicht zufäll
 		\\\\
 		Zusammenfassend kann für diesen Abschnitt festgehalten werden, dass die LANCZOS4-Interpolation mit einem Wert von 26,12 zwar über alle Bereiche zwar den kleinsten durchschnittlichen Fehler erzeugt, jedoch nur im Kalibrierungsbereich von 1,1 $\nicefrac{\mu m}{\text{Pixel}}$ bei schrittweise Skalierung auch tatsächlich den kleinsten absoluten Messfehler. Die Streuungsparameter zeigen jedoch das die LANCZOS-Interpolation nicht immer die niedrigste Varianz in den Daten aufweist, sondern nur im Bereich von 0,7 $\nicefrac{\mu m}{\text{Pixel}}$.
 		\\\\
-		Auch bezogen auf die Größenklassen bestätigt sich die bereits im Abschnitt \ref{subsubsec:AuswertungGesamtfehlerbetrachtung} Beobachtung, dass durch Voll-Skalierung im wesentlich geringere Fehler erzeugt werden, als bei vergleichbarer schrittweisen Skalierung.
+		Auch bezogen auf die Größenklassen bestätigt sich die bereits im Abschnitt \ref{subsubsec:AuswertungGesamtfehlerbetrachtung} Beobachtung, dass durch Voll-Skalierung wesentlich geringere Fehler erzeugt werden, als bei vergleichbarer schrittweisen Skalierung.
 		Ein signifikanter Anstieg ist ab einer Kalibrierungsstufe von 1,1 $\nicefrac{\mu m}{\text{Pixel}}$ erkennbar. Jedoch gilt dies nur für die Größenklassen 4-8, wobei die Fehler in den Klassen 1-3 über alle Kalibrierungsstufen und Interpolationsalgorithmen vergleichsweise vernachlässigbar gering ausfallen.
 	\end{minipage}
 }
@@ -2117,7 +2117,7 @@ Wie schon bei den Größenklassen im vorherigen Abschnitt, teilen sich diese wie
 	\end{figure}
 \end{table}
 
-\noindent Im Vergleich mit den Größenklassen (anzahlgewichtet) ist hier ein ganz ähnlicher Verlauf zu erkennen, allerdings ist es nun die kubische Interpolation (rote Datenpunkte), die mit einem gemittelten Wert von ca. 28,73 über alle Bereiche den geringsten Fehler erzeugt. Jedoch ergibt sich auch wieder ein etwas anderes Bild, wenn man untersucht, für welche Kategorien das letztendlich auch wirklich zutrifft. Die Abbildung zeigt daher jeweils auch die minimalen Werte an, außer in den Fällen in denen die kubische Interpolation tatsächlich auch den geringsten Fehler aufweist. 
+\noindent Im Vergleich mit den Größenklassen (anzahlgewichtet) ist hier ein ganz ähnlicher Verlauf zu erkennen, allerdings ist es nun die kubische Interpolation (rote Datenpunkte), die mit einem gemittelten Wert von ca. 28,73 über alle Bereiche den geringsten Fehler erzeugt. Jedoch ergibt sich auch wieder ein etwas anderes Bild, wenn man untersucht, für welche Kategorien das letztendlich auch wirklich zutrifft. Die Abbildung zeigt daher jeweils auch die minimalen Werte an, außer in den Fällen, in denen die kubische Interpolation tatsächlich auch den geringsten Fehler aufweist. 
 \\\\
 \noindent Die Streuungsparameter Standardabweichung und Varianz zeigen auf den ersten Blick nahezu exakt den selben Verlauf wie in Abschnitt \ref{subsubsec:AuswertungGKanz}, allerdings sind auch unterschiedliche Algorithmen für die jeweils größten und kleinsten Fehler verantwortlich (Abbildung \ref{fig:DAGesamtStreu1GKfläche} i.V.m. Datentabelle \ref{tab:DAGesamtStreu1GKflaeche} sowie Abbildung \ref{fig:DAGesamtStreu2GKfläche} und Datentabelle \ref{tab:DAGesamtStreu2GKflaeche}).
 
@@ -2153,9 +2153,9 @@ Wie schon bei den Größenklassen im vorherigen Abschnitt, teilen sich diese wie
 	\end{figure}
 \end{table}
 
-\noindent Während die Standardabweichung mit einem Wert von im Mittel ca. 4,35 und einer Variationsbreite von gerade mal ca. 0,42 sehr gering ist und kaum schwankt, zeigen die Varianzen wieder, dass die kubische Interpolation in fast allen Bereichen nur mittelmäßig abschneidet. Das ist an den eingezeichneten minimalen und maximalen Datenpunkten zu erkennen, denn nur im Bereich von 1,1 $\nicefrac{\mu m}{\text{Pixel}}$ (schrittweise Skalierung) weist die kubische Interpolation auch tatsächlich die geringste Varianz auf.
+\noindent Während die Standardabweichung mit einem Wert von im Mittel ca. 4,35 und einer Variationsbreite von ca. 0,42 sehr gering ist und kaum schwankt, zeigen die Varianzen wieder, dass die kubische Interpolation in fast allen Bereichen nur mittelmäßig abschneidet. Das ist an den eingezeichneten minimalen und maximalen Datenpunkten zu erkennen, denn nur im Bereich von 1,1 $\nicefrac{\mu m}{\text{Pixel}}$ (schrittweise Skalierung) weist die kubische Interpolation auch tatsächlich die geringste Varianz auf.
 \\\\
-\noindent Zur Vervollständigung der Analyse in diesem Bereich, folgt nun wieder eine Einzelbetrachtung der Größenklassen (flächengewichtet). In der nachstehenden Abbildung \ref{fig:DAEinzelAbsolutGKflaeche} ist zu erkennen, dass wiederum in den Klassen 4-8 ein signifikanter Anstieg der Fehlerwerte vorliegt.
+\noindent Zur Vervollständigung der Analyse in diesem Bereich folgt nun wieder eine Einzelbetrachtung der Größenklassen (flächengewichtet). In der nachstehenden Abbildung \ref{fig:DAEinzelAbsolutGKflaeche} ist zu erkennen, dass wiederum in den Klassen 4-8 ein signifikanter Anstieg der Fehlerwerte vorliegt.
 
 \begin{figure}[H]
 	\centering
@@ -2164,7 +2164,7 @@ Wie schon bei den Größenklassen im vorherigen Abschnitt, teilen sich diese wie
 	\label{fig:DAEinzelAbsolutGKflaeche}
 \end{figure}
 
-\noindent Für den im Diagramm eingezeichneten Vergleich (rote Datenpunkte) wurde die kubische Interpolation gewählt, weil bei diesem Interpolationsverfahren über alle Größenklassen der geringste durchschnittliche Messfehler auftritt. Dabei ist festzustellen, das bspw. wie hier in Kalibrierungsstufe 1,9 $\nicefrac{\mu m}{\text{Pixel}}$ (Vollskalierung), der Fehlerwert in Größenklasse 8 mit ca. 10,87 nur etwa 3,4 mal höher ist als in Klasse 5 mit ca. 3,15. Außerdem ist sowohl bei Voll- als auch bei der schrittweisen Skalierung jeweils ein Knick in der im Bereich der Größenklasse 7 auffällig, bei dem die Fehlerwerte im verglichen mit Klasse 6 zunächst absinken und dann wieder sehr stark ansteigen. 
+\noindent Für den im Diagramm eingezeichneten Vergleich (rote Datenpunkte) wurde die kubische Interpolation gewählt, weil bei diesem Interpolationsverfahren über alle Größenklassen der geringste durchschnittliche Messfehler auftritt. Dabei ist festzustellen, dass bspw. wie hier in Kalibrierungsstufe 1,9 $\nicefrac{\mu m}{\text{Pixel}}$ (Vollskalierung), der Fehlerwert in Größenklasse 8 mit ca. 10,87 nur etwa 3,4 mal höher ist, als in Klasse 5 mit ca. 3,15. Außerdem ist sowohl bei Voll- als auch bei der schrittweisen Skalierung jeweils ein Knick in der im Bereich der Größenklasse 7 auffällig, bei dem die Fehlerwerte im Vergleich mit Klasse 6 zunächst absinken und dann wieder sehr stark ansteigen. 
 \\\\
 \colorbox{gray!10}{
 	\label{box:Ergebnis der Auswertung nach Größenklassen (flächengewichtet):}
@@ -2173,7 +2173,7 @@ Wie schon bei den Größenklassen im vorherigen Abschnitt, teilen sich diese wie
 		\\\\
 		Es wurde in diesem Teil der Analyse festgestellt, dass die kubische Interpolation mit einem  Fehler von 28,72 einen über alle Bereiche geringsten durchschnittlichen Wert aufweist, aber nur im bei Kalibrierung von 0,7 $\nicefrac{\mu m}{\text{Pixle}}$ bei Voll-Skalierung auch den tatsächlich kleinsten absoluten Wert. Die Streuungsparameter zeigen bei einer konstant sehr niedrigen Standardabweichung, dass bei der die kubischen Interpolation nur im Bereich 1,1 $\nicefrac{\mu m}{\text{Pixel}}$ auch die kleinste Varianz in den Daten gegeben ist.
 		\\\\
-		Wie auch an früherer Stelle schon festgestellt gilt auch hier wieder, dass die Verringerung des Kalibrierungsfaktors geringere Fehler erzeugt. Bedeutende Anstiege des Fehlers sind auch hier ab Kalibrierungsstufe 1,1 $\nicefrac{\mu m}{\text{Pixel}}$ gegeben, was jedoch wieder nur für die Größenklassen 4-8 zutreffend ist.
+		Wie auch an früherer Stelle schon festgestellt, gilt auch hier wieder, dass die Verringerung des Kalibrierungsfaktors geringere Fehler erzeugt. Bedeutende Anstiege des Fehlers sind auch hier ab Kalibrierungsstufe 1,1 $\nicefrac{\mu m}{\text{Pixel}}$ gegeben, was jedoch wieder nur für die Größenklassen 4-8 zutreffend ist.
 	\end{minipage}
 }
 	
@@ -2197,7 +2197,7 @@ Die Bestimmung der Anordnungsklassen ist ebenfalls ein von der Software AMGuss b
 	\label{tab:DAGesamtAbsolutAKL}
 \end{table}
 
-\noindent Zu erkennen ist das wieder an den farbig markierten Datenpunkten die ebenfalls angeben, welcher Algorithmus in der jeweiligen Kategorie den geringsten Wert aufweist. Wie man unschwer erkennen kann, ergibt sich auch hier wieder ein sehr unklares Bild, da der Algorithmus, welcher über aller Bilder den geringsten durchschnittlichen Fehler in dieser Kategorie aufweist, nicht derselbe ist, der in den unterschiedlichen Kalibrierungsstufen und Interpolationsmodi auch zum geringsten Fehler führt - und zwar in keinem einzigen Bereich.
+\noindent Zu erkennen ist das wieder an den farbig markierten Datenpunkte,n die ebenfalls angeben, welcher Algorithmus in der jeweiligen Kategorie den geringsten Wert aufweist. Wie man unschwer erkennen kann, ergibt sich auch hier wieder ein sehr unklares Bild, da der Algorithmus, welcher über aller Bilder den geringsten durchschnittlichen Fehler in dieser Kategorie aufweist, nicht derselbe ist, der in den unterschiedlichen Kalibrierungsstufen und Interpolationsmodi auch zum geringsten Fehler führt - und zwar in keinem einzigen Bereich.
 \\\\
 Des Weiteren sind ebenfalls hohe Varianzen zu erkennen, wie in folgender Abbildung \ref{fig:DAGesamtStreu1AKL} (i.V.m. Datentabelle \ref{tab:DAGesamtStreu1AKL} dargestellt, wenngleich auch im Unterschied zu den anderen bereits beschriebenen Fehlerbereichen ein etwas andersartiger Zusammenhang vorliegt. Die Streuung in den Daten ist hier über alle Kategorien hinweg etwa gleichbleibend und weist nur in Bereich ab Kalibrierungsstufe 1,1 (bei schrittweiser Skalierung) einen erkennbaren Anstieg auf.
 
@@ -2233,7 +2233,7 @@ Des Weiteren sind ebenfalls hohe Varianzen zu erkennen, wie in folgender Abbildu
 	\label{tab:DAGesamtStreu2GAKL}
 \end{table}
 
-\noindent Bei der Einzelwertbetrachtung (Abbildung \ref{fig:DAEinzelAbsolutAKL}) fällt auf, das die Fehlerwerte in den Anordnungsklassen A und C jeweils rapide ansteigen und danach in etwa gleich steil wieder sinken, wohingegen zwischen Klasse D und E nur ein vergleichsweise geringer Anstieg zu erkennen ist.
+\noindent Bei der Einzelwertbetrachtung (Abbildung \ref{fig:DAEinzelAbsolutAKL}) fällt auf, dass die Fehlerwerte in den Anordnungsklassen A und C jeweils rapide ansteigen und danach in etwa gleich steil wieder sinken, wohingegen zwischen Klasse D und E nur ein vergleichsweise geringer Anstieg zu erkennen ist.
 
 \begin{figure}[H]
 	\centering
@@ -2249,7 +2249,7 @@ Des Weiteren sind ebenfalls hohe Varianzen zu erkennen, wie in folgender Abbildu
 	\begin{minipage}{0.975\textwidth}
 		\textbf{\underline{Ergebnis der Auswertung nach Größenklassen (flächengewichtet):}}
 		\\\\
-		Es wurde in diesem Teil der Analyse festgestellt, dass die kubische Interpolation mit einem  Fehler von 28,73 einen über alle Bereiche geringsten durchschnittlichen, jedoch aber in keinem Bereich auch tatsächlich den kleinsten absoluten Wert aufweist. Die Streuungsparameter zeigen in allen Bereichen  in etwa gleich Hohe Werte für Standardabweichung und Varianz, wobei ab Kalibrierungsstufe 1,1 $\nicefrac{\mu m}{\text{Pixel}}$ (bei schrittweiser Skalierung) ein Anstieg erkennbar ist.
+		Es wurde in diesem Teil der Analyse festgestellt, dass die kubische Interpolation mit einem  Fehler von 28,73 einen über alle Bereiche geringsten durchschnittlichen, jedoch aber in keinem Bereich auch tatsächlich den kleinsten absoluten Wert aufweist. Die Streuungsparameter zeigen in allen Bereichen  in etwa gleich hohe Werte für Standardabweichung und Varianz, wobei ab Kalibrierungsstufe 1,1 $\nicefrac{\mu m}{\text{Pixel}}$ (bei schrittweiser Skalierung) ein Anstieg erkennbar ist.
 		\\\\
 		Der zuvor festgestellte Zusammenhang, dass die Fehler mit zunehmender Ausgangskalibrierung stetig ansteigen, lässt sich hier jedoch nicht eindeutig bestätigen.
 	\end{minipage}
@@ -2261,13 +2261,13 @@ Das es die Zielsetzung dieser Arbeit ist, die Möglichkeiten zur Entwicklung ein
 
 \section{Zusammenfassung}
 \label{sec:Zusammenfassung}
-Bei der vorausgegangenen Analyse wurden in Abschnitt \ref{subsubsec:AuswertungStatVpl} zunächst die Ergebnisse aus der statistischen Versuchsplanung ausgewertet. Dabei wurde bereits deutlich, das die Faktoren Interpolationsmodus und Kalibrierung den größten Einfluss auf den Messfehler haben.
+Bei der vorausgegangenen Analyse wurden in Abschnitt \ref{subsubsec:AuswertungStatVpl} zunächst die Ergebnisse aus der statistischen Versuchsplanung ausgewertet. Dabei wurde bereits deutlich, dass die Faktoren Interpolationsmodus und Kalibrierung den größten Einfluss auf den Messfehler haben.
 \\\\
-\noindent Daran anschließend wurden  die durch Bildskalierung und Interpolation hervorgerufen Messfehler nach einer Gesamtfehlerbetrachtung in Abschnitt \ref{subsubsec:AuswertungGesamtfehlerbetrachtung}, schrittweise in ihre Bestandteile zerlegt und die Fehler in den Größenklassen (anzahl- und flächengewichtet) in den Abschnitten \ref{subsubsec:AuswertungGKanz} und \ref{subsubsec:AuswertungGKflaeche} sowie in den Anordnungsklassen im Abschnitt \ref{subsubsec:AuswertungAKL} untersucht, wobei die Ergebnisse aus den genannten Abschnitten, jeweils am Ende kurz zusammengefasst wurden.
+\noindent Daran anschließend wurden  die durch Bildskalierung und Interpolation hervorgerufen Messfehler nach einer Gesamtfehlerbetrachtung in Abschnitt \ref{subsubsec:AuswertungGesamtfehlerbetrachtung} schrittweise in ihre Bestandteile zerlegt und die Fehler in den Größenklassen (anzahl- und flächengewichtet) in den Abschnitten \ref{subsubsec:AuswertungGKanz} und \ref{subsubsec:AuswertungGKflaeche} sowie in den Anordnungsklassen im Abschnitt \ref{subsubsec:AuswertungAKL} untersucht, wobei die Ergebnisse aus den genannten Abschnitten jeweils am Ende kurz zusammengefasst wurden.
 \\\\
-\noindent Dabei wurde festgestellt, dass ein Vergleich der Algorithmen nicht ohne weiteres möglich ist, da bspw. bei der Gesamtfehlerbetrachtung der nach Größenklassen (anzahlgewichtet) sowie der nach Anordnungsklassen jeweils die LANCZOS4- Interpolation über alle Kategorien den geringsten Messfehler erzeugt, jedoch nicht immer den geringsten Wert in den unterschiedlichen Kalibrierungsstufen. Bei den Größenklassen (flächengewichtet) trifft dasselbe für die kubische Interpolation zu. Das ist insofern problematisch, als das die Kalibrierung, wie bereits in Abschnitt \ref{subsec:DefEinflusStoer} beschrieben wurde, eine Störgröße darstellt und nicht direkt beeinflusst werden kann.
+\noindent Dabei wurde festgestellt, dass ein Vergleich der Algorithmen nicht ohne weiteres möglich ist, da bspw. bei der Gesamtfehlerbetrachtung der nach Größenklassen (anzahlgewichtet) sowie der nach Anordnungsklassen jeweils die LANCZOS4- Interpolation über alle Kategorien den geringsten Messfehler erzeugt, jedoch nicht immer den geringsten Wert in den unterschiedlichen Kalibrierungsstufen. Bei den Größenklassen (flächengewichtet) trifft dasselbe für die kubische Interpolation zu. Das ist insofern problematisch, als dass die Kalibrierung, wie bereits in Abschnitt \ref{subsec:DefEinflusStoer} beschrieben wurde, eine Störgröße darstellt und nicht direkt beeinflusst werden kann.
 \\\\
-Allerdings ist das Ergebnis auch im Hinblick auf das Auswertungsinteresse eines Metallographen bzw. einer Metallographin zu bewerten, die sich vor allem für die Messergebnisse in den Größenklassen (flächengewichtet) interessieren, da diese Größe wesentlich bedeutendere Rückschlüsse auf die Materialeigenschaften eines Gusseisenwerkstoffes zulässt. Vor diesem Hintergrund wurden in einer weiteren Analyse die Größenklassen in Bezug auf die unterschiedlichen Kalibrierungsstufen noch einmal separat betrachtet und in Abbildung \ref{fig:DAGesamtKalibBenchmark} dargestellt. Daran ist zu erkennen, dass die Fehler in einem Kalibrierungsbereich von 0,3 - 0,5 $\nicefrac{\mu m}{\text{Pixel}}$ zunächst stark abnehmen un dann wieder stark ansteigen. Die eingezeichneten Benchmark-Linien ergeben sich aus den Mittelwerten in der entsprechenden Größenklassenkategorie und es wird vermutet, dass alle Werte, die unterhalb dieser Linie liegen die Anforderungen an einen Standard-Klassifikator, welche in Abschnitt \ref{sec:DefAnforderungenAnordnKlas} auf Seite \pageref{sec:DefAnforderungenAnordnKlas} beschrieben wurden, zu erfüllen. Allerdings ist die Beantwortung der Frage, was den genau ein tolerierbarer Fehlerwert ist, nicht Teil dieser Arbeit und wurde daher auch nicht untersucht.
+Allerdings ist das Ergebnis auch im Hinblick auf das Auswertungsinteresse eines Metallographen bzw. einer Metallographin zu bewerten, die sich vor allem für die Messergebnisse in den Größenklassen (flächengewichtet) interessieren, da diese Größe wesentlich bedeutendere Rückschlüsse auf die Materialeigenschaften eines Gusseisenwerkstoffes zulässt. Vor diesem Hintergrund wurden in einer weiteren Analyse die Größenklassen in Bezug auf die unterschiedlichen Kalibrierungsstufen noch einmal separat betrachtet und in Abbildung \ref{fig:DAGesamtKalibBenchmark} dargestellt. Daran ist zu erkennen, dass die Fehler um die Standardkalibrierung (0,3 und 0,7 $\nicefrac{\mu m}{\text{Pixel}}$ noch tolerierbar sind, wohingegen sie bei höheren Kalibrierungen über der Benchmark-Linie liegen. Weiterhin ist zu verzeichnen, dass bei einer anzahlgewichteten Messung der Fehler wesentlich höher ausfällt. Dies ist darauf zurückzuführen, dass durch die starke Verringerung der Bildgröße sich die Anzahl der kleinen Strukturen stark verringert und diese somit nicht mehr in der kleinsten Größenklasse erfasst werden können. Die eingezeichneten Benchmark-Linien ergeben sich aus den Mittelwerten in der entsprechenden Größenklassenkategorie und es wird vermutet, dass alle Werte, die unterhalb dieser Linie liegen die Anforderungen an einen Standard-Klassifikator, welche in Abschnitt \ref{sec:DefAnforderungenAnordnKlas} auf Seite \pageref{sec:DefAnforderungenAnordnKlas} beschrieben wurden, zu erfüllen. Allerdings ist die Beantwortung der Frage, was den genau ein tolerierbarer Fehlerwert ist, nicht Teil dieser Arbeit und wurde daher auch nicht untersucht.
 
 \begin{figure}[H]
 	\centering
@@ -2276,16 +2276,72 @@ Allerdings ist das Ergebnis auch im Hinblick auf das Auswertungsinteresse eines 
 	\label{fig:DAGesamtKalibBenchmark}
 \end{figure}
 
-\noindent Abgesehen davon kann jedoch als Ergebnis in dieser Arbeit festgestellt werden, dass die Anwendung eines Standard-Klassifikators nur empfehlenswert bei Bildern mit hoher Auflösung ist, also $< 1,0 \nicefrac{\mu m}{Pixel}$. Das ist bei heutigen modernen Kameras mit hoher Auflösung immer gegeben, wobei die Kalibrierung bei Bildern die mit älteren Kameramodellen  aufgenommen wurden (z.B. PAL-D mit einem Standard-Signal von 768 $\times$ 576 Pixeln) bei > 1,0 $\nicefrac{\mu m}{\text{Pixel}}$ liegt. 
+\noindent Generell kann somit als Ergebnis in dieser Arbeit festgestellt werden, dass die Anwendung eines Standard-Klassifikators nur empfehlenswert bei Bildern mit hoher Auflösung ist, also $< 1,0 \nicefrac{\mu m}{Pixel}$. Das ist bei heutigen modernen Kameras mit hoher Auflösung immer gegeben, wobei die Kalibrierung bei Bildern die mit älteren Kameramodellen  aufgenommen wurden (z.B. PAL-D mit einem Standard-Signal von 768 $\times$ 576 Pixeln) bei > 1,0 $\nicefrac{\mu m}{\text{Pixel}}$ liegt. 
 \\\\
-\noindent Außerdem kann gesagt werden, das sowohl die kubische als auch die LANCZOS4-Interpolation sich am besten zur Bildskalierung bei Anwendung eines Standard-Klassifikators eignen. Und zwar sollte die kubische Interpolation auf Bilder mit einer Ausgangskalibrierung von 0,7 $\nicefrac{\mu m}{\text{Pixel}}$ und die LANCZOS4-Interpolation auf Bilder mit kleineren Kalibrierungen angewendet werden, jeweils bei Voll-Skalierung.
+\noindent Außerdem kann gesagt werden, dass sowohl die kubische als auch die LANCZOS4-Interpolation sich am besten zur Bildskalierung bei Anwendung eines Standard-Klassifikators eignen. Und zwar sollte die kubische Interpolation auf Bilder mit einer Ausgangskalibrierung von 0,7 $\nicefrac{\mu m}{\text{Pixel}}$ und die LANCZOS4-Interpolation auf Bilder mit kleineren Kalibrierungen angewendet werden, jeweils bei Voll-Skalierung.
 
 \section{Ausblick}
 \label{sec:Ausblick}
 
-Die in dieser Arbeit durchgeführten Untersuchungen haben gezeigt, welche Interpolationsverfahren sich zur Bild-transformation bei der Verwendung eines allgemeingültigen Anordnungsklassifikators zur Durchführung von Lamellengraphit-Messungen mit der Software AMGuss am besten geeignet sind, weil dadurch die geringsten Messfehler erzeugt werden. Allerdings ist eine Bildskalierung nie fehlerfrei und kann es auch nie sein. Die Frage ist nur, wie groß denn der Fehler maximal sein darf, damit die aus Expertensicht geforderten qualitativen Anforderungen an ein Messergebnis erfüllt werden. Daher wäre zur abschließenden Bewertung eine weitere Studie wichtig, in der die Experten, also die Anwender dieser Software in metallographischen Laboren, diese Ergebnisse begutachten und bewerten. Nur auf diese Weise kann letztlich die Frage beantwortet werden, ob die durch Bildtransformation erzeugten Messfehler ein tolerierbares Maß überschreiten, oder nicht. 
+Die in dieser Arbeit durchgeführten Untersuchungen haben gezeigt, welche Interpolationsverfahren sich zur Bild-transformation bei der Verwendung eines allgemeingültigen Anordnungsklassifikators zur Durchführung von Lamellengraphit-Messungen mit der Software AMGuss am besten geeignet sind, weil dadurch die geringsten Messfehler erzeugt werden. Allerdings ist eine Bildskalierung nie fehlerfrei und kann es auch nie sein. Die Frage ist nur, wie groß denn der Fehler maximal sein darf, damit die aus Expertensicht geforderten qualitativen Anforderungen an ein Messergebnis erfüllt werden. Daher wäre zur abschließenden Bewertung eine weitere Studie wichtig, in der die Experten, also die Anwender dieser Software in metallographischen Laboren, diese Ergebnisse begutachten und bewerten. Nur auf diese Weise kann letztlich die Frage beantwortet werden, ob die durch Bildtransformation erzeugten Messfehler ein tolerierbares Maß überschreiten oder nicht. 
 \\\\
-\noindent Abhängig davon, wie diese Bewertungsergebnisse ausfallen wäre es ggf. auch lohnenswert zu untersuchen, ob es unter Anwendung von Methoden des maschinellen Lernens möglich wäre, die Datenverluste bei der Bildtransformation und somit die bei einer Messung mit AMGuss erzeugten Messfehler auf ein tolerierbares Maß hin zu minimieren. 
+\noindent Abhängig davon, wie diese Bewertungsergebnisse ausfallen wäre es ggf. auch lohnenswert zu untersuchen, ob es unter Anwendung von Methoden des maschinellen Lernens möglich wäre, die Datenverluste bei der Bildtransformation und somit die bei einer Messung mit AMGuss erzeugten Messfehler auf ein tolerierbares Maß hin zu minimieren. Oder stattdessen einen Klassifikationsalgorithmus, der auf alle Bildskalierungen anwendbar ist und man somit auf Bildtransformation verzichten kann.
+
+\newpage
+
+\appendix
+\chapter{Inhalt des Projekt-Repositories}
+
+Alle Daten sowie auch der Quellcode zu dieser Arbeit, befinden sich auf
+\\\\ 
+- \url{https://github.com/MichaelKaip/lamello-stat}.
+\\\\
+Ein Zugang zu diesem Repository kann, sofern dieser noch nicht vorliegt, unter
+\\\\ 
+- \href{mailto:michael.kaip@outlook.com}{\nolinkurl{michael.kaip@outlook.com}} 
+\\\\
+beantragt werden.
+
+\section{Daten}
+Diese befinden sich im o.g. Repository im Unterverzeichnis
+\\\\ 
+- \textbf{/resources/evaluation\_data.xslx}.
+
+\section{Quellcode}
+Dieser befindet sich im o.g. Repository im Unterverzeichnis
+\\\\ 
+- \textbf{/src}
+\\\\
+mit folgendem Inhalt:
+\begin{enumerate}\bfseries
+	\item amguss\_runner.py
+	\item amguss\_runner\_helper.py
+	\item doe\_stats\_job.py
+	\item evaluation\_job.py
+	\item image.py
+	\item img\_set\_creation\_job.py
+	\item job\_helper.py
+	\item lamello\_stat\_main.py
+	\item lamello\_stat\_main\_helper.py
+	\item monitoring\_container.py
+	\item parsing\_job.py
+	\item refresh\_runner.py
+	\item scaling\_job.py
+	\item scaling\_train\_images\_job.py
+	\item writing\_data\_to\_excel\_job.py
+\end{enumerate}
+
+\section{Dokumentation}
+Eine vollständige Dokumentation des Quellcodes befindet sich im Unterverzeichnis
+\\\\ 
+- \textbf{/docs}
+\\\\
+Diese ist als Webseite verfügbar und kann in jedem verfügbaren Browser angezeigt werden, indem die Datei \textbf{index.html} im Unterverzeichnis
+\\\\
+- \textbf{/html}
+\\\\
+dort geöffnet wird.
+
 
 \bibliographystyle{IEEEtran}
 \bibliography{literature}
