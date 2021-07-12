@@ -721,23 +721,28 @@ Das grundsätzliche Problem bei der Skalierung von Bildern, soll durch Abbildung
 \end{figure}
 \noindent Wie zu erkennen, führt die lineare Interpolation dazu, das Kanten sehr unscharf werden und neue Farbverläufe entstehen. Im Bereich der Materialstrukturanalyse, wie später in Kapitel \ref{sec:Problemstellung} auf Seite \pageref{sec:Problemstellung} noch gezeigt wird, kann das (auch bei wesentlich kleineren Skalierungsfaktoren) zu sehr unerwünschten Einflüssen führen und Messergebnisse verfälschen.
 \\\\
-\noindent Abgesehen von diesen sehr einfachen Beispiel der bilinearen Interpolation gibt es jedoch auch noch einige weitere Interpolationsverfahren, bei denen die Modelle zur Approximation der fehlenden Bildinformationen auf wesentlich komplexere Art und Weise berechnet werden. Im Rahmen dieser Arbeit, kommen die folgenden zum Einsatz:
-\begin{minipage}[t]{0.5\linewidth}\vspace{0pt}
+\noindent Abgesehen von diesen sehr einfachen Beispiel der bilinearen Interpolation gibt es jedoch auch noch einige weitere Interpolationsverfahren, bei denen die Modelle zur Approximation der fehlenden Bildinformationen auf wesentlich komplexere Art und Weise berechnet werden. Im Rahmen dieser Arbeit kommen, außer der bereits beschriebenen linearen Interpolation, die folgenden Interpolationsverfahren zum Einsatz:
+\begin{minipage}[t]{0.45\linewidth}\vspace{0pt}
 	\begin{itemize}
-		\item Nächster Nachbar
-		\item Nächster Nachbar Exakt
-		\item Linear
-		\item Linear Exakt
+		\item \textbf{Nächster Nachbar}\\
+		Dabei wird jedem neu zu berechnenden Pixel der Farbwert des Pixels zugewiesen,, der die geringste euklidische Distanz zum betrachteten Pixel hat.  
+		\item \textbf{Nächster Nachbar Exak}t\\
+		Dabei handelt es sich um eine bit-exakte Nächster-Nachbar-Interpol.
+		\item \textbf{Linear Exakt}\\
+		Dabei handelt es sich um eine bit-exakte lineare Interpolation
+	\end{itemize}
+\end{minipage}~~~~
+\begin{minipage}[t]{0.45\linewidth}\vspace{0pt}
+	\begin{itemize}
+		\item \textbf{Kubisch}\\
+		Bei der kubischen Interpolation wird über einen Ausschnitt von 4 $\times$ 4 Pixeln interpoliert.
+		\item \textbf{Flächen-basiert}\\
+		Hierbei werden Pixelflächenbeziehungen zur Berechnung fehlender Pixel verwendet.
+		\item \textbf{Lanczos4}\\
+		Dabei wird über einen Ausschnitt von 8 $\times$ 8 Pixeln interpoliert.
 	\end{itemize}
 \end{minipage}
-\begin{minipage}[t]{0.49\linewidth}\vspace{0pt}
-	\begin{itemize}
-		\item Kubisch
-		\item Flächen-basiert
-		\item Lanczos
-	\end{itemize}
-\end{minipage}
-\\\\
+\\\\\\
 \noindent Je komplexer die Algorithmen, umso genauer arbeiten sie natürlich, aber umso größer ist die Laufzeitkomplexität. Es hängt also vom konkreten Anwendungsfall ab, welcher Algorithmus zu bevorzugen ist.
 \\\\
 \noindent In den Kapiteln \ref{ch:Konzept} (ab Seite \pageref{ch:Konzept}) und \ref{ch:Umsetzung} (ab Seite \pageref{ch:Umsetzung}) wird das Thema wieder eine bedeutende Rolle spielen wenn es darum geht, all die benötigten Bilder mit unterschiedlichen Ausgangskalibrierungen zu erzeugen und auszuwerten, um letztlich die zentrale mit dieser Arbeit verbundenen Fragestellung beantworten zu können.
@@ -2278,7 +2283,7 @@ Allerdings ist das Ergebnis auch im Hinblick auf das Auswertungsinteresse eines 
 \section{Ausblick}
 \label{sec:Ausblick}
 
-Die in dieser Arbeit durchgeführten Untersuchungen haben gezeigt, welche Interpolationsverfahren sich zur Bild-transformation bei der Verwendung eines allgemeingültigen Anordnungsklassifikators zur Durchführung von Lamel-lengraphit-Messungen mit der Software AMGuss am besten geeignet sind, weil dadurch die geringsten Messfehler erzeugt werden. Allerdings ist eine Bildskalierung nie fehlerfrei und kann es auch nie sein. Die Frage ist nur, wie groß denn der Fehler maximal sein darf, damit die aus Expertensicht geforderten qualitativen Anforderungen an ein Messergebnis erfüllt werden. Daher wäre zur abschließenden Bewertung eine weitere Studie wichtig, bei der Experten, also die Anwender dieser Software in metallographischen Laboren, diese Ergebnisse begutachten und bewerten. Nur auf diese Weise kann letztlich die Frage beantwortet werden, ob die durch Bildtransformation erzeugten Messfehler ein tolerierbares Maß überschreiten, oder nicht. 
+Die in dieser Arbeit durchgeführten Untersuchungen haben gezeigt, welche Interpolationsverfahren sich zur Bild-transformation bei der Verwendung eines allgemeingültigen Anordnungsklassifikators zur Durchführung von Lamellengraphit-Messungen mit der Software AMGuss am besten geeignet sind, weil dadurch die geringsten Messfehler erzeugt werden. Allerdings ist eine Bildskalierung nie fehlerfrei und kann es auch nie sein. Die Frage ist nur, wie groß denn der Fehler maximal sein darf, damit die aus Expertensicht geforderten qualitativen Anforderungen an ein Messergebnis erfüllt werden. Daher wäre zur abschließenden Bewertung eine weitere Studie wichtig, in der die Experten, also die Anwender dieser Software in metallographischen Laboren, diese Ergebnisse begutachten und bewerten. Nur auf diese Weise kann letztlich die Frage beantwortet werden, ob die durch Bildtransformation erzeugten Messfehler ein tolerierbares Maß überschreiten, oder nicht. 
 \\\\
 \noindent Abhängig davon, wie diese Bewertungsergebnisse ausfallen wäre es ggf. auch lohnenswert zu untersuchen, ob es unter Anwendung von Methoden des maschinellen Lernens möglich wäre, die Datenverluste bei der Bildtransformation und somit die bei einer Messung mit AMGuss erzeugten Messfehler auf ein tolerierbares Maß hin zu minimieren. 
 
